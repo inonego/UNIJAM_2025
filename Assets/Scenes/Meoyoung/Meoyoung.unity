@@ -456,8 +456,8 @@ MonoBehaviour:
   boss70: {fileID: 21300000, guid: 5dd308b3383b1af4fa0f66e7d610e4d7, type: 3}
   boss90: {fileID: 21300000, guid: b370a48f5de49fd41bb8fb291b3d0024, type: 3}
   rsbLoseSprite: {fileID: 21300000, guid: a99acab7d11da5242b845d92e565bca6, type: 3}
-  rsbWinSprite: {fileID: 21300000, guid: b24a2bafa6be06941bea29af724ebd85, type: 3}
-  rsbDrawSprite: {fileID: 21300000, guid: 496599d61fb833a41bb22e921ef84094, type: 3}
+  rsbWinSprite: {fileID: 21300000, guid: 496599d61fb833a41bb22e921ef84094, type: 3}
+  rsbDrawSprite: {fileID: 21300000, guid: b24a2bafa6be06941bea29af724ebd85, type: 3}
 --- !u!1 &377143795
 GameObject:
   m_ObjectHideFlags: 0
