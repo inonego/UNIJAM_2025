@@ -7,62 +7,86 @@ public class Enemy : MonoBehaviour
     public static Enemy Instance { get; private set; }
 
     [Header("보스 체력 바")]
-    [SerializeField] Slider hpBar;    // 보스 Hp Bar를 나타내는 Slider
-    [SerializeField] float duration;  // 슬라이더 전환 속도
+    [SerializeField] Slider hpBar;          // 보스 Hp Bar를 나타내는 Slider
+    [SerializeField] float duration;        // 슬라이더 전환 속도
 
     [Header("보스 HP 수치")]
-    [SerializeField] float maxHp;     // 보스 최대체력
-    [SerializeField] float baseHp;    // 보스 초기체력
+    [SerializeField] float maxHp;           // 보스 최대체력
+    [SerializeField] float baseHp;          // 보스 초기체력
 
-    private float currentHp;          // 보스 현재체력
-    private float varianceValue = 5f;
-    private Image fillIcon;           // Slider FIll Icon이 0에 수렴할 경우 이미지 enabled = false 처리를 위함
+    [Header("보스 스프라이트")]
+    [SerializeField] Sprite boss30;
+    [SerializeField] Sprite boss50;
+    [SerializeField] Sprite boss70;
+    [SerializeField] Sprite boss90;
+    [SerializeField] Sprite rsbLoseSprite;
+    [SerializeField] Sprite rsbWinSprite;
+    [SerializeField] Sprite rsbDrawSprite;
+
+    private float currentHp;                // 보스 현재체력
+    private float varianceValue = 5f;       // 보스 게이지 차는 비율
+    private Image fillIcon;                 // Slider FIll Icon이 0에 수렴할 경우 이미지 enabled = false 처리를 위함
+    private SpriteRenderer spriteRenderer;  // 보스 SpriteRender 컴포넌트
 
     private void Awake()
     {
         if(Instance == null)
             Instance = this;
 
+        spriteRenderer = GetComponent<SpriteRenderer>();
         Image[] images = hpBar.GetComponentsInChildren<Image>();
         fillIcon = images[1];
 
         hpBar.value = baseHp / maxHp;
         currentHp = baseHp;
-        SetSliderValue(currentHp);
+        SetSprite();
     }
 
-    // RSBResult Win, Lose, Draw 값을 받게 됨
-    /*public void ReflectionRSBValue(RSBResult result)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+            GetHpBarValue(-10);
+        else if(Input.GetKeyDown(KeyCode.S))
+            GetHpBarValue(10);
+    }
+
+    /*// RSBResult Win, Lose, Draw 값을 받게 됨
+    public void ReflectionRSBValue(RSBResult result)
     {
         switch(result)
         {
             case RSBResult.Win:
                 GetHpBarValue(varianceValue);
+                spriteRenderer.sprite = rsbWinSprite;
                 // 이겼을 때의 로직 처리
                 break;
             case RSBResult.Draw:
                 // 비겼을 때의 로직 처리
+                spriteRenderer.sprite = rsbDrawSprite;
                 break;
             case RSBResult.Lose:
                 GetHpBarValue(-varianceValue);
+                spriteRenderer.sprite = rsbLoseSprite;
                 // 졌을 때의 로직 처리
                 break;
         }
+        Invoke(nameof(SetSprite), 2.0f);
     }*/
 
-    void GetHpBarValue(float _value)
+    // Hp Slider.value와 보스의 Hp 값을 조정하는 함수
+    private void GetHpBarValue(float _value)
     {
         StartCoroutine(ControlHpBar(_value));
         SetHpValue(_value);
     }
 
-    IEnumerator ControlHpBar(float _value)
+    // Slider.value의 값을 보간하여 애니메이션 처리하는 함수
+    private IEnumerator ControlHpBar(float _value)
     {
         float currentHpRatio = hpBar.value;
         float targetHpRatio = (currentHp + _value) / maxHp;
         float elapsedTime = 0f;
         
-        // Duration 만큼 선형보간
         while(elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
@@ -76,6 +100,7 @@ public class Enemy : MonoBehaviour
         SetSliderValue(targetHpRatio);
     }
 
+    // 보스의 체력을 설정하는 함수
     private void SetHpValue(float _value)
     {
         currentHp += _value;
@@ -86,6 +111,7 @@ public class Enemy : MonoBehaviour
             currentHp = maxHp;
     }
 
+    // Slider.value를 설정하는 함수
     private void SetSliderValue(float _interpolValue)
     {
         if(_interpolValue <= 0.03)
@@ -100,6 +126,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // 보스의 Slider.value가 1이면 승리 처리
     private void IsSlider1F()
     {
         if(hpBar.value >= 1f)
@@ -107,4 +134,26 @@ public class Enemy : MonoBehaviour
             // 이겼을 때의 로직 처리
         }
     }
+
+    // 보스 체력 비율에 따라 Sprite 이미지를 설정
+    private void SetSprite()
+    {
+        if (hpBar.value >= 0.9f)
+        {
+            spriteRenderer.sprite = boss90;
+        }
+        else if (hpBar.value >= 0.7f)
+        {
+            spriteRenderer.sprite = boss70;
+        }
+        else if (hpBar.value >= 0.5f)
+        {
+            spriteRenderer.sprite = boss50;
+        }
+        else if (hpBar.value >= 0.3f)
+        {
+            spriteRenderer.sprite = boss30;
+        }
+    }
+
 }
