@@ -31,6 +31,7 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
         base.Awake();
 
         GameTimer.OnEnded += OnGameTimerEnded;
+        IntervalTimer.OnEnded += OnIntervalTimerEnded;
     }
 
     private void Start()
@@ -63,16 +64,16 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 
     public void Stop()
     {
-        StopTimers();
+        StopAll();
 
         RSBManager.Clear();
     }
     
-    private void StopTimers()
+    private void StopAll()
     {
-        //GameTimer.Stop();
+        GameTimer.Stop();
 
-        //IntervalTimer.Stop();
+        IntervalTimer.Stop();
     }
 
 #endregion
@@ -100,7 +101,6 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
     {
         Stop();
 
-        Debug.Log("WTF");
         OnGameEnded?.Invoke();
     }
 

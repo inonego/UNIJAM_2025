@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: RSBJudgerKey
   m_EditorClassIdentifier: Assembly-CSharp::RSBJudgerKey
-  Name: 
+  Name: "\uC704\uCE58 \uC774\uB3D9!"
   Description: 
   Icon: {fileID: 0}
   KeyBindings:

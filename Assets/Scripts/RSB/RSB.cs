@@ -20,6 +20,7 @@ public enum RSBResult
     Lose    = 2,
 }
 
+[Serializable]
 public abstract class RSBJudgerBase : ScriptableObject
 {
     public string Name;
@@ -162,8 +163,6 @@ public class CurrentRSB
         for (int i = 0; i < KeyBinding.Keys.Count; i++)
         {
             Key key = KeyBinding.Keys[i];
-
-            Debug.Log(key);
 
             if (Keyboard.current[key].isPressed)
             {

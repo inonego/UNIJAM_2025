@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using inonego;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class RSBJudgerRandomValue
 {
     public RSBJudgerBase Judger;
