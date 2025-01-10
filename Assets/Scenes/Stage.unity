@@ -284,13 +284,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05db952ff2224a94f80ef42f3ceb884d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MinJudgerCount: 3
+  MaxJudgerCount: 5
+  DefaultKeyBinding:
+    Name: 
+    S: 15
+    R: 33
+    P: 18
   Judgers:
   - Judger: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
-    Weight: 0
+    Weight: 0.333333
   - Judger: {fileID: 11400000, guid: 80ffaac662e075a438e997f709ecc014, type: 2}
-    Weight: 0
+    Weight: 0.333333
   - Judger: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
-    Weight: 0
+    Weight: 0.333333
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0

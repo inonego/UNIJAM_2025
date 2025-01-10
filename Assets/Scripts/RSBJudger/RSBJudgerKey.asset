@@ -19,13 +19,13 @@ MonoBehaviour:
     _serializedList:
     - Key: 1
       Value:
-        Name: 
-        S: {fileID: 0}
-        R: {fileID: 0}
-        P: {fileID: 0}
+        Name: "\uC704"
+        S: 31
+        R: 37
+        P: 19
     - Key: 2
       Value:
-        Name: 
-        S: {fileID: 0}
-        R: {fileID: 0}
-        P: {fileID: 0}
+        Name: "\uC544\uB798"
+        S: 40
+        R: 38
+        P: 17
