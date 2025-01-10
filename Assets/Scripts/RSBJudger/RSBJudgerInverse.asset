@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: RSBJudgerInverse
   m_EditorClassIdentifier: Assembly-CSharp::RSBJudgerInverse
-  Name: "\uAC70\uAFB8\uB85C"
-  Description: "\uAC70\uAFB8\uB85C"
+  Name: 
+  Description: 
   Icon: {fileID: 0}

@@ -658,9 +658,9 @@ MonoBehaviour:
     Weight: 0.25
   - Judger: {fileID: 11400000, guid: 80ffaac662e075a438e997f709ecc014, type: 2}
     Weight: 0.25
-  - Judger: {fileID: 11400000, guid: 7dae88153d112574c8a635092881aa0d, type: 2}
-    Weight: 0.25
   - Judger: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
+    Weight: 0.25
+  - Judger: {fileID: 11400000, guid: 7dae88153d112574c8a635092881aa0d, type: 2}
     Weight: 0.25
   JudgeTime: 3
 --- !u!4 &512501433

@@ -37,6 +37,7 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
     {
         RSBManager.OnNewRSB += OnNewRSB;
         RSBManager.OnJudgerChanged += OnJudgerChanged;
+        
         Start(GameTime);
     }
 

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: RSBJudgerSame
   m_EditorClassIdentifier: Assembly-CSharp::RSBJudgerSame
-  Name: "\uBE44\uAE30\uAE30"
-  Description: "\uBE44\uAE30\uAE30"
+  Name: 
+  Description: 
   Icon: {fileID: 0}
