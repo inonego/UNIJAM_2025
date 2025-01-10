@@ -48,7 +48,7 @@ public class RSBManager : MonoBehaviour
 
     // 새로운 가위바위보 시작 시 호출됩니다.
     public event Action<CurrentRSB> OnNewRSB;
-    public event Action OnJudgerChanged;
+    public event Action<RSBJudgerBase> OnJudgerChanged;
     
 #endregion
 
@@ -120,7 +120,7 @@ public class RSBManager : MonoBehaviour
             {
                 CurrentJudger = Judgers[i].Judger;
                 
-                OnJudgerChanged?.Invoke();  
+                OnJudgerChanged?.Invoke(CurrentJudger);  
 
                 return;
             }
@@ -129,7 +129,15 @@ public class RSBManager : MonoBehaviour
         CurrentJudger = Judgers[0].Judger;
 
         // 가위바위보 판정 조건 변경 이벤트를 호출합니다.
-        OnJudgerChanged?.Invoke();
+        OnJudgerChanged?.Invoke(CurrentJudger);
+    }
+
+    public void Clear()
+    {
+        CurrentRSB.Stop();
+
+        CurrentRSB = null;
+        CurrentJudger = null;
     }
 
 }

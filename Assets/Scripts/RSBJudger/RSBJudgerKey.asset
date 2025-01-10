@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: RSBJudgerKey
   m_EditorClassIdentifier: Assembly-CSharp::RSBJudgerKey
-  Name: 
-  Description: 
+  Name: "\uD0A4 \uBCC0\uACBD"
+  Description: "\uD0A4 \uBCC0\uACBD"
   Icon: {fileID: 0}
   KeyBindings:
     _serializedList:
     - Key: 1
       Value:
-        Name: "\uC704"
+        Name: 
         S: 31
         R: 37
         P: 19
     - Key: 2
       Value:
-        Name: "\uC544\uB798"
+        Name: 
         S: 40
         R: 38
         P: 17

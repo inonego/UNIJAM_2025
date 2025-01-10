@@ -44,12 +44,14 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Q))
             ReflectionRSBValue(RSBResult.Lose);
         else if (Input.GetKeyDown(KeyCode.W))
             ReflectionRSBValue(RSBResult.Win);
         else if (Input.GetKeyDown(KeyCode.E))
             ReflectionRSBValue(RSBResult.Draw);
+        */
     }
 
     // RSBResult Win, Lose, Draw 값을 받게 됨

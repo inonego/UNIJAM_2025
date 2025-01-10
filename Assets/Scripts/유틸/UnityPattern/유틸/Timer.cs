@@ -9,7 +9,7 @@ using inonego.util;
 
 public class Timer
 {
-    public struct TimeDATA
+    public class TimeDATA
     {
         public float Total      { get; private set; }
         public float Current    { get; private set; }

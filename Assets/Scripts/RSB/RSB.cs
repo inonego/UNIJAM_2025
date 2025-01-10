@@ -23,6 +23,7 @@ public enum RSBResult
 public abstract class RSBJudgerBase : ScriptableObject
 {
     public string Name;
+    [TextArea(2, 5)]
     public string Description;
     public Sprite Icon;
 
@@ -78,16 +79,11 @@ public class RSBJudgerKey : DefaultRSBJudger
 {
     public SerializedDictionary<RSBKeyBindingType, RSBKeyBinding> KeyBindings = new SerializedDictionary<RSBKeyBindingType, RSBKeyBinding>();
 
-    private List<RSBKeyBindingType> KeyBindingList = null;
-
     public override void SetCurrentRSB(CurrentRSB currentRSB)
     {
         base.SetCurrentRSB(currentRSB);
 
-        if (KeyBindingList == null)
-        {
-            KeyBindingList = KeyBindings.Keys.ToList();
-        }
+        var KeyBindingList = KeyBindings.Keys.ToList();
 
         // 랜덤으로 키 바인딩을 선택합니다.
         RSBKeyBindingType randomKeyBindingType = KeyBindingList[UnityEngine.Random.Range(0, KeyBindingList.Count)];
@@ -165,7 +161,11 @@ public class CurrentRSB
 
         for (int i = 0; i < KeyBinding.Keys.Count; i++)
         {
-            if (Keyboard.current[KeyBinding.Keys[i]].isPressed)
+            Key key = KeyBinding.Keys[i];
+
+            Debug.Log(key);
+
+            if (Keyboard.current[key].isPressed)
             {
                 // 키가 중복되면 무효화합니다.
                 if (input != null)

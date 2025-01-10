@@ -18,12 +18,15 @@ public class RSBKeyBinding
     [SerializeField] private Key P;
 
     private Key[] keys = new Key[3];
-    public IReadOnlyList<Key> Keys => keys;
-    
-    public RSBKeyBinding()
+    public IReadOnlyList<Key> Keys
     {
-        keys[0] = S;
-        keys[1] = R;
-        keys[2] = P;
+        get
+        {
+            keys[0] = S;
+            keys[1] = R;
+            keys[2] = P;
+
+            return keys;
+        }
     }
 }
