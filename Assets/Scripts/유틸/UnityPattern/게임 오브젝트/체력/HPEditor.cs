@@ -47,7 +47,7 @@ public class HPEditor : Editor
         newMaxHP = EditorGUILayout.IntField("최대 체력", newMaxHP);
         if (GUILayout.Button("설정", GUILayout.Width(50)))
         {
-            hp.SetMaxHP(newMaxHP);
+            hp.SetMaxValue(newMaxHP);
         }
         EditorGUILayout.EndHorizontal();
         
@@ -56,7 +56,7 @@ public class HPEditor : Editor
         newHP = EditorGUILayout.IntField("현재 체력", newHP);
         if (GUILayout.Button("설정", GUILayout.Width(50)))
         {
-            hp.SetHP(newHP);
+            hp.SetValue(newHP);
         }
         EditorGUILayout.EndHorizontal();
         
