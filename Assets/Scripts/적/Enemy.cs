@@ -44,13 +44,15 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-            GetHpBarValue(-10);
-        else if(Input.GetKeyDown(KeyCode.S))
-            GetHpBarValue(10);
+        if (Input.GetKeyDown(KeyCode.Q))
+            ReflectionRSBValue(RSBResult.Lose);
+        else if (Input.GetKeyDown(KeyCode.W))
+            ReflectionRSBValue(RSBResult.Win);
+        else if (Input.GetKeyDown(KeyCode.E))
+            ReflectionRSBValue(RSBResult.Draw);
     }
 
-    /*// RSBResult Win, Lose, Draw 값을 받게 됨
+    // RSBResult Win, Lose, Draw 값을 받게 됨
     public void ReflectionRSBValue(RSBResult result)
     {
         switch(result)
@@ -70,8 +72,8 @@ public class Enemy : MonoBehaviour
                 // 졌을 때의 로직 처리
                 break;
         }
-        Invoke(nameof(SetSprite), 2.0f);
-    }*/
+        Invoke(nameof(SetSprite), 0.5f);
+    }
 
     // Hp Slider.value와 보스의 Hp 값을 조정하는 함수
     private void GetHpBarValue(float _value)
@@ -93,11 +95,11 @@ public class Enemy : MonoBehaviour
             float t  = elapsedTime / duration;
             float interpolValue = Mathf.Lerp(currentHpRatio, targetHpRatio, t);
             SetSliderValue(interpolValue);
-            IsSlider1F();
             yield return null;
         }
 
         SetSliderValue(targetHpRatio);
+        IsSlider1F();
     }
 
     // 보스의 체력을 설정하는 함수
@@ -150,7 +152,7 @@ public class Enemy : MonoBehaviour
         {
             spriteRenderer.sprite = boss50;
         }
-        else if (hpBar.value >= 0.3f)
+        else
         {
             spriteRenderer.sprite = boss30;
         }
