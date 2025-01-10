@@ -11,11 +11,15 @@ public class GameUI : MonoBehaviour
 {
     public SerializedDictionary<RSBType, Sprite> SpriteDictionary = new SerializedDictionary<RSBType, Sprite>();
 
+    [Header("UI")]
     public TextMeshProUGUI NameUI;
     public TextMeshProUGUI DescriptionUI;
+    public TextMeshProUGUI GameTimeUI;
+    public TextMeshProUGUI RSBTimeUI;
 
     public Image CurrentRSBImageUI;
 
+    [Header("RSB Card")]
     public List<RSBCardUI> RSBCardList = new List<RSBCardUI>();
 
     private void Start()
@@ -48,5 +52,13 @@ public class GameUI : MonoBehaviour
             NameUI.text = rsbJudger.Name;
             DescriptionUI.text = rsbJudger.Description;
         };
+    }
+
+    private void Update()
+    {
+        var gameManager = RSBGameManager.Instance;
+
+        GameTimeUI.text = $"{gameManager.LeftTime:F2}";
+        RSBTimeUI.text = $"{gameManager.RSBManager.CurrentRSB.LeftTime:F2}";
     }
 }

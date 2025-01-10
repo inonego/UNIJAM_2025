@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using AYellowpaper.SerializedCollections;
 using inonego;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -40,59 +37,6 @@ public abstract class RSBJudgerBase : ScriptableObject
     public abstract RSBResult Judge();
 }   
 
-[CreateAssetMenu(fileName = "DefaultRSBJudger", menuName = "RSB/Default RSBJudger")]
-// 일반적인 가위바위보 승리 조건
-public class DefaultRSBJudger : RSBJudgerBase
-{
-    public override RSBResult Judge()
-    {
-        // 일반적인 가위바위보 승리 조건
-        // 가위 > 보, 보 > 바위, 바위 > 가위
-        return (RSBResult)((CurrentRSB.Input - CurrentRSB.RSBType + 3) % 3);
-    }
-}
-
-[CreateAssetMenu(fileName = "RSBJudgerInverse", menuName = "RSB/RSBJudger Inverse")]
-// 일반적인 가위바위보 승리 조건의 반대
-public class RSBJudgerInverse : RSBJudgerBase
-{
-    public override RSBResult Judge()
-    {
-        // 일반적인 가위바위보 승리 조건의 반대
-        return (RSBResult)((CurrentRSB.RSBType - CurrentRSB.Input + 3) % 3);
-    }
-}
-
-[CreateAssetMenu(fileName = "RSBJudgerSame", menuName = "RSB/RSBJudger Same")]
-// 비겨야지만 이길 수 있음!
-public class RSBJudgerSame : RSBJudgerBase
-{
-    public override RSBResult Judge()
-    {
-        // 비겨야지만 이길 수 있음!
-        return CurrentRSB.RSBType == CurrentRSB.Input ? RSBResult.Win : RSBResult.Lose;
-    }
-}
-
-[CreateAssetMenu(fileName = "RSBJudgerKey", menuName = "RSB/RSBJudger Key")]
-// 키 바인딩을 통해 승리 조건을 선택합니다.
-public class RSBJudgerKey : DefaultRSBJudger
-{
-    public SerializedDictionary<RSBKeyBindingType, RSBKeyBinding> KeyBindings = new SerializedDictionary<RSBKeyBindingType, RSBKeyBinding>();
-
-    public override void SetCurrentRSB(CurrentRSB currentRSB)
-    {
-        base.SetCurrentRSB(currentRSB);
-
-        var KeyBindingList = KeyBindings.Keys.ToList();
-
-        // 랜덤으로 키 바인딩을 선택합니다.
-        RSBKeyBindingType randomKeyBindingType = KeyBindingList[UnityEngine.Random.Range(0, KeyBindingList.Count)];
-
-        currentRSB.SetKeyBinding(KeyBindings[randomKeyBindingType]);
-    }
-}
-
 [Serializable]
 public class CurrentRSB
 {
@@ -109,8 +53,16 @@ public class CurrentRSB
     // 키 바인딩 목록입니다.
     public RSBKeyBinding KeyBinding { get; private set; } = null;
 
+    public float ElapsedTime => Timer.Time.ElapsedTime;
+    public float LeftTime => Timer.Time.LeftTime;
+
     public event Action<RSBResult> OnJudged;
     public Func<RSBResult> JudgeFunc;
+
+    public CurrentRSB()
+    {
+        Timer.OnEnded += OnTimerEnded;
+    }
 
     public void SetRandomRSB()
     {
