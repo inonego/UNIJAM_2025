@@ -92,8 +92,6 @@ public class RSBManager : MonoBehaviour
         // 랜덤으로 가위바위보 승리 조건을 선택합니다.
         CurrentJudger.SetCurrentRSB(CurrentRSB);
 
-        CurrentRSB.JudgeFunc = () => CurrentJudger.Judge();
-
         // 가위바위보 시작 이벤트를 호출합니다.
         OnNewRSB?.Invoke(CurrentRSB);
 

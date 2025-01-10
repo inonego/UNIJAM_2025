@@ -31,6 +31,8 @@ public abstract class RSBJudgerBase : ScriptableObject
     public virtual void SetCurrentRSB(CurrentRSB currentRSB)
     {
         CurrentRSB = currentRSB;
+        
+        CurrentRSB.JudgeFunc = Judge;
     }
 
     public abstract RSBResult Judge();
