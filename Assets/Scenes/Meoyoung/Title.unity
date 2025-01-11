@@ -1583,7 +1583,7 @@ MonoBehaviour:
   sfxVolume: 1
   audioMixerGroup: {fileID: 24300002, guid: 5bd615700c0f8c043be940c4d6f2c9a5, type: 2}
   audioMixer: {fileID: 24100000, guid: 5bd615700c0f8c043be940c4d6f2c9a5, type: 2}
-  duration: 4
+  duration: 3
 --- !u!4 &567741372
 Transform:
   m_ObjectHideFlags: 0
