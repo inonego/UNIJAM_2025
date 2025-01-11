@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 78d1525901f324d40ba2bd765b201123
+guid: 9b627489660ee3247a65e230e86afef1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5347887539760132729
-    second: cat_card_red_scisor_0
+      213: 2487820561093509773
+    second: cat_card_red_scisor2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_card_red_scisor_0
+      name: cat_card_red_scisor2_0
       rect:
         serializedVersion: 2
-        x: 640
-        y: 591
-        width: 1549
-        height: 2187
+        x: 121
+        y: 430
+        width: 2231
+        height: 2506
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 78d0cdded9c78c5b0800000000000000
-      internalID: -5347887539760132729
+      spriteID: d8244e88e93868220800000000000000
+      internalID: 2487820561093509773
       vertices: []
       indices: 
       edges: []
@@ -138,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cat_card_red_scisor_0: -5347887539760132729
+      cat_card_red_scisor2_0: 2487820561093509773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

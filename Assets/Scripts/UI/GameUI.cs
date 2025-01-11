@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
+using AYellowpaper.SerializedCollections.Editor.Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,7 +10,8 @@ using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
-    public SerializedDictionary<RSBType, Sprite> SpriteDictionary = new SerializedDictionary<RSBType, Sprite>();
+    public SerializedDictionary<RSBType, Sprite> EnemySpriteDictionary = new SerializedDictionary<RSBType, Sprite>();
+    public SerializedDictionary<RSBType, Sprite> PlayerSpriteDictionary = new SerializedDictionary<RSBType, Sprite>();
 
     public string StageName;
 
@@ -20,7 +22,12 @@ public class GameUI : MonoBehaviour
     public TextMeshProUGUI GameTimeUI;
     public TextMeshProUGUI RSBTimeUI;
 
-    public Image CurrentRSBImageUI;
+    [Header("RSB UI")]
+    public Image EnemyRSBImageUI;
+    public Image PlayerRSBImageUI;
+    public Animation PlayerRSBAnimation;
+
+    private bool HasPlayerRSBAnimationEverPlayed = false;
 
     [Header("RSB Card")]
     public List<RSBCardUI> RSBCardList = new List<RSBCardUI>();
@@ -49,7 +56,23 @@ public class GameUI : MonoBehaviour
         {
             RSBType rsbType = currentRSB.RSBType.Value;
 
-            CurrentRSBImageUI.sprite = SpriteDictionary[rsbType];
+            EnemyRSBImageUI.sprite = EnemySpriteDictionary[rsbType];
+
+            currentRSB.OnInput += (input) =>
+            {
+                PlayerRSBImageUI.sprite = PlayerSpriteDictionary[input];
+
+                if (!HasPlayerRSBAnimationEverPlayed)
+                {
+                    PlayerRSBAnimation.Play("HandAnimation");
+
+                    HasPlayerRSBAnimationEverPlayed = true;
+                }
+                else
+                {
+                    PlayerRSBAnimation.Play("HandAnimationSecond");
+                }
+            };
         };
 
         RSBGameManager.Instance.OnJudgerChanged += (rsbJudger) =>

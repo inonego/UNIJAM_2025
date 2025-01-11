@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3b2542eb1de03c6489942f128dcf700f
+guid: da5205c0d5c43614aab48321e6aef3d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5727912792541727285
-    second: cat_card_blue_paper_0
+      213: -8007438658591844595
+    second: cat_card_blue_paper2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_card_blue_paper_0
+      name: cat_card_blue_paper2_0
       rect:
         serializedVersion: 2
-        x: 640
-        y: 591
-        width: 1549
-        height: 2187
+        x: 121
+        y: 430
+        width: 2231
+        height: 2506
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc57228b9ad5280b0800000000000000
-      internalID: -5727912792541727285
+      spriteID: d0717e917fcdfd090800000000000000
+      internalID: -8007438658591844595
       vertices: []
       indices: 
       edges: []
@@ -138,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cat_card_blue_paper_0: -5727912792541727285
+      cat_card_blue_paper2_0: -8007438658591844595
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

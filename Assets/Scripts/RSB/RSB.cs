@@ -22,7 +22,11 @@ public class CurrentRSB
 {
     public bool IsWorking { get; private set; } = false;
 
+    public float JudgeDelayTime = 0.72f;
+
     private Timer Timer = new Timer();
+    
+    private Timer JudgeDelayTimer = new Timer();
 
     public readonly RSBTweakerBase CurrentTweaker;
 
@@ -37,11 +41,14 @@ public class CurrentRSB
     public float ElapsedTime => Timer.Time.ElapsedTime;
     public float LeftTime => Timer.Time.LeftTime;
 
+    public event Action<RSBType> OnInput;
     public event Action<RSBResult> OnJudged;
 
     public CurrentRSB(RSBTweakerBase tweaker)
     {
         Timer.OnEnded += OnTimerEnded;
+
+        JudgeDelayTimer.OnEnded += OnJudgeDelayTimerEnded;
 
         CurrentTweaker = tweaker;
 
@@ -58,11 +65,14 @@ public class CurrentRSB
     /// </summary>
     public void Update()
     {
-        if (!IsWorking) return;
-
         Timer.Update();
 
-        ProcessInput();
+        JudgeDelayTimer.Update();
+
+        if (IsWorking)
+        {
+            ProcessInput();
+        }
     }
 
     /// <summary>
@@ -84,18 +94,22 @@ public class CurrentRSB
         IsWorking = false;
 
         Timer.Stop();
+
+        JudgeDelayTimer.Stop();
     }
 
     // 플레이어의 입력을 처리합니다.
     private void ProcessInput()
     {
+        if (JudgeDelayTimer.IsWorking) return;
+
         RSBType? input = null;
 
         for (int i = 0; i < CurrentKeyBinding.Keys.Count; i++)
         {
             Key key = CurrentKeyBinding.Keys[i];
 
-            if (Keyboard.current[key].isPressed)
+            if (Keyboard.current[key].wasPressedThisFrame)
             {
                 // 키가 중복되면 무효화합니다.
                 if (input != null)
@@ -113,7 +127,9 @@ public class CurrentRSB
         {
             Input = input.Value;
 
-            Judge();
+            OnInput?.Invoke(input.Value);
+
+            JudgeDelayed();
         }
     }
 
@@ -126,8 +142,13 @@ public class CurrentRSB
         }
         else
         {
-            Judge();
+            JudgeDelayed();
         }
+    }
+
+    private void OnJudgeDelayTimerEnded(Timer sender, Timer.EndedEventArgs e)
+    {
+        Judge();
     }
 
     private void Judge()
@@ -135,8 +156,13 @@ public class CurrentRSB
         RSBResult result = CurrentTweaker.Judge(RSBType.Value, Input.Value);
 
         OnJudged?.Invoke(result);
+    }
 
+    private void JudgeDelayed()
+    {
         Stop();
+
+        JudgeDelayTimer.Start(JudgeDelayTime);
     }
 }
 
