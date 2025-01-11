@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89d5192d81a7244ba0894218dedb7d9, type: 3}
+  m_Name: Stage 2_phase 4
+  m_EditorClassIdentifier: 
+  data:
+    MinJudgerCount: 2
+    MaxJudgerCount: 3
+    Judgers:
+    - Judger: {fileID: 11400000, guid: 7dae88153d112574c8a635092881aa0d, type: 2}
+      Weight: 1
+    - Judger: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
+      Weight: 1
+    - Judger: {fileID: 11400000, guid: 80ffaac662e075a438e997f709ecc014, type: 2}
+      Weight: 1
+    JudgeTime: 3
+    BossPlusValue: 14
+    BossMinusValue: 30
+    MinusPerSecond: 3.2

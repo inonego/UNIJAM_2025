@@ -1032,10 +1032,14 @@ MonoBehaviour:
   GameTime: 180
   IntervalTime: 1
   PhaseTimes:
-  - Phase: {fileID: 11400000, guid: cbc77890da2e7264bbc423221232881e, type: 2}
+  - Phase: {fileID: 11400000, guid: cf9e1091a1bb6534dbc7307ace42351e, type: 2}
     StartTime: 0
-  - Phase: {fileID: 11400000, guid: dce7c9557ada96f4f937db973917b08d, type: 2}
-    StartTime: 4
+  - Phase: {fileID: 11400000, guid: 3ffb4ac5e9c98224891680e94a9a05a2, type: 2}
+    StartTime: 13
+  - Phase: {fileID: 11400000, guid: d3cdeda77b21ac74ea1d9df077d23acc, type: 2}
+    StartTime: 30
+  - Phase: {fileID: 11400000, guid: 0678d1dee7e2e694dac340fe59655d01, type: 2}
+    StartTime: 50
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
