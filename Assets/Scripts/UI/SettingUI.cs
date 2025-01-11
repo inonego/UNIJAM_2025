@@ -91,6 +91,14 @@ public class SettingUI : MonoBehaviour
         });
     }
 
+    public void LoadCutScene(string name)
+    {
+        FadeManager.instance.FadeOut(onComplete: () =>
+        {
+            SceneManager.LoadScene(name);
+        });
+    }
+
     public void SetIsFading(bool isFading)
     {
         this.isFading = isFading;
