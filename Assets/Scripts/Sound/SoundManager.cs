@@ -228,6 +228,9 @@ public class SoundManager : MonoBehaviour
             case "CutScene3":
                 PlayBGM(BGM.Stage3);
                 break;
+            case "CutScene4":
+                PlayBGM(BGM.Final);
+                break;
             case "INF":
                 PlayBGM(BGM.Stage3);
                 break;
@@ -245,7 +248,8 @@ public enum BGM
     Menu,
     Stage1,
     Stage2,
-    Stage3
+    Stage3,
+    Final
 }
 
 public enum SFX
