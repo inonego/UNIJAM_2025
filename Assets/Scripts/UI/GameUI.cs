@@ -104,6 +104,8 @@ public class GameUI : MonoBehaviour
                 IsHandVisible = true;
 
                 RSBCardList[(int)input].Submit();
+
+                SoundManager.instance.PlaySFX(SFX.RSB);
             };
 
             currentRSB.OnJudged += (result) =>

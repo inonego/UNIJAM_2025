@@ -1609,6 +1609,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5947597505400537175, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
   m_PrefabInstance: {fileID: 961223817}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &961223819 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8980168853339810652, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
+  m_PrefabInstance: {fileID: 961223817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &961223820 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9187744405872314974, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
@@ -3024,6 +3029,10 @@ PrefabInstance:
       propertyPath: hpBar
       value: 
       objectReference: {fileID: 553327186}
+    - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 961223819}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: plusValue
       value: 5

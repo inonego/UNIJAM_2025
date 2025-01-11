@@ -1568,6 +1568,16 @@ MonoBehaviour:
       Value: {fileID: 8300000, guid: a942b7518a2cb4c45b78175c17d9e1fc, type: 3}
     - Key: Stage3_RSB_Win
       Value: {fileID: 8300000, guid: 4dc60eb837c119e48bdcd0ad0871e78b, type: 3}
+    - Key: Draw
+      Value: {fileID: 8300000, guid: 5627c7d4ea43fe14f81a1d131dc760c1, type: 3}
+    - Key: Fail
+      Value: {fileID: 8300000, guid: 3878ec8cbf5a0f14787f7340cd80b026, type: 3}
+    - Key: Clear
+      Value: {fileID: 8300000, guid: 485549a57e631c042bef94dba65d3bc5, type: 3}
+    - Key: RSB
+      Value: {fileID: 8300000, guid: 5305f4f09585d38468b701ebe81f1ce6, type: 3}
+    - Key: Gimmic
+      Value: {fileID: 8300000, guid: d323f294e0e49e344b42226e29fc3576, type: 3}
   bgms:
     _serializedList:
     - Key: Menu

@@ -241,6 +241,11 @@ public enum BGM
 public enum SFX
 {
     Stage1_RSB_Lose, Stage2_RSB_Lose, Stage3_RSB_Lose,
-    Stage1_RSB_Win, Stage2_RSB_Win, Stage3_RSB_Win
+    Stage1_RSB_Win, Stage2_RSB_Win, Stage3_RSB_Win,
+    Draw,
+    Clear,
+    Fail,
+    Gimmic,
+    RSB
 }
 #endregion
