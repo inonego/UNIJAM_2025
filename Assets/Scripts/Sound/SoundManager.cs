@@ -3,6 +3,7 @@ using AYellowpaper.SerializedCollections;
 using System.Collections.Generic;
 using System.Collections;
 using System;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class SoundManager : MonoBehaviour
     public int channels;
     [Range(0, 1)] public float sfxVolume;
 
+    [Header("# Audio Mixer Group")]
+    [SerializeField] AudioMixerGroup audioMixerGroup;
     private Queue<AudioSource> sfxQueue;
 
     private void Awake()
@@ -48,6 +51,7 @@ public class SoundManager : MonoBehaviour
         bgmPlayer.volume = bgmVolume;
         bgmPlayer.dopplerLevel = 0.0f;              // 입체효과 비활성화
         bgmPlayer.reverbZoneMix = 0.0f;             // 동굴과 같은 입체환경 반영 비활성화
+        bgmPlayer.outputAudioMixerGroup = audioMixerGroup;
     }
 
     void InitSFXPlayer()
@@ -65,6 +69,7 @@ public class SoundManager : MonoBehaviour
             sfxPlayers[i].volume = sfxVolume;
             sfxPlayers[i].dopplerLevel = 0.0f;      // 입체효과 비활성화
             sfxPlayers[i].reverbZoneMix = 0.0f;     // 동굴과 같은 입체환경 반영 비활성화
+            sfxPlayers[i].outputAudioMixerGroup = audioMixerGroup;
             sfxQueue.Enqueue(sfxPlayers[i]);
         }
 
