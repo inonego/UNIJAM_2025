@@ -48,12 +48,15 @@ public class SoundManager : MonoBehaviour
 
 
         Init();
+    }
+
+    private void Start()
+    {
         SceneManager.sceneLoaded += (scene, mode) =>
         {
             CheckSceneSound();
         };
     }
-
 
     #region Initalize
     void Init()

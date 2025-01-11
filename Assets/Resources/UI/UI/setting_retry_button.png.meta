@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2002eec0693c63f43a88d78b485bcd81
+guid: 475e22f5dab7d934bb1fe74a71ee6e88
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9194330722380729752
-    second: main_story_button_0
+      213: -724059650074619831
+    second: setting_retry_button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: main_story_button_0
+      name: setting_retry_button_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 400
+        x: 12
+        y: 2
+        width: 666
         height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8623901fbec276080800000000000000
-      internalID: -9194330722380729752
+      spriteID: 940db11a59f93f5f0800000000000000
+      internalID: -724059650074619831
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      main_story_button_0: -9194330722380729752
+      setting_retry_button_0: -724059650074619831
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

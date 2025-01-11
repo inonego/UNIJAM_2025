@@ -55,13 +55,16 @@ public class TitleManager : MonoSingleton<TitleManager>
     {
         if(settingPopup.activeSelf)
             settingPopup.SetActive(false);
+
+        Time.timeScale = 1f;
     }
 
     public void OnClickExitBtn()
     {
         FadeManager.instance.FadeOut(onComplete: () =>
         {
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
+            Debug.Log("에디터 종료");
             UnityEditor.EditorApplication.isPlaying = false;
             #else
             Application.Quit(); // 어플리케이션 종료

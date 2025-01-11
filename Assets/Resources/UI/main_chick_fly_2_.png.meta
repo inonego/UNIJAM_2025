@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2002eec0693c63f43a88d78b485bcd81
+guid: 812093c229c3e234f96d0fc89fc4e60e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9194330722380729752
-    second: main_story_button_0
+      213: 3427590045507163819
+    second: main_chick_fly_2__0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: main_story_button_0
+      name: main_chick_fly_2__0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 400
-        height: 130
+        x: 1249
+        y: 274
+        width: 657
+        height: 632
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8623901fbec276080800000000000000
-      internalID: -9194330722380729752
+      spriteID: ba69e1a7cfe319f20800000000000000
+      internalID: 3427590045507163819
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      main_story_button_0: -9194330722380729752
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
