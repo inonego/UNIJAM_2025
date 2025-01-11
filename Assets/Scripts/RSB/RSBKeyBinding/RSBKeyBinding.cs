@@ -8,8 +8,8 @@ public enum RSBKeyBindingType
     None, U, D
 }
 
-[Serializable]
-public class RSBKeyBinding
+[CreateAssetMenu(fileName = "RSBKeyBinding", menuName = "RSB/RSB Key Binding/RSB Key Binding")]
+public class RSBKeyBinding : ScriptableObject
 {
     public string Name;
 
@@ -18,6 +18,7 @@ public class RSBKeyBinding
     [SerializeField] private Key P;
 
     private Key[] keys = new Key[3];
+    
     public IReadOnlyList<Key> Keys
     {
         get

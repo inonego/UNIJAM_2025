@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class RSBJudgerRandomValue
 {
-    public RSBJudgerBase Judger;
+    public RSBTweakerBase Judger;
     public float Weight;
 }
 
@@ -15,7 +15,7 @@ public class RSBManager : MonoBehaviour
     
     [Header("RSB Key Bindings")]
     // 기본 가위바위보 키 바인딩입니다.
-    public RSBKeyBinding DefaultKeyBinding = new RSBKeyBinding();
+    public RSBKeyBinding DefaultKeyBinding = null;
 
     // 남은 가위바위보 판정 조건 개수입니다.
     public int LeftJudgerCount { get; private set; } = 0;
@@ -26,7 +26,7 @@ public class RSBManager : MonoBehaviour
 #region 현재 상태
 
     // 현재 가위바위보 판정 조건입니다.
-    public RSBJudgerBase CurrentJudger { get; private set; } = null;
+    public RSBTweakerBase CurrentTweaker { get; private set; } = null;
 
     // 현재 가위바위보 상태입니다.
     public CurrentRSB CurrentRSB { get; private set; } = null;
@@ -37,7 +37,7 @@ public class RSBManager : MonoBehaviour
 
     // 새로운 가위바위보 시작 시 호출됩니다.
     public event Action<CurrentRSB> OnNewRSB;
-    public event Action<RSBJudgerBase> OnJudgerChanged;
+    public event Action<RSBTweakerBase> OnJudgerChanged;
     
 #endregion
 
@@ -48,16 +48,13 @@ public class RSBManager : MonoBehaviour
 
     private CurrentRSB CreateRSB()
     {
-        var CurrentRSB = new CurrentRSB();
+        var CurrentRSB = new CurrentRSB(CurrentTweaker);
 
         if (CurrentRSB.RSBType == null)
         {
             // 랜덤으로 가위바위보를 선택합니다.
             CurrentRSB.SetRandomRSB();
         }
-        
-        // 기본 키 바인딩을 설정합니다.
-        CurrentRSB.SetKeyBinding(DefaultKeyBinding);
 
         return CurrentRSB;
     }
@@ -80,7 +77,7 @@ public class RSBManager : MonoBehaviour
             SetRandomJudger();
         }
         
-        if (CurrentJudger == null)
+        if (CurrentTweaker == null)
         {
             Debug.LogError("현재 가위바위보 판정 조건이 없습니다!");
 
@@ -91,9 +88,6 @@ public class RSBManager : MonoBehaviour
 
         // 새로운 가위바위보를 생성합니다.
         CurrentRSB = CreateRSB();
-
-        // 랜덤으로 가위바위보 승리 조건을 선택합니다.
-        CurrentJudger.SetCurrentRSB(CurrentRSB);
 
         // 가위바위보 시작 이벤트를 호출합니다.
         OnNewRSB?.Invoke(CurrentRSB);
@@ -114,27 +108,25 @@ public class RSBManager : MonoBehaviour
 
         float randomValue = UnityEngine.Random.Range(0, sum);
 
-        // 확률에 따라 가위바위보 승리 조건을 선택합니다.
-        for (int i = 0; i < CurrentPhase.Judgers.Count; i++)
-        {
-            randomValue -= CurrentPhase.Judgers[i].Weight;
-
-            if (randomValue < 0)
-            {
-                CurrentJudger = CurrentPhase.Judgers[i].Judger;
-                
-                OnJudgerChanged?.Invoke(CurrentJudger);
-
-                return;
-            }
-        }
-
         if (CurrentPhase.Judgers.Count > 0)
         {
-            CurrentJudger = CurrentPhase.Judgers[0].Judger;
+            CurrentTweaker = CurrentPhase.Judgers[0].Judger;
+
+            // 확률에 따라 가위바위보 승리 조건을 선택합니다.
+            for (int i = 0; i < CurrentPhase.Judgers.Count; i++)
+            {
+                randomValue -= CurrentPhase.Judgers[i].Weight;
+
+                if (randomValue < 0)
+                {
+                    CurrentTweaker = CurrentPhase.Judgers[i].Judger;
+
+                    break;
+                }
+            }
 
             // 가위바위보 판정 조건 변경 이벤트를 호출합니다.
-            OnJudgerChanged?.Invoke(CurrentJudger);
+            OnJudgerChanged?.Invoke(CurrentTweaker);
         }
     }
 
@@ -143,7 +135,7 @@ public class RSBManager : MonoBehaviour
         CurrentRSB.Stop();
 
         CurrentRSB = null;
-        CurrentJudger = null;
+        CurrentTweaker = null;
     }
 
 }

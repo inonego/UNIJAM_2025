@@ -10,22 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 917c103cf2b566b43955cac4cc19d4e6, type: 3}
-  m_Name: RSBJudgerKey
+  m_Name: RSBTweakerKey
   m_EditorClassIdentifier: Assembly-CSharp::RSBJudgerKey
+  Icon: {fileID: 0}
   Name: "\uC704\uCE58 \uC774\uB3D9!"
   Description: 
-  Icon: {fileID: 0}
+  DefaultKeyBinding: {fileID: 11400000, guid: 27198400c44826346baaefe9b1202298, type: 2}
   KeyBindings:
     _serializedList:
     - Key: 1
-      Value:
-        Name: 
-        S: 31
-        R: 37
-        P: 19
+      Value: {fileID: 11400000, guid: 2a3023e7d499a7a408888323f91bef78, type: 2}
     - Key: 2
-      Value:
-        Name: 
-        S: 40
-        R: 38
-        P: 17
+      Value: {fileID: 11400000, guid: 930d7ee486595494b8b148acf59b38f6, type: 2}

@@ -32,7 +32,7 @@ public class RSBGameTest : MonoBehaviour
         Debug.Log("가위바위보 종료 ==" + result);
     }
 
-    private void OnJudgerChanged(RSBJudgerBase judger)
+    private void OnJudgerChanged(RSBTweakerBase judger)
     {
         Debug.Log("판정자 변경 == " + judger.GetType());
     }

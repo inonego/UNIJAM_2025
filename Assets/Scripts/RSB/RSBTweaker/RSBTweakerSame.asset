@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7187b514f8ad9714dbb11efc54a3632f, type: 3}
-  m_Name: RSBJudgerSame
+  m_Name: RSBTweakerSame
   m_EditorClassIdentifier: Assembly-CSharp::RSBJudgerSame
+  Icon: {fileID: 0}
   Name: "\uBE44\uACA8\uB77C!"
   Description: 
-  Icon: {fileID: 0}
+  DefaultKeyBinding: {fileID: 11400000, guid: 27198400c44826346baaefe9b1202298, type: 2}

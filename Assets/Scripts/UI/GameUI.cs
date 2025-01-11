@@ -38,7 +38,7 @@ public class GameUI : MonoBehaviour
             {
                 RSBType rsbType = RSBCardList[index].RSBType;
 
-                Key key = currentRSB.KeyBinding.Keys[(int)rsbType];
+                Key key = currentRSB.CurrentKeyBinding.Keys[(int)rsbType];
 
                 RSBCardList[index].SetKeyLabelText(key);
             };

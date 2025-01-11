@@ -32,7 +32,7 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
     public event Action<CurrentRSB> OnRSBStarted;
     public event Action<RSBResult> OnRSBEnded;
 
-    public event Action<RSBJudgerBase> OnJudgerChanged;
+    public event Action<RSBTweakerBase> OnJudgerChanged;
 
     public event Action<RSBPhase> OnPhaseChanged;
 
