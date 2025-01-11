@@ -226,10 +226,12 @@ MonoBehaviour:
   GameTime: 180
   IntervalTime: 1
   PhaseTimes:
-  - Phase: {fileID: 11400000, guid: cbc77890da2e7264bbc423221232881e, type: 2}
+  - Phase: {fileID: 11400000, guid: b3fa7373eefb72642abf4ad618d0c4e4, type: 2}
     StartTime: 0
-  - Phase: {fileID: 11400000, guid: dce7c9557ada96f4f937db973917b08d, type: 2}
-    StartTime: 4
+  - Phase: {fileID: 11400000, guid: cf9e1091a1bb6534dbc7307ace42351e, type: 2}
+    StartTime: 25
+  - Phase: {fileID: 11400000, guid: f923bdffc2afb334baad10eff6826e96, type: 2}
+    StartTime: 50
 --- !u!1 &544207211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7402676275987011310, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
