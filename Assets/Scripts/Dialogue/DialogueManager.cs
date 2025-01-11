@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [Header("# 대사")]
-    [TextArea(1,5)][SerializeField] string[] script;
-    [SerializeField] Sprite[] cutScenes;
+    [TextArea(1, 5)][SerializeField] string[] script;
+    [SerializeField] Image[] cutScenes;
 
     [Header("# 대사 출력 간격")]
     [SerializeField] float delay;
@@ -25,7 +25,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogue = GetComponentInChildren<TMP_Text>();
         imagePanel = GetComponentInChildren<Image>();
-        imagePanel.sprite = cutScenes[0];
         dialogue.text = "";
         currentCounter = 0;
     }
@@ -49,37 +48,37 @@ public class DialogueManager : MonoBehaviour
         // 1. 대사 초기화
         dialogue.text = "";
 
-        // 2. currentCounter에 맞는 스프라이트 할당
-        imagePanel.sprite = cutScenes[currentCounter];
 
-        // 3. 키보드 치는듯한 연출로 dialogue 초기화
+        // 2. 키보드 치는듯한 연출로 dialogue 초기화
         for (int i = 0; i < script[currentCounter].Length; i++)
         {
             dialogue.text += script[currentCounter][i];
             yield return typingTime;
         }
 
-        // 4. 대사 카운터 증가
+        // 3. 대사 카운터 증가
         ++currentCounter;
 
-        // 5. 대사 읽을 시간을 위해 약간의 delay
+        // 4. 대사 읽을 시간을 위해 약간의 delay
         yield return new WaitForSeconds(delay);
 
 
-        // 6. FadeOut 후 대사가 끝났다면 다음씬 로드. 대사가 남았다면 FadeIn후 대사 출력
-        FadeManager.instance.FadeOut(onComplete: () =>
+        // 5. FadeOut 후 대사가 끝났다면 다음씬 로드. 대사가 남았다면 FadeIn후 대사 출력
+        if (currentCounter < script.Length)
         {
-            if(currentCounter < script.Length)
+            FadeManager.instance.FadeIn(image: cutScenes[currentCounter - 1], onComplete: () =>
             {
                 dialogue.text = "";
-                FadeManager.instance.FadeIn(onComplete: () =>
-                {
-                    ShowDialogue();
-                });
-            }
-            else
+                ShowDialogue();
+            });
+        }
+        else
+        {
+            FadeManager.instance.FadeOut(onComplete: () =>
+            {
                 SceneManager.LoadScene(nextSceneName);
-        });
+            });
+        }
     }
 
 
