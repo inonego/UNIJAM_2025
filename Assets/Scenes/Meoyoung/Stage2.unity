@@ -934,12 +934,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8317354476566911801, guid: c5dbc233b7f6fce459650c3739f23563, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5dbc233b7f6fce459650c3739f23563, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 80, y: 45}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1183,9 +1183,13 @@ PrefabInstance:
     - target: {fileID: 3458734939934656765, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -7061861470982874813, guid: 87e5db6f61818d64aa59509a3277bf5e, type: 3}
+      objectReference: {fileID: 21300000, guid: 87e5db6f61818d64aa59509a3277bf5e, type: 3}
     - target: {fileID: 3458734939934656765, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3458734939934656765, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
@@ -1195,31 +1199,31 @@ PrefabInstance:
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: boss30
       value: 
-      objectReference: {fileID: -7061861470982874813, guid: 87e5db6f61818d64aa59509a3277bf5e, type: 3}
+      objectReference: {fileID: 21300000, guid: 87e5db6f61818d64aa59509a3277bf5e, type: 3}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: boss50
       value: 
-      objectReference: {fileID: -6898287915167727061, guid: 4e2e03807eb349d4e893c8872aa26f70, type: 3}
+      objectReference: {fileID: 21300000, guid: 4e2e03807eb349d4e893c8872aa26f70, type: 3}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: boss70
       value: 
-      objectReference: {fileID: -6241791876213370063, guid: 9c9c8815f398bcb49a9acd04112b87be, type: 3}
+      objectReference: {fileID: 21300000, guid: 9c9c8815f398bcb49a9acd04112b87be, type: 3}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: boss90
       value: 
-      objectReference: {fileID: 8792234225296896574, guid: 1193deee30681004ba45de79e19af72f, type: 3}
+      objectReference: {fileID: 21300000, guid: 1193deee30681004ba45de79e19af72f, type: 3}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: rsbWinSprite
       value: 
-      objectReference: {fileID: -1681067638844408547, guid: 6f9a438aea185a3409f4b2e5d92393c1, type: 3}
+      objectReference: {fileID: 21300000, guid: 6f9a438aea185a3409f4b2e5d92393c1, type: 3}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: rsbDrawSprite
       value: 
-      objectReference: {fileID: 6217497690788707059, guid: 3b4e037cced11d2468124cc8c8207d2c, type: 3}
+      objectReference: {fileID: 21300000, guid: 3b4e037cced11d2468124cc8c8207d2c, type: 3}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: rsbLoseSprite
       value: 
-      objectReference: {fileID: -132656702190773938, guid: 55dc57aaeb004df41b5214b1ecc83dee, type: 3}
+      objectReference: {fileID: 21300000, guid: 55dc57aaeb004df41b5214b1ecc83dee, type: 3}
     - target: {fileID: 5658536544968875041, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.45000002
@@ -1512,11 +1516,11 @@ MonoBehaviour:
   EnemySpriteDictionary:
     _serializedList:
     - Key: 0
-      Value: {fileID: -9166072648753077263, guid: 3854627cadc693e41a149637610cb1a0, type: 3}
+      Value: {fileID: 21300000, guid: 3854627cadc693e41a149637610cb1a0, type: 3}
     - Key: 1
-      Value: {fileID: -8957987520633840618, guid: 9e976a1272df5cc489b14dcf20cd7c01, type: 3}
+      Value: {fileID: 21300000, guid: 9e976a1272df5cc489b14dcf20cd7c01, type: 3}
     - Key: 2
-      Value: {fileID: -7802877522402280520, guid: f0533e122523faf42ab9205986af33a5, type: 3}
+      Value: {fileID: 21300000, guid: f0533e122523faf42ab9205986af33a5, type: 3}
   PlayerSpriteDictionary:
     _serializedList:
     - Key: 0
@@ -1533,7 +1537,9 @@ MonoBehaviour:
   RSBTimeUI: {fileID: 20157443}
   EnemyRSBImageUI: {fileID: 20157442}
   PlayerRSBImageUI: {fileID: 1086030020}
+  EnemyRSBAnimator: {fileID: 20157447}
   PlayerRSBAnimation: {fileID: 1079184051}
+  CardShuffleInterval: 0.5
   RSBCardList:
   - {fileID: 20157440}
   - {fileID: 20157436}
