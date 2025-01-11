@@ -14,6 +14,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxHp;           // 보스 최대체력
     [SerializeField] float baseHp;          // 보스 초기체력
 
+    [Header("# 보스 게이지 증감 정보")]
+    [SerializeField] float plusValue;
+    [SerializeField] float minusValue;
+
     [Header("보스 스프라이트")]
     [SerializeField] Sprite boss30;
     [SerializeField] Sprite boss50;
@@ -27,7 +31,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject drawEffect;
 
     private float currentHp;                // 보스 현재체력
-    private float varianceValue = 5f;       // 보스 게이지 차는 비율
     private Image fillIcon;                 // Slider FIll Icon이 0에 수렴할 경우 이미지 enabled = false 처리를 위함
     private SpriteRenderer spriteRenderer;  // 보스 SpriteRender 컴포넌트
 
@@ -65,7 +68,7 @@ public class Enemy : MonoBehaviour
         switch(result)
         {
             case RSBResult.Win:
-                GetHpBarValue(varianceValue);
+                GetHpBarValue(plusValue);
                 spriteRenderer.sprite = rsbWinSprite;
 
                 animation.Play("Boss Good");
@@ -77,7 +80,7 @@ public class Enemy : MonoBehaviour
                 Instantiate(drawEffect);
                 break;
             case RSBResult.Lose:
-                GetHpBarValue(-varianceValue);
+                GetHpBarValue(-minusValue);
                 spriteRenderer.sprite = rsbLoseSprite;
                 LoseEffect.instance.ShowDamageEffect();
                 animation.Play("Boss Bad");
