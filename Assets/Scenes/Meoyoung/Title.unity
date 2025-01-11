@@ -1578,6 +1578,8 @@ MonoBehaviour:
       Value: {fileID: 8300000, guid: 5305f4f09585d38468b701ebe81f1ce6, type: 3}
     - Key: Gimmic
       Value: {fileID: 8300000, guid: d323f294e0e49e344b42226e29fc3576, type: 3}
+    - Key: Typing
+      Value: {fileID: 8300000, guid: 14df3827ff887af4782e3e104bf5e788, type: 3}
   bgms:
     _serializedList:
     - Key: Menu
@@ -1588,9 +1590,9 @@ MonoBehaviour:
       Value: {fileID: 8300000, guid: 2908038277505f748abede0b2f5ee8e3, type: 3}
     - Key: Stage3
       Value: {fileID: 8300000, guid: f21ecbc2fd085fc49a1a85085ef7408f, type: 3}
-  bgmVolume: 1
+  bgmVolume: 0.5
   channels: 30
-  sfxVolume: 1
+  sfxVolume: 0.7
   audioMixerGroup: {fileID: 24300002, guid: 5bd615700c0f8c043be940c4d6f2c9a5, type: 2}
   audioMixer: {fileID: 24100000, guid: 5bd615700c0f8c043be940c4d6f2c9a5, type: 2}
   duration: 3

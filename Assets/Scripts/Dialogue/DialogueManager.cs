@@ -16,6 +16,9 @@ public class DialogueManager : MonoBehaviour
     [Header("# 넘어갈 씬 이름")]
     [SerializeField] string nextSceneName;
 
+    [Header("# 타이핑 소리")]
+    [SerializeField] AudioSource typingAudioSource;
+
     private Image imagePanel;
     private TMP_Text dialogue;
     private int currentCounter;
@@ -48,6 +51,7 @@ public class DialogueManager : MonoBehaviour
         // 1. 대사 초기화
         dialogue.text = "";
 
+        typingAudioSource.Play();
 
         // 2. 키보드 치는듯한 연출로 dialogue 초기화
         for (int i = 0; i < script[currentCounter].Length; i++)
@@ -58,6 +62,8 @@ public class DialogueManager : MonoBehaviour
 
         // 3. 대사 카운터 증가
         ++currentCounter;
+
+        typingAudioSource.Stop();
 
         // 4. 대사 읽을 시간을 위해 약간의 delay
         yield return new WaitForSeconds(delay);
