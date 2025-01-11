@@ -69,11 +69,18 @@ public class Enemy : MonoBehaviour
         RSBGameManager.Instance.OnRSBEnded += OnRSBEnded;
         RSBGameManager.Instance.OnJudgerChanged += (Judge) => { SoundManager.instance.PlaySFX(SFX.Gimmic); };
         RSBGameManager.Instance.OnGameEnded += () => { timer.Stop(); };
+        RSBGameManager.Instance.OnPhaseChanged += OnPhaseChanged;
     }
 
     private void OnRSBEnded(RSBResult result)
     {
         ReflectionRSBValue(result);
+    }
+
+    private void OnPhaseChanged(RSBPhase phase)
+    {
+        plusValue = phase.BossPlusValue;
+        minusValue = phase.BossMinusValue;
     }
 
     // RSBResult Win, Lose, Draw 값을 받게 됨
