@@ -2047,7 +2047,7 @@ MonoBehaviour:
     - Key: Typing
       Value: {fileID: 8300000, guid: 14df3827ff887af4782e3e104bf5e788, type: 3}
     - Key: INF_RSB_Win
-      Value: {fileID: 8300000, guid: f47f78884802a914e9736178d21a1776, type: 3}
+      Value: {fileID: 8300000, guid: f6d28b4f1a03e394e9e23912666f3800, type: 3}
     - Key: INF_RSB_Lose
       Value: {fileID: 8300000, guid: 02c3e8698dda6ec44b19d91a75e60898, type: 3}
   bgms:
@@ -2060,6 +2060,8 @@ MonoBehaviour:
       Value: {fileID: 8300000, guid: 2908038277505f748abede0b2f5ee8e3, type: 3}
     - Key: Stage3
       Value: {fileID: 8300000, guid: f21ecbc2fd085fc49a1a85085ef7408f, type: 3}
+    - Key: Final
+      Value: {fileID: 8300000, guid: f6159c4bd8a21704ca6f08bcb97241a0, type: 3}
   bgmVolume: 0.5
   channels: 30
   sfxVolume: 0.7
