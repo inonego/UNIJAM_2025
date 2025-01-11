@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a89d5192d81a7244ba0894218dedb7d9, type: 3}
-  m_Name: Stage 2_phase 4
+  m_Name: Stage 3_phase 5
   m_EditorClassIdentifier: 
   data:
-    MinJudgerCount: 2
-    MaxJudgerCount: 3
+    MinJudgerCount: 1
+    MaxJudgerCount: 2
     Judgers:
-    - Judger: {fileID: 11400000, guid: 7dae88153d112574c8a635092881aa0d, type: 2}
+    - Judger: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
       Weight: 1
     - Judger: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
       Weight: 1
     - Judger: {fileID: 11400000, guid: 80ffaac662e075a438e997f709ecc014, type: 2}
       Weight: 1
-    JudgeTime: 3
-    BossPlusValue: 14
+    JudgeTime: 2
+    BossPlusValue: 17
     BossMinusValue: 30
-    MinusPerSecond: 3.5
+    MinusPerSecond: 5.5

@@ -67,4 +67,9 @@ public class TitleManager : MonoSingleton<TitleManager>
             #endif
         });
     }
+
+    public void OnClickBtn()
+    {
+        SoundManager.instance.PlaySFX(SFX.BtnClick);
+    }
 }

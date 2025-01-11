@@ -103,4 +103,9 @@ public class SettingUI : MonoBehaviour
     {
         this.isFading = isFading;
     }
+
+    public void OnClickBtn()
+    {
+        SoundManager.instance.PlaySFX(SFX.BtnClick);
+    }
 }
