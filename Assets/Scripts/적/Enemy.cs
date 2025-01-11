@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
@@ -35,6 +37,8 @@ public class Enemy : MonoBehaviour
     public UnityEvent OnWin;
     public UnityEvent OnLose;
 
+    [SerializeField] AudioSource timer;
+
     private float currentHp;                // 보스 현재체력
     private Image fillIcon;                 // Slider FIll Icon이 0에 수렴할 경우 이미지 enabled = false 처리를 위함
     private SpriteRenderer spriteRenderer;  // 보스 SpriteRender 컴포넌트
@@ -55,11 +59,16 @@ public class Enemy : MonoBehaviour
         SetSprite();
 
         animation = GetComponentInChildren<Animation>();
+
+        OnWin.AddListener(Win);
+        OnLose.AddListener(Lose);
     }
 
     private void Start()
     {
         RSBGameManager.Instance.OnRSBEnded += OnRSBEnded;
+        RSBGameManager.Instance.OnJudgerChanged += (Judge) => { SoundManager.instance.PlaySFX(SFX.Gimmic); };
+        RSBGameManager.Instance.OnGameEnded += () => { timer.Stop(); };
     }
 
     private void OnRSBEnded(RSBResult result)
@@ -72,28 +81,38 @@ public class Enemy : MonoBehaviour
     {
         switch(result)
         {
+            // 1. 게임 이겼을 때
             case RSBResult.Win:
                 GetHpBarValue(plusValue);
                 spriteRenderer.sprite = rsbWinSprite;
-
+                if (Enum.TryParse(SceneManager.GetActiveScene().name+"_RSB_Win", out SFX win))
+                {
+                    SoundManager.instance.PlaySFX(win);
+                }
                 animation.Play("Boss Good");
-                // 이겼을 때의 로직 처리
                 break;
+            // 2. 게임 비겼을 때
             case RSBResult.Draw:
-                // 비겼을 때의 로직 처리
                 spriteRenderer.sprite = rsbDrawSprite;
                 Instantiate(drawEffect);
+                SoundManager.instance.PlaySFX(SFX.Draw);
                 break;
+            // 3. 게임 졌을 때
             case RSBResult.Lose:
                 GetHpBarValue(-minusValue);
                 spriteRenderer.sprite = rsbLoseSprite;
                 LoseEffect.instance.ShowDamageEffect();
                 animation.Play("Boss Bad");
-                // 졌을 때의 로직 처리
+                if (Enum.TryParse(SceneManager.GetActiveScene().name + "_RSB_Lose", out SFX lose))
+                {
+                    SoundManager.instance.PlaySFX(lose);
+                }
                 break;
         }
         Invoke(nameof(SetSprite), 0.5f);
     }
+
+
 
     // Hp Slider.value와 보스의 Hp 값을 조정하는 함수
     private void GetHpBarValue(float _value)
@@ -155,6 +174,7 @@ public class Enemy : MonoBehaviour
         if(hpBar.value >= 1f)
         {
             Debug.Log("이겼습니다!");
+            hpBar.gameObject.SetActive(false);
 
             RSBGameManager.Instance.Stop();
 
@@ -165,7 +185,8 @@ public class Enemy : MonoBehaviour
         if (hpBar.value <= 0f)
         {
             Debug.Log("죽었습니다!");
-            
+            hpBar.gameObject.SetActive(false);
+
             RSBGameManager.Instance.Stop();
 
             OnLose?.Invoke();
@@ -193,4 +214,25 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void Win()
+    {
+        StartCoroutine(WinCoroutine());
+    }
+
+    void Lose()
+    {
+        StartCoroutine(LoseCoroutine());
+    }
+
+    IEnumerator WinCoroutine()
+    {
+        yield return new WaitForSeconds(2.0f);
+        SoundManager.instance.PlaySFX(SFX.Clear);
+    }
+
+    IEnumerator LoseCoroutine()
+    {
+        yield return new WaitForSeconds(2.0f);
+        SoundManager.instance.PlaySFX(SFX.Fail);
+    }
 }

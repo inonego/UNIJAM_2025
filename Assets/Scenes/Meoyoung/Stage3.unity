@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &12067734 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8980168853339810652, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
+  m_PrefabInstance: {fileID: 20157423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &20157423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1201,6 +1206,10 @@ PrefabInstance:
       propertyPath: hpBar
       value: 
       objectReference: {fileID: 20157424}
+    - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 12067734}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: boss30
       value: 
@@ -2848,7 +2857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05db952ff2224a94f80ef42f3ceb884d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultKeyBinding: {fileID: 0}
   CurrentPhase: {fileID: 0}
 --- !u!114 &1702005426
 MonoBehaviour:
