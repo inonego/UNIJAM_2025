@@ -12,8 +12,10 @@ public class TitleManager : MonoSingleton<TitleManager>
     [Header("# 설정 팝업")]
     [SerializeField] GameObject settingPopup;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         if(stagePopup.activeSelf)
             stagePopup.SetActive(false);
 
