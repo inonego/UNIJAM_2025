@@ -16,9 +16,12 @@ public class RSBPhase : ScriptableObject
 
     public float JudgeTime = 5f;
 
+    public int BossPlusValue = 4;
+    public int BossMinusValue = 4;
+
     public virtual void Initialize() 
     {
-
+        
     }
 
     public virtual void UpdatePhase()
