@@ -4,15 +4,11 @@ using UnityEngine;
 // 비겨야지만 이길 수 있음!
 public class RSBTweakerSame : RSBTweakerBase
 {
+    public override Gimmic GimicType => Gimmic.DRAW;
+
     public override RSBResult Judge(RSBType current, RSBType input)
     {
         // 비겨야지만 이길 수 있음!
         return current == input ? RSBResult.Win : RSBResult.Lose;
-    }
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        GimmicUI.instance.ShowGimmicText(Gimmic.DRAW);
     }
 }

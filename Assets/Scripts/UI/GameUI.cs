@@ -129,6 +129,8 @@ public class GameUI : MonoBehaviour
         {
             NameUI.text = rsbJudger.Name;
             DescriptionUI.text = rsbJudger.Description;
+
+            GimmicUI.instance.ShowGimmicText(rsbJudger.GimicType);
         };
     }
 

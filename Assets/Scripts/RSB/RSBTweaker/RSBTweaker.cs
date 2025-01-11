@@ -11,6 +11,8 @@ public abstract class RSBTweakerBase : ScriptableObject
 
     public RSBKeyBinding DefaultKeyBinding;
 
+    public abstract Gimmic GimicType { get; }
+
     public virtual void Initialize() { }
 
     public virtual RSBKeyBinding GetKeyBinding() => DefaultKeyBinding;

@@ -8,6 +8,8 @@ using UnityEngine;
 // 키 바인딩을 통해 승리 조건을 선택합니다.
 public class RSBTweakerKey : DefaultRSBTweaker
 {
+    public override Gimmic GimicType => Gimmic.CHANGE;
+
     public SerializedDictionary<RSBKeyBindingType, RSBKeyBinding> KeyBindings = new SerializedDictionary<RSBKeyBindingType, RSBKeyBinding>();
 
     public override RSBKeyBinding GetKeyBinding()
@@ -18,11 +20,5 @@ public class RSBTweakerKey : DefaultRSBTweaker
         RSBKeyBindingType randomKeyBindingType = KeyBindingList[UnityEngine.Random.Range(0, KeyBindingList.Count)];
 
         return KeyBindings[randomKeyBindingType];
-    }
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        GimmicUI.instance.ShowGimmicText(Gimmic.CHANGE);
     }
 }
