@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dc178096153cb1b4fa0dce296ac45854
+guid: b6956bc11de651348b9389da3111efda
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4488651748948279691
-    second: eagle_card_green_rock2_0
+      213: 2475409390767523154
+    second: eagle_70_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eagle_card_green_rock2_0
+      name: eagle_70_0
       rect:
         serializedVersion: 2
-        x: 110
-        y: 418
-        width: 2252
-        height: 2528
+        x: 158
+        y: 2
+        width: 1084
+        height: 1596
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b818f78dbf4ea4e30800000000000000
-      internalID: 4488651748948279691
+      spriteID: 2554d52c9bb6a5220800000000000000
+      internalID: 2475409390767523154
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      eagle_card_green_rock2_0: 4488651748948279691
+      eagle_70_0: 2475409390767523154
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
