@@ -38,7 +38,7 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
     public event Action<CurrentRSB> OnRSBStarted;
     public event Action<RSBResult> OnRSBEnded;
 
-    public event Action<RSBTweakerBase> OnJudgerChanged;
+    public event Action<RSBTweakerBase> OnTweakerChanged;
 
     public event Action<RSBPhase> OnPhaseChanged;
 
@@ -59,7 +59,7 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
     private void Start()
     {
         RSBManager.OnNewRSB += OnNewRSB;
-        RSBManager.OnJudgerChanged += OnJudgerChanged;
+        RSBManager.OnTweakerChanged += OnTweakerChanged;
         
         Start(GameTime);
     }

@@ -105,7 +105,7 @@ public class GameUI : MonoBehaviour
 
                 RSBCardList[(int)input].Submit();
 
-                SoundManager.instance.PlaySFX(SFX.RSB);
+                if (SoundManager.instance != null) SoundManager.instance.PlaySFX(SFX.RSB);
             };
 
             currentRSB.OnJudged += (result) =>
@@ -119,7 +119,7 @@ public class GameUI : MonoBehaviour
             StartCoroutine(HideCard());
         };
 
-        RSBGameManager.Instance.OnJudgerChanged += (rsbJudger) =>
+        RSBGameManager.Instance.OnTweakerChanged += (rsbJudger) =>
         {
             NameUI.text = rsbJudger.Name;
             DescriptionUI.text = rsbJudger.Description;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -10,12 +11,18 @@ public class Enemy : MonoBehaviour
     public static Enemy Instance { get; private set; }
 
     [Header("보스 체력 바")]
-    [SerializeField] Slider hpBar;          // 보스 Hp Bar를 나타내는 Slider
-    [SerializeField] float duration;        // 슬라이더 전환 속도
+    [SerializeField] Slider hpBarSlider;          // 보스 Hp Bar를 나타내는 Slider
+    [SerializeField] float hpValueChangeSpeed;
+
+#region 보스 체력
 
     [Header("보스 HP 수치")]
     [SerializeField] float maxHp;           // 보스 최대체력
     [SerializeField] float baseHp;          // 보스 초기체력
+
+    private float currentHp;                // 보스 현재체력
+
+#endregion
 
     [Header("# 보스 게이지 증감 정보")]
     [SerializeField] float plusValue;
@@ -42,49 +49,100 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] AudioSource timer;
 
-    private float currentHp;                // 보스 현재체력
-    private Image fillIcon;                 // Slider FIll Icon이 0에 수렴할 경우 이미지 enabled = false 처리를 위함
+    private new Animation animation;
     private SpriteRenderer spriteRenderer;  // 보스 SpriteRender 컴포넌트
 
-    private new Animation animation;
+    private Image fillIcon;                 // Slider FIll Icon이 0에 수렴할 경우 이미지 enabled = false 처리를 위함
 
     private void Awake()
     {
-        if(Instance == null)
-            Instance = this;
-
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        Image[] images = hpBar.GetComponentsInChildren<Image>();
-        fillIcon = images[1];
-
-        hpBar.value = baseHp / maxHp;
-        currentHp = baseHp;
-        SetSprite();
+        if(Instance == null) Instance = this;
 
         animation = GetComponentInChildren<Animation>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        Image[] images = hpBarSlider.GetComponentsInChildren<Image>();
+        fillIcon = images[1];
+
+        SetSprite();
 
         OnWin.AddListener(Win);
         OnLose.AddListener(Lose);
+
+        currentHp = baseHp;
+    }
+
+    private void Update()
+    {
+        hpBarSlider.maxValue = maxHp;
+        hpBarSlider.value = currentHp;
+    }
+
+    private RSBPhase currentPhase;
+
+    private Coroutine applyMinusPerSecondCoroutine;
+
+    private IEnumerator ApplyMinusPerSecond()
+    {
+        while(true)
+        {
+            if (currentPhase != null)
+            {
+                SetHp(currentHp - currentPhase.current.MinusPerSecond * Time.deltaTime);
+            }
+
+            yield return null;
+        }
     }
 
     private void Start()
     {
-        RSBGameManager.Instance.OnRSBEnded += OnRSBEnded;
-        RSBGameManager.Instance.OnJudgerChanged += (Judge) => { SoundManager.instance.PlaySFX(SFX.Gimmic); };
-        RSBGameManager.Instance.OnGameEnded += () => { timer.Stop(); };
-        RSBGameManager.Instance.OnPhaseChanged += OnPhaseChanged;
+        RSBGameManager.Instance.OnRSBEnded       += OnRSBEnded;
+        RSBGameManager.Instance.OnTweakerChanged += OnTweakerChanged;
+        RSBGameManager.Instance.OnGameStarted    += OnGameStarted;
+        RSBGameManager.Instance.OnGameEnded      += OnGameEnded;
+        RSBGameManager.Instance.OnPhaseChanged   += OnPhaseChanged;
     }
+
+#region 이벤트 메서드
 
     private void OnRSBEnded(RSBResult result)
     {
         ReflectionRSBValue(result);
     }
 
+    private void OnTweakerChanged(RSBTweakerBase tweaker)
+    {
+        SoundManager.instance?.PlaySFX(SFX.Gimmic); 
+    }
+
+    private void OnGameStarted()
+    {
+        applyMinusPerSecondCoroutine = StartCoroutine(ApplyMinusPerSecond());
+    }
+
+    private void OnGameEnded()
+    {
+        timer.Stop(); 
+
+        if (applyMinusPerSecondCoroutine != null)
+        {
+            StopCoroutine(applyMinusPerSecondCoroutine);
+        }
+    }
+
     private void OnPhaseChanged(RSBPhase phase)
     {
-        plusValue = phase.current.BossPlusValue;
-        minusValue = phase.current.BossMinusValue;
+        currentPhase = phase;
+
+        if (phase != null)
+        {
+            plusValue = phase.current.BossPlusValue;
+            minusValue = phase.current.BossMinusValue;
+        }
     }
+
+#endregion
 
     // RSBResult Win, Lose, Draw 값을 받게 됨
     public void ReflectionRSBValue(RSBResult result)
@@ -93,111 +151,83 @@ public class Enemy : MonoBehaviour
         {
             // 1. 게임 이겼을 때
             case RSBResult.Win:
-                GetHpBarValue(plusValue);
+                SetHp(currentHp + plusValue);
+
                 spriteRenderer.sprite = rsbWinSprite;
+
                 if (Enum.TryParse(SceneManager.GetActiveScene().name+"_RSB_Win", out SFX win))
                 {
-                    SoundManager.instance.PlaySFX(win);
+                    SoundManager.instance?.PlaySFX(win);
                 }
+                
                 animation.Play("Boss Good");
                 break;
+
             // 2. 게임 비겼을 때
             case RSBResult.Draw:
                 spriteRenderer.sprite = rsbDrawSprite;
+
+                SoundManager.instance?.PlaySFX(SFX.Draw);
+
                 Instantiate(drawEffect);
-                SoundManager.instance.PlaySFX(SFX.Draw);
                 break;
+
             // 3. 게임 졌을 때
             case RSBResult.Lose:
-                GetHpBarValue(-minusValue);
+                SetHp(currentHp - minusValue);
+
                 spriteRenderer.sprite = rsbLoseSprite;
+
                 LoseEffect.instance.ShowDamageEffect();
-                animation.Play("Boss Bad");
+
                 if (Enum.TryParse(SceneManager.GetActiveScene().name + "_RSB_Lose", out SFX lose))
                 {
-                    SoundManager.instance.PlaySFX(lose);
+                    SoundManager.instance?.PlaySFX(lose);
                 }
+
+                animation.Play("Boss Bad");
                 break;
         }
+        
         Invoke(nameof(SetSprite), 0.5f);
     }
 
-
-
-    // Hp Slider.value와 보스의 Hp 값을 조정하는 함수
-    private void GetHpBarValue(float _value)
-    {
-        StartCoroutine(ControlHpBar(_value));
-        SetHpValue(_value);
-    }
-
-    // Slider.value의 값을 보간하여 애니메이션 처리하는 함수
-    private IEnumerator ControlHpBar(float _value)
-    {
-        float currentHpRatio = hpBar.value;
-        float targetHpRatio = (currentHp + _value) / maxHp;
-        float elapsedTime = 0f;
-        
-        while(elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-            float t  = elapsedTime / duration;
-            float interpolValue = Mathf.Lerp(currentHpRatio, targetHpRatio, t);
-            SetSliderValue(interpolValue);
-            yield return null;
-        }
-
-        SetSliderValue(targetHpRatio);
-        CheckSliderValue();
-    }
-
     // 보스의 체력을 설정하는 함수
-    private void SetHpValue(float _value)
+    private void SetHp(float _value)
     {
-        currentHp += _value;
+        currentHp = Mathf.Clamp(_value, 0, maxHp);
 
-        if (currentHp <= 0)
-            currentHp = 0;
-        else if(currentHp >= maxHp)
-            currentHp = maxHp;
-    }
-
-    // Slider.value를 설정하는 함수
-    private void SetSliderValue(float _interpolValue)
-    {
-        if(_interpolValue <= 0.03)
-        {
-            hpBar.value = 0f;
-            fillIcon.enabled = false;
-        }
-        else
-        {
-            hpBar.value = _interpolValue;
-            fillIcon.enabled = true;
-        }
+        CheckHp();
     }
 
     // 보스의 Slider.value가 1이면 승리 처리
-    private void CheckSliderValue()
+    private void CheckHp()
     {
-        // 이겼을때
-        if(hpBar.value >= 1f)
+        if (!RSBGameManager.Instance.IsGameRunning) return;
+
+        void SetDone()
         {
-            Debug.Log("이겼습니다!");
-            hpBar.gameObject.SetActive(false);
+            hpBarSlider.gameObject.SetActive(false);
 
             RSBGameManager.Instance.Stop();
+        }
+
+        // 이겼을때
+        if(currentHp >= maxHp)
+        {
+            Debug.Log("이겼습니다!");
+
+            SetDone();
 
             OnWin?.Invoke();
         }
         else
         // 죽었을때
-        if (hpBar.value <= 0f)
+        if (currentHp <= 0f)
         {
             Debug.Log("죽었습니다!");
-            hpBar.gameObject.SetActive(false);
 
-            RSBGameManager.Instance.Stop();
+            SetDone();
 
             OnLose?.Invoke();
         }
@@ -206,15 +236,17 @@ public class Enemy : MonoBehaviour
     // 보스 체력 비율에 따라 Sprite 이미지를 설정
     private void SetSprite()
     {
-        if (hpBar.value >= 0.9f)
+        float value = currentHp / maxHp;
+        
+        if (value >= 0.9f)
         {
             spriteRenderer.sprite = boss90;
         }
-        else if (hpBar.value >= 0.7f)
+        else if (value >= 0.7f)
         {
             spriteRenderer.sprite = boss70;
         }
-        else if (hpBar.value >= 0.5f)
+        else if (value >= 0.5f)
         {
             spriteRenderer.sprite = boss50;
         }
@@ -223,6 +255,8 @@ public class Enemy : MonoBehaviour
             spriteRenderer.sprite = boss30;
         }
     }
+
+#region 승리 / 패배
 
     void Win()
     {
@@ -237,14 +271,16 @@ public class Enemy : MonoBehaviour
     IEnumerator WinCoroutine()
     {
         yield return new WaitForSeconds(2.0f);
-        SoundManager.instance.PlaySFX(SFX.Clear);
+        SoundManager.instance?.PlaySFX(SFX.Clear);
         resultPanel.SetActive(true);
     }
 
     IEnumerator LoseCoroutine()
     {
         yield return new WaitForSeconds(2.0f);
-        SoundManager.instance.PlaySFX(SFX.Fail);
+        SoundManager.instance?.PlaySFX(SFX.Fail);
         resultPanel.SetActive(true);
     }
+
+#endregion
 }
