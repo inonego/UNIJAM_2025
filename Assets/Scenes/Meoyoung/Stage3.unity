@@ -870,10 +870,28 @@ MonoBehaviour:
   GameTime: 180
   IntervalTime: 1
   PhaseTimes:
-  - Phase: {fileID: 11400000, guid: cbc77890da2e7264bbc423221232881e, type: 2}
+  - Phase: {fileID: 11400000, guid: 3ffb4ac5e9c98224891680e94a9a05a2, type: 2}
     StartTime: 0
-  - Phase: {fileID: 11400000, guid: dce7c9557ada96f4f937db973917b08d, type: 2}
-    StartTime: 4
+  - Phase: {fileID: 11400000, guid: 0678d1dee7e2e694dac340fe59655d01, type: 2}
+    StartTime: 20
+  - Phase: {fileID: 11400000, guid: 1964e1da437fe8447a998221fe3d076c, type: 2}
+    StartTime: 40
+  - Phase: {fileID: 11400000, guid: 3a01d3f6b8ad6d948afaa50b339da6be, type: 2}
+    StartTime: 65
+  - Phase: {fileID: 11400000, guid: 60af72ccddefa1b44b6a3cdd138cf4f9, type: 2}
+    StartTime: 80
+  - Phase: {fileID: 11400000, guid: 3a01d3f6b8ad6d948afaa50b339da6be, type: 2}
+    StartTime: 90
+  - Phase: {fileID: 11400000, guid: 60af72ccddefa1b44b6a3cdd138cf4f9, type: 2}
+    StartTime: 105
+  - Phase: {fileID: 11400000, guid: 3a01d3f6b8ad6d948afaa50b339da6be, type: 2}
+    StartTime: 115
+  - Phase: {fileID: 11400000, guid: 60af72ccddefa1b44b6a3cdd138cf4f9, type: 2}
+    StartTime: 130
+  - Phase: {fileID: 11400000, guid: 3a01d3f6b8ad6d948afaa50b339da6be, type: 2}
+    StartTime: 140
+  - Phase: {fileID: 11400000, guid: 60af72ccddefa1b44b6a3cdd138cf4f9, type: 2}
+    StartTime: 155
 --- !u!1 &1921262588 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3069603465434178555, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
