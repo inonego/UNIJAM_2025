@@ -99,8 +99,6 @@ public class FadeManager : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             float alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
-            Debug.Log(alpha);
-            Debug.Log(elapsedTime);
 
             SetAlpha(image, alpha);
             yield return null;
