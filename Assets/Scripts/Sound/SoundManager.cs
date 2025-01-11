@@ -3,6 +3,7 @@ using AYellowpaper.SerializedCollections;
 using System.Collections.Generic;
 using System.Collections;
 using System;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
@@ -20,7 +21,17 @@ public class SoundManager : MonoBehaviour
     public int channels;
     [Range(0, 1)] public float sfxVolume;
 
+    [Header("# Audio Mixer Group")]
+    [SerializeField] AudioMixerGroup audioMixerGroup;
+    [SerializeField] AudioMixer audioMixer;
+
+    [Header("# Fade 시간")]
+    [SerializeField] private float duration = 1f;
+
     private Queue<AudioSource> sfxQueue;
+    private const string VolumeParameter = "Master"; // 노출된 매개변수 이름
+    private float originVolume;
+
 
     private void Awake()
     {
@@ -48,6 +59,7 @@ public class SoundManager : MonoBehaviour
         bgmPlayer.volume = bgmVolume;
         bgmPlayer.dopplerLevel = 0.0f;              // 입체효과 비활성화
         bgmPlayer.reverbZoneMix = 0.0f;             // 동굴과 같은 입체환경 반영 비활성화
+        bgmPlayer.outputAudioMixerGroup = audioMixerGroup;
     }
 
     void InitSFXPlayer()
@@ -65,6 +77,7 @@ public class SoundManager : MonoBehaviour
             sfxPlayers[i].volume = sfxVolume;
             sfxPlayers[i].dopplerLevel = 0.0f;      // 입체효과 비활성화
             sfxPlayers[i].reverbZoneMix = 0.0f;     // 동굴과 같은 입체환경 반영 비활성화
+            sfxPlayers[i].outputAudioMixerGroup = audioMixerGroup;
             sfxQueue.Enqueue(sfxPlayers[i]);
         }
 
@@ -123,8 +136,66 @@ public class SoundManager : MonoBehaviour
     }
     #endregion
 
+    public void FadeInAudioGroup()
+    {
+        StartCoroutine(FadeInAudioGroupCoroutine());
+    }
+
+    public void FadeOutAudioGroup()
+    {
+        StartCoroutine(FadeOutAudioGroupCoroutine());
+    }
+    IEnumerator FadeInAudioGroupCoroutine()
+    {
+        float currentVolume;
+        audioMixer.GetFloat(VolumeParameter, out currentVolume);
+
+        float targetVolume = originVolume;
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // Lerp를 사용해 부드럽게 볼륨 증가
+            float newVolume = Mathf.Lerp(currentVolume, targetVolume, elapsedTime / duration);
+            audioMixer.SetFloat(VolumeParameter, newVolume);
+
+            yield return null;
+        }
+
+        // 정확히 originVolume로 설정
+        audioMixer.SetFloat(VolumeParameter, targetVolume);
+    }
+
+    IEnumerator FadeOutAudioGroupCoroutine()
+    {
+        audioMixer.GetFloat(VolumeParameter, out originVolume);
+
+        float targetVolume = -80f; // 완전 무음 (-80dB)
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // Lerp를 사용해 부드럽게 볼륨 감소
+            float newVolume = Mathf.Lerp(originVolume, targetVolume, elapsedTime / duration);
+            audioMixer.SetFloat(VolumeParameter, newVolume);
+            Debug.Log(newVolume);
+            yield return null;
+        }
+
+        // 정확히 -80dB로 설정
+        audioMixer.SetFloat(VolumeParameter, targetVolume);
+    }
+
 }
 
+
+#region enum
 public enum BGM
 {
     Menu,
@@ -138,3 +209,4 @@ public enum SFX
     Stage1_RSB_Lose, Stage2_RSB_Lose, Stage3_RSB_Lose,
     Stage1_RSB_Win, Stage2_RSB_Win, Stage3_RSB_Win
 }
+#endregion
