@@ -478,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f0533e122523faf42ab9205986af33a5, type: 3}
     - target: {fileID: 4253182113509100876, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_Name
-      value: UI (1)
+      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 6143970165106167027, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -494,10 +494,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6143970165106167027, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402676275987011310, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7933899280857843242, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
@@ -1237,8 +1233,8 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 750871301}
   - {fileID: 266689567}
+  - {fileID: 750871301}
   - {fileID: 6353380152452154781}
   - {fileID: 1532111361}
   - {fileID: 4190225031921950826}

@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 117717277}
   - component: {fileID: 117717276}
   m_Layer: 0
-  m_Name: Square
+  m_Name: "\uBC30\uACBD"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -352,7 +352,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f0533e122523faf42ab9205986af33a5, type: 3}
     - target: {fileID: 4253182113509100876, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_Name
-      value: UI (1)
+      value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253182113509100876, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6143970165106167027, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_AnchorMax.y
@@ -369,14 +373,6 @@ PrefabInstance:
     - target: {fileID: 6143970165106167027, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402676275987011310, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7670377407639022858, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7933899280857843242, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_Pivot.x
@@ -610,34 +606,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8320230897853262562, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 588596417}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
---- !u!1 &588596416 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8320230897853262562, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
-  m_PrefabInstance: {fileID: 588596415}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &588596417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588596416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fd3332bc63aa6e4eba578314c683d00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &588596418 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
   m_PrefabInstance: {fileID: 588596415}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588596416}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 576516b39e6fe844e8fbcbea50c25744, type: 3}
@@ -734,6 +710,10 @@ PrefabInstance:
     - target: {fileID: 1504622173650548124, guid: c9cdc363eef1da845942f89c99576014, type: 3}
       propertyPath: m_Name
       value: Gimmic Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1504622173650548124, guid: c9cdc363eef1da845942f89c99576014, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1060,9 +1040,9 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 407175641}
   - {fileID: 1213607017}
   - {fileID: 588596415}
+  - {fileID: 407175641}
   - {fileID: 117717277}
   - {fileID: 157254472}
   - {fileID: 869483755}

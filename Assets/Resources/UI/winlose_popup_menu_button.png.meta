@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      winlose_popup_menu_button_0: 7179250652934111718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
