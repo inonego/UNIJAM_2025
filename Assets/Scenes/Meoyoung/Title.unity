@@ -795,6 +795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage Select Btn
       objectReference: {fileID: 0}
+    - target: {fileID: 3599150736361126478, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6fcb53e547ed064409a7b575b70f5bc0, type: 3}
     - target: {fileID: 3969406636723988395, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
       propertyPath: m_Name
       value: main
@@ -890,6 +894,10 @@ PrefabInstance:
     - target: {fileID: 6375156940044842269, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
       propertyPath: m_text
       value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 6691608155093364090, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6802942845510821261, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
       propertyPath: m_text
@@ -1066,9 +1074,6 @@ PrefabInstance:
     - {fileID: 1651602677500061624, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
     - {fileID: 1599442712187874647, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1922514244736640812, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2126883593}
     - targetCorrespondingSourceObject: {fileID: 3891764890262786403, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 212116378}
@@ -1561,13 +1566,13 @@ MonoBehaviour:
     - Key: Stage1_RSB_Win
       Value: {fileID: 8300000, guid: 804c5bf5e349168408ad1bb7745116d6, type: 3}
     - Key: Stage2_RSB_Lose
-      Value: {fileID: 8300000, guid: 8db0eaf337975d448bd02eaf2f100fd6, type: 3}
+      Value: {fileID: 8300000, guid: 8af6753a4c0e23c4bbe2cd61ac0896c7, type: 3}
     - Key: Stage2_RSB_Win
       Value: {fileID: 8300000, guid: 800f5d3c913e5b943be7daffeb0d55cb, type: 3}
     - Key: Stage3_RSB_Lose
       Value: {fileID: 8300000, guid: a942b7518a2cb4c45b78175c17d9e1fc, type: 3}
     - Key: Stage3_RSB_Win
-      Value: {fileID: 8300000, guid: 4dc60eb837c119e48bdcd0ad0871e78b, type: 3}
+      Value: {fileID: 8300000, guid: 7519c3a136a25f34aa4d148920f03de8, type: 3}
     - Key: Draw
       Value: {fileID: 8300000, guid: 5627c7d4ea43fe14f81a1d131dc760c1, type: 3}
     - Key: Fail
@@ -1810,7 +1815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2112,41 +2117,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920398313}
   m_CullTransparentMesh: 1
---- !u!1 &2126883592
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2126883593}
-  m_Layer: 0
-  m_Name: Setting
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2126883593
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126883592}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 231069199}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

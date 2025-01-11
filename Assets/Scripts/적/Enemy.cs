@@ -37,6 +37,9 @@ public class Enemy : MonoBehaviour
     public UnityEvent OnWin;
     public UnityEvent OnLose;
 
+    [Header("# 결과 패널")]
+    [SerializeField] GameObject resultPanel;
+
     [SerializeField] AudioSource timer;
 
     private float currentHp;                // 보스 현재체력
@@ -235,11 +238,13 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         SoundManager.instance.PlaySFX(SFX.Clear);
+        resultPanel.SetActive(true);
     }
 
     IEnumerator LoseCoroutine()
     {
         yield return new WaitForSeconds(2.0f);
         SoundManager.instance.PlaySFX(SFX.Fail);
+        resultPanel.SetActive(true);
     }
 }
