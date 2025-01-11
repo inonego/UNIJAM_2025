@@ -790,11 +790,11 @@ MonoBehaviour:
   EnemySpriteDictionary:
     _serializedList:
     - Key: 0
-      Value: {fileID: 2487820561093509773, guid: 9b627489660ee3247a65e230e86afef1, type: 3}
+      Value: {fileID: 21300000, guid: 9b627489660ee3247a65e230e86afef1, type: 3}
     - Key: 1
-      Value: {fileID: -8572041376105196285, guid: 85d78cde0da43f245a39c5822c3c0069, type: 3}
+      Value: {fileID: 21300000, guid: 85d78cde0da43f245a39c5822c3c0069, type: 3}
     - Key: 2
-      Value: {fileID: -8007438658591844595, guid: da5205c0d5c43614aab48321e6aef3d1, type: 3}
+      Value: {fileID: 21300000, guid: da5205c0d5c43614aab48321e6aef3d1, type: 3}
   PlayerSpriteDictionary:
     _serializedList:
     - Key: 0

@@ -101,8 +101,6 @@ public class CurrentRSB
     // 플레이어의 입력을 처리합니다.
     private void ProcessInput()
     {
-        if (JudgeDelayTimer.IsWorking) return;
-
         RSBType? input = null;
 
         for (int i = 0; i < CurrentKeyBinding.Keys.Count; i++)
@@ -135,6 +133,8 @@ public class CurrentRSB
 
     private void OnTimerEnded(Timer sender, Timer.EndedEventArgs e)
     {
+        Stop();
+
         // 타이머가 끝났는데 플레이어가 아무것도 누르지 않았다면 패배합니다.
         if (Input == null)
         {
@@ -142,7 +142,7 @@ public class CurrentRSB
         }
         else
         {
-            JudgeDelayed();
+            Judge();
         }
     }
 
