@@ -240,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 915040465}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: baseHp
-      value: 99
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: boss30
