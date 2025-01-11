@@ -23,10 +23,6 @@ public class TitleManager : MonoSingleton<TitleManager>
             settingPopup.SetActive(false);
     }
 
-    private void Start()
-    {
-        SoundManager.instance.PlayBGM(BGM.Menu);
-    }
 
     public void LoadScene(string sceneName)
     {

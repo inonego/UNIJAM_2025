@@ -52,8 +52,11 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
+        CheckSceneSound();
+
         SceneManager.sceneLoaded += (scene, mode) =>
         {
+            Debug.Log("Scene Loaded");
             CheckSceneSound();
         };
     }
@@ -210,6 +213,7 @@ public class SoundManager : MonoBehaviour
 
     void CheckSceneSound()
     {
+        Debug.Log("Check");
         switch (SceneManager.GetActiveScene().name)
         {
             case "Title":
@@ -222,6 +226,9 @@ public class SoundManager : MonoBehaviour
                 PlayBGM(BGM.Stage2);
                 break;
             case "CutScene3":
+                PlayBGM(BGM.Stage3);
+                break;
+            case "INF":
                 PlayBGM(BGM.Stage3);
                 break;
             default:

@@ -45,11 +45,12 @@ public class Enemy : MonoBehaviour
     public UnityEvent OnLose;
 
     [Header("# 결과 패널")]
-    [SerializeField] GameObject resultPanel;
+    [SerializeField] GameObject winPanel;
+    [SerializeField] GameObject losePanel;
 
     [SerializeField] AudioSource timer;
 
-    private new Animation animation;
+    private Animation anim;
     private SpriteRenderer spriteRenderer;  // 보스 SpriteRender 컴포넌트
 
     private Image fillIcon;                 // Slider FIll Icon이 0에 수렴할 경우 이미지 enabled = false 처리를 위함
@@ -58,7 +59,7 @@ public class Enemy : MonoBehaviour
     {
         if(Instance == null) Instance = this;
 
-        animation = GetComponentInChildren<Animation>();
+        anim = GetComponentInChildren<Animation>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         SetSprite();
@@ -151,7 +152,7 @@ public class Enemy : MonoBehaviour
                     SoundManager.instance?.PlaySFX(win);
                 }
                 
-                animation.Play("Boss Good");
+                anim.Play("Boss Good");
                 break;
 
             // 2. 게임 비겼을 때
@@ -176,7 +177,7 @@ public class Enemy : MonoBehaviour
                     SoundManager.instance?.PlaySFX(lose);
                 }
 
-                animation.Play("Boss Bad");
+                anim.Play("Boss Bad");
                 break;
         }
         
@@ -263,14 +264,14 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         SoundManager.instance?.PlaySFX(SFX.Clear);
-        resultPanel.SetActive(true);
+        winPanel.SetActive(true);
     }
 
     IEnumerator LoseCoroutine()
     {
         yield return new WaitForSeconds(2.0f);
         SoundManager.instance?.PlaySFX(SFX.Fail);
-        resultPanel.SetActive(true);
+        losePanel.SetActive(true);
     }
 
 #endregion
