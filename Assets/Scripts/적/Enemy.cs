@@ -60,11 +60,18 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         RSBGameManager.Instance.OnRSBEnded += OnRSBEnded;
+        RSBGameManager.Instance.OnPhaseChanged += OnPhaseChanged;
     }
 
     private void OnRSBEnded(RSBResult result)
     {
         ReflectionRSBValue(result);
+    }
+
+    private void OnPhaseChanged(RSBPhase phase)
+    {
+        plusValue = phase.BossPlusValue;
+        minusValue = phase.BossMinusValue;
     }
 
     // RSBResult Win, Lose, Draw 값을 받게 됨
