@@ -7,6 +7,7 @@ public class GimmicUI : MonoBehaviour
 
     [Header("# 기믹 종류")]
     [SerializeField] GameObject[] gimmicList;
+    [SerializeField] GameObject panel;
 
     private void Awake()
     {
@@ -16,7 +17,7 @@ public class GimmicUI : MonoBehaviour
         }
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (Keyboard.current[Key.Q].wasPressedThisFrame)
             ShowGimmicText(Gimmic.DRAW);
@@ -26,11 +27,18 @@ public class GimmicUI : MonoBehaviour
             ShowGimmicText(Gimmic.CHANGE);
         else if (Keyboard.current[Key.R].wasPressedThisFrame)
             ShowGimmicText(Gimmic.LOSE);
-    }
+    }*/
     public void ShowGimmicText(Gimmic type)
     {
+        panel.SetActive(true);
         InitObject();
         gimmicList[(int)type].SetActive(true);
+        Invoke(nameof(SetPanelFalse), 1.2f);
+    }
+
+    void SetPanelFalse()
+    {
+        panel.SetActive(false);
     }
 
     private void InitObject()

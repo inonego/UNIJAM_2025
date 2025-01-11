@@ -10,4 +10,11 @@ public class DefaultRSBTweaker : RSBTweakerBase
         // 가위 > 보, 보 > 바위, 바위 > 가위
         return (RSBResult)((input - current + 3) % 3);
     }
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        GimmicUI.instance.ShowGimmicText(Gimmic.WIN);
+    }
 }

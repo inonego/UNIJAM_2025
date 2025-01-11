@@ -19,4 +19,10 @@ public class RSBTweakerKey : DefaultRSBTweaker
 
         return KeyBindings[randomKeyBindingType];
     }
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        GimmicUI.instance.ShowGimmicText(Gimmic.CHANGE);
+    }
 }

@@ -10,4 +10,11 @@ public class RSBTweakerInverse : RSBTweakerBase
         // 일반적인 가위바위보 승리 조건의 반대
         return (RSBResult)((current - input + 3) % 3);
     }
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        GimmicUI.instance.ShowGimmicText(Gimmic.LOSE);
+    }
 }
