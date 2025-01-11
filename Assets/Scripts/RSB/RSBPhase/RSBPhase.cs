@@ -15,4 +15,14 @@ public class RSBPhase : ScriptableObject
     public List<RSBJudgerRandomValue> Judgers = new List<RSBJudgerRandomValue>();
 
     public float JudgeTime = 5f;
+
+    public virtual void Initialize() 
+    {
+
+    }
+
+    public virtual void UpdatePhase()
+    {
+
+    }
 }

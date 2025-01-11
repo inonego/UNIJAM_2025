@@ -20,10 +20,9 @@ public enum RSBResult
 [Serializable]
 public abstract class RSBJudgerBase : ScriptableObject
 {
-    public string Name;
-    [TextArea(2, 5)]
-    public string Description;
     public Sprite Icon;
+    [TextArea(1, 1)] public string Name;
+    [TextArea(2, 5)] public string Description;
 
     public CurrentRSB CurrentRSB { get; private set; } = null;
 

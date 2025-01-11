@@ -91,10 +91,14 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
         {
             RSBManager.CurrentPhase = currentPhase;
 
+            currentPhase.Initialize();
+
             OnPhaseChanged?.Invoke(currentPhase);
 
             Debug.Log("페이즈 변경!");
         }
+
+        currentPhase.UpdatePhase();
     }
 
 #endregion
@@ -110,6 +114,8 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
             GameTimer.Start(time);
 
             RSBManager.CurrentPhase = PhaseTimes[0].Phase;
+
+            RSBManager.CurrentPhase.Initialize();
 
             RSBManager.GoNext();
         }
