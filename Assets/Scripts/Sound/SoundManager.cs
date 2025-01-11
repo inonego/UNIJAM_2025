@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -36,9 +37,38 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         if(instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
 
         Init();
+    }
+
+    private void Start()
+    {
+        switch(SceneManager.GetActiveScene().name)
+        {
+            case "Title":
+                PlayBGM(BGM.Menu);
+                break;
+            case "Stage1":
+                PlayBGM(BGM.Stage1);
+                break;
+            case "Stage2":
+                PlayBGM(BGM.Stage2);
+                break;
+            case "Stage3":
+                PlayBGM(BGM.Stage3);
+                break;
+            default:
+                break;
+        }
     }
 
     #region Initalize
