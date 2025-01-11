@@ -326,10 +326,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3069603465434178555, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3931147736120494561, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 494
+      objectReference: {fileID: 0}
+    - target: {fileID: 3931147736120494561, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 349
+      objectReference: {fileID: 0}
     - target: {fileID: 3961318040868023675, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1212783063}
+    - target: {fileID: 3968231107165134609, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3730402821214253699, guid: 397257b4de617ef4db2d5e4edcb8d1e2, type: 3}
     - target: {fileID: 4203280736952905042, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: Enemy
       value: 
@@ -457,6 +473,26 @@ PrefabInstance:
     - target: {fileID: 6143970165106167027, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391488850953183687, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 555
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391488850953183687, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 368
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234238981336679285, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -267619569429315079, guid: f5950bf6f8fc16b4b828da237446fd8c, type: 3}
+    - target: {fileID: 7402676275987011310, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670377407639022858, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7933899280857843242, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_Pivot.x
@@ -658,6 +694,10 @@ PrefabInstance:
       propertyPath: timer
       value: 
       objectReference: {fileID: 313418816}
+    - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
+      propertyPath: baseHp
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: boss30
       value: 

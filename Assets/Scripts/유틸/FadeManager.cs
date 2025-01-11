@@ -27,6 +27,12 @@ public class FadeManager : MonoBehaviour
 
         defaultImage = GetComponentInChildren<Image>();
         defaultImage.enabled = false;
+    }
+
+    private void Start()
+    {
+        if (defaultImage.color.a == 1)
+            FadeIn();
 
         SceneManager.sceneLoaded += (scene, mode) =>
         {
