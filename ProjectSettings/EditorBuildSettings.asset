@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Meoyoung/Stage3.unity
     guid: 5e414b988231c994a88ba9275d738b13
+  - enabled: 1
+    path: Assets/Scenes/Meoyoung/INF.unity
+    guid: 918484c53ac15bf499f6860b707c81e3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: da2084549bb34f34b965ed4b81982f03, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

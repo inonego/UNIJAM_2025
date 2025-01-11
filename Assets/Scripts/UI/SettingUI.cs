@@ -49,7 +49,7 @@ public class SettingUI : MonoBehaviour
                 Time.timeScale = 0.0f;
             }
         }
-    }
+    }   
     public void SetVolume(float value)
     {
         audioMixer.SetFloat(VolumeParameter, Mathf.Log10(value) * 20);

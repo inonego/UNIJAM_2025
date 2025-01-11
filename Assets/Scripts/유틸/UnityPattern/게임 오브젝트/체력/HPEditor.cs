@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 namespace inonego
 {
 
@@ -89,3 +90,4 @@ public class HPEditor : Editor
 }
 
 }
+#endif
