@@ -596,11 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05db952ff2224a94f80ef42f3ceb884d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultKeyBinding:
-    Name: 
-    S: 15
-    R: 33
-    P: 18
+  DefaultKeyBinding: {fileID: 0}
   CurrentPhase: {fileID: 0}
 --- !u!4 &512501433
 Transform:

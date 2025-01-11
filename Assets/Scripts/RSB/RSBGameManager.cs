@@ -15,6 +15,8 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 {
     public RSBManager RSBManager;
 
+#region 게임 시간 설정
+
     public float GameTime = 180f;
     public float IntervalTime = 1f;
 
@@ -22,10 +24,14 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 
     private Timer IntervalTimer = new Timer();
 
-    public bool IsGameRunning => GameTimer.IsWorking;
-
     public float ElapsedTime    => GameTimer.Time.ElapsedTime;
     public float LeftTime       => GameTimer.Time.LeftTime;
+
+#endregion
+
+    public bool IsGameRunning => GameTimer.IsWorking;
+
+#region 게임 이벤트
 
     public event Action OnGameStarted;
     public event Action OnGameEnded;
@@ -37,6 +43,8 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
     public event Action<RSBPhase> OnPhaseChanged;
 
     public List<RSBPhaseTime> PhaseTimes = new List<RSBPhaseTime>();
+
+#endregion
 
 #region 유니티 이벤트
 
@@ -72,10 +80,22 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 
 #region 로직 처리 메서드
 
+    public void SetPhase(RSBPhase phase)
+    {
+        if (phase != null && RSBManager.CurrentPhase != phase)
+        {
+            RSBManager.CurrentPhase = phase;
+
+            phase.Initialize();
+
+            OnPhaseChanged?.Invoke(phase);
+
+            Debug.Log("페이즈 변경!");
+        }
+    }
+
     private void UpdatePhase()
     {
-        RSBPhase previousPhase = RSBManager.CurrentPhase;
-
         RSBPhase currentPhase = null;
 
         foreach (var phaseTime in PhaseTimes)
@@ -85,18 +105,8 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
                 currentPhase = phaseTime.Phase;
             }
         }
-
-        // 현재 페이즈가 변경되었을 때 처리
-        if (previousPhase != currentPhase)
-        {
-            RSBManager.CurrentPhase = currentPhase;
-
-            currentPhase.Initialize();
-
-            OnPhaseChanged?.Invoke(currentPhase);
-
-            Debug.Log("페이즈 변경!");
-        }
+        
+        SetPhase(currentPhase);
 
         currentPhase.UpdatePhase();
     }
@@ -113,9 +123,7 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 
             GameTimer.Start(time);
 
-            RSBManager.CurrentPhase = PhaseTimes[0].Phase;
-
-            RSBManager.CurrentPhase.Initialize();
+            SetPhase(PhaseTimes[0].Phase);
 
             RSBManager.GoNext();
         }
