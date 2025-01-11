@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
@@ -29,6 +30,10 @@ public class Enemy : MonoBehaviour
 
     [Header("보스 비겼을 때 물음표")]
     [SerializeField] GameObject drawEffect;
+
+    [Header("승리 / 패배 시 이벤트")]
+    public UnityEvent OnWin;
+    public UnityEvent OnLose;
 
     private float currentHp;                // 보스 현재체력
     private Image fillIcon;                 // Slider FIll Icon이 0에 수렴할 경우 이미지 enabled = false 처리를 위함
@@ -114,7 +119,7 @@ public class Enemy : MonoBehaviour
         }
 
         SetSliderValue(targetHpRatio);
-        IsSlider1F();
+        CheckSliderValue();
     }
 
     // 보스의 체력을 설정하는 함수
@@ -144,11 +149,26 @@ public class Enemy : MonoBehaviour
     }
 
     // 보스의 Slider.value가 1이면 승리 처리
-    private void IsSlider1F()
+    private void CheckSliderValue()
     {
+        // 이겼을때
         if(hpBar.value >= 1f)
         {
-            // 이겼을 때의 로직 처리
+            Debug.Log("이겼습니다!");
+
+            RSBGameManager.Instance.Stop();
+
+            OnWin?.Invoke();
+        }
+        else
+        // 죽었을때
+        if (hpBar.value <= 0f)
+        {
+            Debug.Log("죽었습니다!");
+            
+            RSBGameManager.Instance.Stop();
+
+            OnLose?.Invoke();
         }
     }
 

@@ -21,9 +21,14 @@ public class RSBCardUI : MonoBehaviour
         KeyLabel.text = key.ToString();
     }
 
-    public void StartAnimation()
+    public void Show()
     {
-        animator.SetTrigger("Start");
+        animator.SetTrigger("Show");
+    }
+
+    public void Hide()
+    {
+        animator.SetTrigger("Hide");
     }
 
     public void Submit()

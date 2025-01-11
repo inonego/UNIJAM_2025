@@ -135,6 +135,8 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 
     public void Stop()
     {
+        OnGameEnded?.Invoke();
+
         StopAll();
 
         RSBManager.Clear();
