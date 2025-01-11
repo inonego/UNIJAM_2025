@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      main_chick_fly_2_0: 4405578437677614433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

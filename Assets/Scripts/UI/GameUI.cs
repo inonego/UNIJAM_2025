@@ -20,7 +20,10 @@ public class GameUI : MonoBehaviour
     public TextMeshProUGUI NameUI;
     public TextMeshProUGUI DescriptionUI;
     public TextMeshProUGUI GameTimeUI;
-    public TextMeshProUGUI RSBTimeUI;
+
+    [Header("Slider")]
+    public Slider RSBTimeUI;
+    public Slider EnemyHPUI;
 
     [Header("RSB UI")]
     public Image EnemyRSBImageUI;
@@ -34,6 +37,9 @@ public class GameUI : MonoBehaviour
     [Header("RSB Card")]
     public float CardShuffleInterval = 0.5f;
     public List<RSBCardUI> RSBCardList = new List<RSBCardUI>();
+
+    [Header("Enemy")]
+    public Enemy Enemy;
 
     private IEnumerator ShowCard()
     {
@@ -136,7 +142,20 @@ public class GameUI : MonoBehaviour
 
         if (rsbGameManager.CurrentRSB != null)
         {
-            RSBTimeUI.text = $"{rsbGameManager.CurrentRSB.LeftTime:F0}";
+            if (rsbGameManager.CurrentRSB.IsWorking)
+            {
+                RSBTimeUI.maxValue  = rsbGameManager.CurrentRSB.LeftTime + rsbGameManager.CurrentRSB.ElapsedTime;
+                RSBTimeUI.value     = rsbGameManager.CurrentRSB.LeftTime;
+            }
+        }
+
+        EnemyHPUI.maxValue = Enemy.maxHp;
+        EnemyHPUI.value    = Enemy.currentHp;
+
+        if (Enemy.currentHp <= 0f || Enemy.currentHp >= Enemy.maxHp)
+        {
+            RSBTimeUI.gameObject.SetActive(false);
+            EnemyHPUI.gameObject.SetActive(false);
         }
     }
 }

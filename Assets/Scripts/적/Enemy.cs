@@ -10,17 +10,13 @@ public class Enemy : MonoBehaviour
 {
     public static Enemy Instance { get; private set; }
 
-    [Header("보스 체력 바")]
-    [SerializeField] Slider hpBarSlider;          // 보스 Hp Bar를 나타내는 Slider
-    [SerializeField] float hpValueChangeSpeed;
-
 #region 보스 체력
 
     [Header("보스 HP 수치")]
-    [SerializeField] float maxHp;           // 보스 최대체력
-    [SerializeField] float baseHp;          // 보스 초기체력
+    public float maxHp;           // 보스 최대체력
+    public float baseHp;          // 보스 초기체력
 
-    private float currentHp;                // 보스 현재체력
+    public float currentHp { get; private set; }                // 보스 현재체력
 
 #endregion
 
@@ -61,21 +57,12 @@ public class Enemy : MonoBehaviour
         animation = GetComponentInChildren<Animation>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-        Image[] images = hpBarSlider.GetComponentsInChildren<Image>();
-        fillIcon = images[1];
-
         SetSprite();
 
         OnWin.AddListener(Win);
         OnLose.AddListener(Lose);
 
         currentHp = baseHp;
-    }
-
-    private void Update()
-    {
-        hpBarSlider.maxValue = maxHp;
-        hpBarSlider.value = currentHp;
     }
 
     private RSBPhase currentPhase;
@@ -207,8 +194,6 @@ public class Enemy : MonoBehaviour
 
         void SetDone()
         {
-            hpBarSlider.gameObject.SetActive(false);
-
             RSBGameManager.Instance.Stop();
         }
 
