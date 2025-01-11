@@ -2,6 +2,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FadeManager : MonoBehaviour
@@ -28,8 +29,19 @@ public class FadeManager : MonoBehaviour
 
         defaultImage = GetComponentInChildren<Image>();
         defaultImage.enabled = false;
+
+        SceneManager.sceneLoaded += (scene, mode) =>
+        {
+            Debug.Log("씬 전환 ");
+            if (defaultImage.color.a == 1)
+                FadeIn();
+        };
     }
 
+    private void Start()
+    {
+        Debug.Log("FadeManager Start");
+    }
     public void FadeOut(Image image = null, Action onComplete = null)
     {
         if (image == null)
@@ -50,7 +62,7 @@ public class FadeManager : MonoBehaviour
 
     private IEnumerator FadeInCoroutine(Image image, Action onComplete)
     {
-        defaultImage.enabled = true;
+        image.enabled = true;
 
         float elapsedTime = 0f;
         SetAlpha(image, 1f);
@@ -67,7 +79,7 @@ public class FadeManager : MonoBehaviour
         SetAlpha(image, 0f);
 
         // 이미지 비활성화
-        defaultImage.enabled = false;
+        image.enabled = false;
 
         // fadeDuration만큼의 딜레이
         yield return new WaitForSeconds(fadeDuration);
@@ -78,7 +90,7 @@ public class FadeManager : MonoBehaviour
 
     private IEnumerator FadeOutCoroutine(Image image, Action onComplete)
     {
-        defaultImage.enabled = true;
+        image.enabled = true;
 
         float elapsedTime = 0f;
         SetAlpha(image, 0f);

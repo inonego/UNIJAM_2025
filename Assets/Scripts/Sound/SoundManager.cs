@@ -177,8 +177,8 @@ public class SoundManager : MonoBehaviour
     }
     IEnumerator FadeInAudioGroupCoroutine()
     {
-        float currentVolume;
-        audioMixer.GetFloat(VolumeParameter, out currentVolume);
+        float currentVolume = 0;
+        //audioMixer.GetFloat(VolumeParameter, out currentVolume);
 
         float targetVolume = originVolume;
 
@@ -189,7 +189,7 @@ public class SoundManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
 
             // Lerp를 사용해 부드럽게 볼륨 증가
-            float newVolume = Mathf.Lerp(currentVolume, targetVolume, elapsedTime / duration);
+            float newVolume = Mathf.Lerp(currentVolume, targetVolume, elapsedTime / (duration));
             audioMixer.SetFloat(VolumeParameter, newVolume);
 
             yield return null;
@@ -214,7 +214,6 @@ public class SoundManager : MonoBehaviour
             // Lerp를 사용해 부드럽게 볼륨 감소
             float newVolume = Mathf.Lerp(originVolume, targetVolume, elapsedTime / duration);
             audioMixer.SetFloat(VolumeParameter, newVolume);
-            Debug.Log(newVolume);
             yield return null;
         }
 
