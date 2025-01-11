@@ -1,7 +1,15 @@
 using System;
+using System.Collections.Generic;
 using inonego;
 using UnityCommunity.UnitySingleton;
 using UnityEngine;
+
+[Serializable]
+public class RSBPhaseTime
+{
+    public RSBPhase Phase;
+    public float StartTime;
+}
 
 public class RSBGameManager : MonoSingleton<RSBGameManager>
 {
@@ -14,6 +22,8 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 
     private Timer IntervalTimer = new Timer();
 
+    public bool IsGameRunning => GameTimer.IsWorking;
+
     public float ElapsedTime    => GameTimer.Time.ElapsedTime;
     public float LeftTime       => GameTimer.Time.LeftTime;
 
@@ -23,6 +33,10 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
     public event Action<RSBResult> OnRSBEnded;
 
     public event Action<RSBJudgerBase> OnJudgerChanged;
+
+    public event Action<RSBPhase> OnPhaseChanged;
+
+    public List<RSBPhaseTime> PhaseTimes = new List<RSBPhaseTime>();
 
 #region 유니티 이벤트
 
@@ -47,6 +61,40 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
         GameTimer.Update();
 
         IntervalTimer.Update();
+
+        if (IsGameRunning)
+        {
+            UpdatePhase();
+        }
+    }
+
+#endregion
+
+#region 로직 처리 메서드
+
+    private void UpdatePhase()
+    {
+        RSBPhase previousPhase = RSBManager.CurrentPhase;
+
+        RSBPhase currentPhase = null;
+
+        foreach (var phaseTime in PhaseTimes)
+        {
+            if (ElapsedTime >= phaseTime.StartTime)
+            {
+                currentPhase = phaseTime.Phase;
+            }
+        }
+
+        // 현재 페이즈가 변경되었을 때 처리
+        if (previousPhase != currentPhase)
+        {
+            RSBManager.CurrentPhase = currentPhase;
+
+            OnPhaseChanged?.Invoke(currentPhase);
+
+            Debug.Log("페이즈 변경!");
+        }
     }
 
 #endregion
@@ -55,11 +103,20 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 
     public void Start(float time)
     {
-        OnGameStarted?.Invoke();
+        if (PhaseTimes.Count > 0)
+        {
+            OnGameStarted?.Invoke();
 
-        GameTimer.Start(time);
+            GameTimer.Start(time);
 
-        RSBManager.GoNext();
+            RSBManager.CurrentPhase = PhaseTimes[0].Phase;
+
+            RSBManager.GoNext();
+        }
+        else
+        {
+            Debug.LogError("페이즈가 없습니다!");
+        }
     }
 
     public void Stop()

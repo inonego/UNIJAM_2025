@@ -64,6 +64,12 @@ public class GameUI : MonoBehaviour
         var gameManager = RSBGameManager.Instance;
 
         GameTimeUI.text = $"{gameManager.LeftTime:F0}";
-        RSBTimeUI.text = $"{gameManager.RSBManager.CurrentRSB.LeftTime:F0}";
+
+        var rsbGameManager = gameManager.RSBManager;
+
+        if (rsbGameManager.CurrentRSB != null)
+        {
+            RSBTimeUI.text = $"{rsbGameManager.CurrentRSB.LeftTime:F0}";
+        }
     }
 }
