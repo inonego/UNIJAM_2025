@@ -809,17 +809,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &20157443 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1709528269465763184, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
-  m_PrefabInstance: {fileID: 20157423}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &20157444 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7593268364195485238, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
@@ -2678,7 +2667,8 @@ MonoBehaviour:
   NameUI: {fileID: 20157446}
   DescriptionUI: {fileID: 20157444}
   GameTimeUI: {fileID: 20157445}
-  RSBTimeUI: {fileID: 20157443}
+  RSBTimeUI: {fileID: 0}
+  EnemyHPUI: {fileID: 0}
   EnemyRSBImageUI: {fileID: 20157442}
   PlayerRSBImageUI: {fileID: 1086030020}
   EnemyRSBAnimator: {fileID: 20157447}
@@ -2688,6 +2678,7 @@ MonoBehaviour:
   - {fileID: 20157440}
   - {fileID: 20157436}
   - {fileID: 20157432}
+  Enemy: {fileID: 0}
 --- !u!114 &830851553
 MonoBehaviour:
   m_ObjectHideFlags: 0

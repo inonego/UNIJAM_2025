@@ -84,8 +84,6 @@ public class CurrentRSB
         IsWorking = true;
 
         Timer.Start(judgeTime);
-
-        CurrentTweaker.Initialize();
     }
 
     /// <summary>

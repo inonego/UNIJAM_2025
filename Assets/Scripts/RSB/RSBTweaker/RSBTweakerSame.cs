@@ -9,4 +9,10 @@ public class RSBTweakerSame : RSBTweakerBase
         // 비겨야지만 이길 수 있음!
         return current == input ? RSBResult.Win : RSBResult.Lose;
     }
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        GimmicUI.instance.ShowGimmicText(Gimmic.DRAW);
+    }
 }
