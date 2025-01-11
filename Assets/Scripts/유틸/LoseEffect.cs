@@ -26,6 +26,7 @@ public class LoseEffect : MonoBehaviour
 
     public void ShowDamageEffect()
     {
+        Debug.Log("Damage Effect");
         StartCoroutine(AdjustVignette());
     }
 
@@ -39,6 +40,7 @@ public class LoseEffect : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float intensity = Mathf.Lerp(0f, targetValue, elapsedTime / startDuration);
             vignette.intensity.value = intensity;
+            Debug.Log(vignette.intensity.value);
             yield return null;
         }
 
