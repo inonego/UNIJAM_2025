@@ -38,6 +38,7 @@ public class FadeManager : MonoBehaviour
             image = defaultImage;
 
         StartCoroutine(FadeOutCoroutine(image, onComplete));
+        SoundManager.instance.FadeOutAudioGroup();
     }
 
     public void FadeIn(Image image = null, Action onComplete = null)
@@ -46,6 +47,7 @@ public class FadeManager : MonoBehaviour
             image = defaultImage;
 
         StartCoroutine(FadeInCoroutine(image, onComplete));
+        SoundManager.instance.FadeInAudioGroup();
     }
 
     private IEnumerator FadeInCoroutine(Image image, Action onComplete)
