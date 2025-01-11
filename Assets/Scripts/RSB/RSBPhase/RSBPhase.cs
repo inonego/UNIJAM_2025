@@ -23,6 +23,8 @@ public class RSBPhase : ScriptableObject
         public int BossPlusValue = 4;
         public int BossMinusValue = 4;
 
+        public float MinusPerSecond = 1f;
+
         // Copy constructor.
         public DATA(DATA previous)
         {
@@ -35,6 +37,8 @@ public class RSBPhase : ScriptableObject
 
             BossPlusValue = previous.BossPlusValue;
             BossMinusValue = previous.BossMinusValue;
+
+            MinusPerSecond = previous.MinusPerSecond;
         }
     }
 
