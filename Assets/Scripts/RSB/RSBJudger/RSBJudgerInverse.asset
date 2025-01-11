@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 5d04be8417a61a242ad1c1cc0fc42321, type: 3}
   m_Name: RSBJudgerInverse
   m_EditorClassIdentifier: Assembly-CSharp::RSBJudgerInverse
   Name: "\uC838\uB77C!"
