@@ -2046,6 +2046,10 @@ MonoBehaviour:
       Value: {fileID: 8300000, guid: d323f294e0e49e344b42226e29fc3576, type: 3}
     - Key: Typing
       Value: {fileID: 8300000, guid: 14df3827ff887af4782e3e104bf5e788, type: 3}
+    - Key: INF_RSB_Win
+      Value: {fileID: 8300000, guid: f47f78884802a914e9736178d21a1776, type: 3}
+    - Key: INF_RSB_Lose
+      Value: {fileID: 8300000, guid: 02c3e8698dda6ec44b19d91a75e60898, type: 3}
   bgms:
     _serializedList:
     - Key: Menu
