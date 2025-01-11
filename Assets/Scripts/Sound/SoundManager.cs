@@ -262,6 +262,7 @@ public enum SFX
     Fail,
     Gimmic,
     RSB,
-    Typing
+    Typing,
+    BtnClick
 }
 #endregion
