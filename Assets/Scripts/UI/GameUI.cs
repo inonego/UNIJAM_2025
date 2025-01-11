@@ -11,7 +11,10 @@ public class GameUI : MonoBehaviour
 {
     public SerializedDictionary<RSBType, Sprite> SpriteDictionary = new SerializedDictionary<RSBType, Sprite>();
 
+    public string StageName;
+
     [Header("UI")]
+    public TextMeshProUGUI StageNameUI;
     public TextMeshProUGUI NameUI;
     public TextMeshProUGUI DescriptionUI;
     public TextMeshProUGUI GameTimeUI;
@@ -24,6 +27,8 @@ public class GameUI : MonoBehaviour
 
     private void Start()
     {
+        StageNameUI.text = StageName;
+
         // 각 RSB에 대해서 키 입력 텍스트 설정
         for (int i = 0; i < RSBCardList.Count; i++)
         {
@@ -58,7 +63,7 @@ public class GameUI : MonoBehaviour
     {
         var gameManager = RSBGameManager.Instance;
 
-        GameTimeUI.text = $"{gameManager.LeftTime:F2}";
-        RSBTimeUI.text = $"{gameManager.RSBManager.CurrentRSB.LeftTime:F2}";
+        GameTimeUI.text = $"{gameManager.LeftTime:F0}";
+        RSBTimeUI.text = $"{gameManager.RSBManager.CurrentRSB.LeftTime:F0}";
     }
 }
