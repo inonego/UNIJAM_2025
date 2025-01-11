@@ -35,13 +35,35 @@ public class GameUI : MonoBehaviour
     public float CardShuffleInterval = 0.5f;
     public List<RSBCardUI> RSBCardList = new List<RSBCardUI>();
 
-    private IEnumerator StartCard()
+    private IEnumerator ShowCard()
     {
         for (int i = 0; i < RSBCardList.Count; i++)
         {
-            RSBCardList[i].StartAnimation();
+            RSBCardList[i].Show();
 
             yield return new WaitForSeconds(CardShuffleInterval);
+        }
+    }
+
+    private IEnumerator HideCard()
+    {
+        for (int i = 0; i < RSBCardList.Count; i++)
+        {
+            RSBCardList[i].Hide();
+
+            yield return new WaitForSeconds(CardShuffleInterval);
+        }
+    }
+
+    private void HideAllRSB()
+    {
+        EnemyRSBAnimator.SetBool("IsVisible", false);
+
+        if (IsHandVisible)
+        {
+            PlayerRSBAnimation.Play("HandHide");
+
+            IsHandVisible = false;
         }
     }
 
@@ -49,7 +71,7 @@ public class GameUI : MonoBehaviour
     {
         StageNameUI.text = StageName;
 
-        StartCoroutine(StartCard());
+        StartCoroutine(ShowCard());
 
         // 메인 이미지 설정
         RSBGameManager.Instance.OnRSBStarted += (currentRSB) =>
@@ -86,15 +108,13 @@ public class GameUI : MonoBehaviour
 
             currentRSB.OnJudged += (result) =>
             {
-                EnemyRSBAnimator.SetBool("IsVisible", false);
-
-                if (IsHandVisible)
-                {
-                    PlayerRSBAnimation.Play("HandHide");
-
-                    IsHandVisible = false;
-                }
+                HideAllRSB();
             };
+        };
+
+        RSBGameManager.Instance.OnGameEnded += () =>
+        {
+            StartCoroutine(HideCard());
         };
 
         RSBGameManager.Instance.OnJudgerChanged += (rsbJudger) =>
