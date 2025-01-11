@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dc178096153cb1b4fa0dce296ac45854
+guid: 3b4e037cced11d2468124cc8c8207d2c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4488651748948279691
-    second: eagle_card_green_rock2_0
+      213: 6217497690788707059
+    second: snake_same_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eagle_card_green_rock2_0
+      name: snake_same_0
       rect:
         serializedVersion: 2
-        x: 110
-        y: 418
-        width: 2252
-        height: 2528
+        x: 91
+        y: 8
+        width: 1275
+        height: 1610
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b818f78dbf4ea4e30800000000000000
-      internalID: 4488651748948279691
+      spriteID: 3fab543453df84650800000000000000
+      internalID: 6217497690788707059
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      eagle_card_green_rock2_0: 4488651748948279691
+      snake_same_0: 6217497690788707059
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

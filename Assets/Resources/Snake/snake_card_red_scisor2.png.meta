@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      snake_card_red_scisor2_0: -9166072648753077263
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
