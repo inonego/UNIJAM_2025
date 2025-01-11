@@ -246,6 +246,7 @@ public enum SFX
     Clear,
     Fail,
     Gimmic,
-    RSB
+    RSB,
+    Typing
 }
 #endregion
