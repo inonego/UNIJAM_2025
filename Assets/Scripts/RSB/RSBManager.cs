@@ -67,7 +67,7 @@ public class RSBManager : MonoBehaviour
         // 남은 가위바위보 판정 조건 카운트가 0 이하가 되면 
         if (LeftJudgerCount <= 0)
         {
-            LeftJudgerCount = UnityEngine.Random.Range(CurrentPhase.MinJudgerCount, CurrentPhase.MaxJudgerCount + 1);
+            LeftJudgerCount = UnityEngine.Random.Range(CurrentPhase.current.MinJudgerCount, CurrentPhase.current.MaxJudgerCount + 1);
 
             SetRandomJudger();
         }
@@ -88,54 +88,56 @@ public class RSBManager : MonoBehaviour
         OnNewRSB?.Invoke(CurrentRSB);
 
         // CurrentRSB를 시작합니다.
-        CurrentRSB.Start(CurrentPhase.JudgeTime);
+        CurrentRSB.Start(CurrentPhase.current.JudgeTime);
     }
 
     // 랜덤으로 가위바위보 승리 조건을 선택합니다.
     private void SetRandomJudger()
     {
-        if (CurrentPhase.Judgers.Count <= 0)
+        if (CurrentPhase.current.Judgers.Count <= 0)
         {
             Debug.LogError("가위바위보 판정 조건이 없습니다!");
 
             return;
         }
         
-        if (CurrentPhase.Judgers.Count == 1)
+        if (CurrentPhase.current.Judgers.Count == 1)
         {
-            CurrentTweaker = CurrentPhase.Judgers[0].Judger;
+            CurrentTweaker = CurrentPhase.current.Judgers[0].Judger;
 
             return;
         }
 
         float sum = 0f;
 
-        for (int i = 0; i < CurrentPhase.Judgers.Count; i++)
+        for (int i = 0; i < CurrentPhase.current.Judgers.Count; i++)
         {
-            sum += CurrentPhase.Judgers[i].Weight;
+            sum += CurrentPhase.current.Judgers[i].Weight;
         }
 
+        // 이전 가위바위보 Tweaker를 저장합니다.
         RSBTweakerBase previousTweaker = CurrentTweaker;
 
         do
         {
             float randomValue = UnityEngine.Random.Range(0, sum);
             
-            CurrentTweaker = CurrentPhase.Judgers[0].Judger;
+            CurrentTweaker = CurrentPhase.current.Judgers[0].Judger;
 
             // 확률에 따라 가위바위보 승리 조건을 선택합니다.
-            for (int i = 0; i < CurrentPhase.Judgers.Count; i++)
+            for (int i = 0; i < CurrentPhase.current.Judgers.Count; i++)
             {
-                randomValue -= CurrentPhase.Judgers[i].Weight;
+                randomValue -= CurrentPhase.current.Judgers[i].Weight;
 
                 if (randomValue < 0)
                 {
-                    CurrentTweaker = CurrentPhase.Judgers[i].Judger;
+                    CurrentTweaker = CurrentPhase.current.Judgers[i].Judger;
 
                     break;
                 }
             }
         }
+        // 이전 가위바위보 Tweaker와 같은 경우 다시 랜덤으로 선택합니다.
         while (previousTweaker == CurrentTweaker);
 
         // 가위바위보 판정 조건 변경 이벤트를 호출합니다.

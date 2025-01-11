@@ -108,7 +108,7 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
         
         SetPhase(currentPhase);
 
-        currentPhase.UpdatePhase();
+        currentPhase.UpdateAll(ElapsedTime);
     }
 
 #endregion

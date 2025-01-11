@@ -70,8 +70,8 @@ public class Enemy : MonoBehaviour
 
     private void OnPhaseChanged(RSBPhase phase)
     {
-        plusValue = phase.BossPlusValue;
-        minusValue = phase.BossMinusValue;
+        plusValue = phase.current.BossPlusValue;
+        minusValue = phase.current.BossMinusValue;
     }
 
     // RSBResult Win, Lose, Draw 값을 받게 됨
