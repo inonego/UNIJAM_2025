@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b9375f6626d77644081ed0cceb7bc532
+guid: 7bfc93a984d90144692169e7707eb35b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4405578437677614433
-    second: main_chick_fly_2_0
+      213: 6953295244968261570
+    second: text_same_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: main_chick_fly_2_0
+      name: text_same_0
       rect:
         serializedVersion: 2
-        x: 1249
-        y: 274
-        width: 657
-        height: 632
+        x: 0
+        y: 0
+        width: 679
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 16505ef4f32c32d30800000000000000
-      internalID: 4405578437677614433
+      spriteID: 2c7feb66f211f7060800000000000000
+      internalID: 6953295244968261570
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      main_chick_fly_2_0: 4405578437677614433
+      text_same_0: 6953295244968261570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

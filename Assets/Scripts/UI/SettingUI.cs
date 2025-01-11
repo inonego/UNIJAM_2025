@@ -50,12 +50,6 @@ public class SettingUI : MonoBehaviour
             }
         }
     }
-
-    private void OnEnable()
-    {
-        SetSliderValue();
-    }
-
     public void SetVolume(float value)
     {
         audioMixer.SetFloat(VolumeParameter, Mathf.Log10(value) * 20);
@@ -66,8 +60,6 @@ public class SettingUI : MonoBehaviour
         float currentVolume;
         audioMixer.GetFloat(VolumeParameter, out currentVolume);
         volumeSlider.value = Mathf.Pow(10, currentVolume / 20);
-        Debug.Log(audioMixer.GetFloat(VolumeParameter, out currentVolume));
-        Debug.Log(volumeSlider.value);
     }
 
     public void OnClickCloseBtn()

@@ -10,7 +10,6 @@ public class FadeManager : MonoBehaviour
 
     [Header("# 페이드 시간")]
     [SerializeField] private float fadeDuration = 1f;
-    [SerializeField] private float delay = 0.5f;
 
     private Image defaultImage;
 
@@ -36,19 +35,16 @@ public class FadeManager : MonoBehaviour
                 FadeIn();
         };
     }
-
-    private void Start()
-    {
-        Debug.Log("FadeManager Start");
-    }
     public void FadeOut(Image image = null, Action onComplete = null)
     {
         if (image == null)
             image = defaultImage;
 
         SettingUI.Instance.SetIsFading(true);
+
         StartCoroutine(FadeOutCoroutine(image, onComplete));
         SoundManager.instance.FadeOutAudioGroup();
+
     }
 
     public void FadeIn(Image image = null, Action onComplete = null)
@@ -103,6 +99,9 @@ public class FadeManager : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             float alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
+            Debug.Log(alpha);
+            Debug.Log(elapsedTime);
+
             SetAlpha(image, alpha);
             yield return null;
         }
