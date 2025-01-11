@@ -46,6 +46,7 @@ public class FadeManager : MonoBehaviour
         if (image == null)
             image = defaultImage;
 
+        SettingUI.Instance.SetIsFading(true);
         StartCoroutine(FadeOutCoroutine(image, onComplete));
         SoundManager.instance.FadeOutAudioGroup();
     }
@@ -55,6 +56,7 @@ public class FadeManager : MonoBehaviour
         if (image == null)
             image = defaultImage;
 
+        SettingUI.Instance.SetIsFading(true);
         StartCoroutine(FadeInCoroutine(image, onComplete));
         SoundManager.instance.FadeInAudioGroup();
     }
@@ -80,6 +82,9 @@ public class FadeManager : MonoBehaviour
         // 이미지 비활성화
         image.enabled = false;
 
+        // ESC 방지 해제
+        SettingUI.Instance.SetIsFading(false);
+
         // fadeDuration만큼의 딜레이
         yield return new WaitForSeconds(fadeDuration);
 
@@ -104,6 +109,9 @@ public class FadeManager : MonoBehaviour
 
         // 오차방지 차원에서 투명도를 1로 설정
         SetAlpha(image, 1f);
+
+        // ESC 방지 해제
+        SettingUI.Instance.SetIsFading(false);
 
         // fadeDuration만큼의 딜레이
         yield return new WaitForSeconds(fadeDuration);
