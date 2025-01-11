@@ -66,14 +66,17 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 
     private void Update()
     {
-        GameTimer.Update();
-
-        IntervalTimer.Update();
-
-        if (IsGameRunning)
+        if (float.IsFinite(LeftTime))
         {
-            UpdatePhase();
+            GameTimer.Update();
+
+            if (IsGameRunning)
+            {
+                UpdatePhase();
+            }
         }
+        
+        IntervalTimer.Update();
     }
 
 #endregion

@@ -136,7 +136,7 @@ public class GameUI : MonoBehaviour
     {
         var gameManager = RSBGameManager.Instance;
 
-        GameTimeUI.text = $"{gameManager.LeftTime:F0}";
+        if (GameTimeUI != null) GameTimeUI.text = $"{gameManager.LeftTime:F0}";
 
         var rsbGameManager = gameManager.RSBManager;
 
@@ -152,7 +152,7 @@ public class GameUI : MonoBehaviour
         EnemyHPUI.maxValue = Enemy.maxHp;
         EnemyHPUI.value    = Enemy.currentHp;
 
-        if (Enemy.currentHp <= 0f || Enemy.currentHp >= Enemy.maxHp)
+        if (Enemy.CanLose && Enemy.currentHp <= 0f || Enemy.CanWin && Enemy.currentHp >= Enemy.maxHp)
         {
             RSBTimeUI.gameObject.SetActive(false);
             EnemyHPUI.gameObject.SetActive(false);

@@ -18,9 +18,13 @@ public class Enemy : MonoBehaviour
 
     public float currentHp { get; private set; }                // 보스 현재체력
 
+
+    [Header("승리 / 패배 가능 여부")]
+    public bool CanWin = true;
+    public bool CanLose = true;
 #endregion
 
-    [Header("# 보스 게이지 증감 정보")]
+    [Header("보스 게이지 증감 정보")]
     [SerializeField] float plusValue;
     [SerializeField] float minusValue;
 
@@ -200,21 +204,23 @@ public class Enemy : MonoBehaviour
         // 이겼을때
         if(currentHp >= maxHp)
         {
-            Debug.Log("이겼습니다!");
+            if (CanWin)
+            {
+                SetDone();
 
-            SetDone();
-
-            OnWin?.Invoke();
+                OnWin?.Invoke();
+            }
         }
         else
         // 죽었을때
         if (currentHp <= 0f)
         {
-            Debug.Log("죽었습니다!");
+            if (CanLose)
+            {
+                SetDone();
 
-            SetDone();
-
-            OnLose?.Invoke();
+                OnLose?.Invoke();
+            }
         }
     }
 

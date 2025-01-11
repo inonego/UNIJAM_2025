@@ -11,6 +11,8 @@ public abstract class RSBTweakerBase : ScriptableObject
 
     public RSBKeyBinding DefaultKeyBinding;
 
+    public virtual void Initialize() { }
+
     public virtual RSBKeyBinding GetKeyBinding() => DefaultKeyBinding;
     
     public abstract RSBResult Judge(RSBType current, RSBType input);

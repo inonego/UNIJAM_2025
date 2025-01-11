@@ -13,15 +13,28 @@ MonoBehaviour:
   m_Name: RSBINFPhase
   m_EditorClassIdentifier: 
   data:
-    MinJudgerCount: 0
-    MaxJudgerCount: 0
-    Judgers: []
-    JudgeTime: 0
-    BossPlusValue: 0
-    BossMinusValue: 0
+    MinJudgerCount: 4
+    MaxJudgerCount: 5
+    Judgers:
+    - Judger: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
+      Weight: 1
+    - Judger: {fileID: 11400000, guid: 80ffaac662e075a438e997f709ecc014, type: 2}
+      Weight: 1
+    - Judger: {fileID: 11400000, guid: 7dae88153d112574c8a635092881aa0d, type: 2}
+      Weight: 1
+    - Judger: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
+      Weight: 1
+    JudgeTime: 5
+    BossPlusValue: 4
+    BossMinusValue: 4
+    MinusPerSecond: 0.5
   TargetMinJudgerCount: 1
   TargetMaxJudgerCount: 1
-  JudgeCountPowerValue: 1
-  TargetTime: 60
-  JudgeTimePowerValue: 1
-  MinJudgeTime: 1
+  JudgeCountPowerValue: 1.08
+  TargetJudgeTime: 3
+  JudgeTimePowerValue: 1.08
+  TargetBossPlusValue: 4
+  TargetBossMinusValue: 4
+  BossPowerValue: 1.08
+  TargetMinusPerSecond: 1
+  MinusPerSecondPowerValue: 1.08
