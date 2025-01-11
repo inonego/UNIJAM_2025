@@ -48,28 +48,12 @@ public class SoundManager : MonoBehaviour
 
 
         Init();
+        SceneManager.sceneLoaded += (scene, mode) =>
+        {
+            CheckSceneSound();
+        };
     }
 
-    private void Start()
-    {
-        switch(SceneManager.GetActiveScene().name)
-        {
-            case "Title":
-                PlayBGM(BGM.Menu);
-                break;
-            case "Stage1":
-                PlayBGM(BGM.Stage1);
-                break;
-            case "Stage2":
-                PlayBGM(BGM.Stage2);
-                break;
-            case "Stage3":
-                PlayBGM(BGM.Stage3);
-                break;
-            default:
-                break;
-        }
-    }
 
     #region Initalize
     void Init()
@@ -219,6 +203,27 @@ public class SoundManager : MonoBehaviour
 
         // 정확히 -80dB로 설정
         audioMixer.SetFloat(VolumeParameter, targetVolume);
+    }
+
+    void CheckSceneSound()
+    {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Title":
+                PlayBGM(BGM.Menu);
+                break;
+            case "CutScene1":
+                PlayBGM(BGM.Stage1);
+                break;
+            case "CutScene2":
+                PlayBGM(BGM.Stage2);
+                break;
+            case "CutScene3":
+                PlayBGM(BGM.Stage3);
+                break;
+            default:
+                break;
+        }
     }
 
 }
