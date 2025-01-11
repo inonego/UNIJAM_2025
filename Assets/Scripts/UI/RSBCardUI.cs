@@ -9,8 +9,25 @@ public class RSBCardUI : MonoBehaviour
     public Image Image;
     public TextMeshProUGUI KeyLabel;
 
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+
     public void SetKeyLabelText(Key key)
     {        
         KeyLabel.text = key.ToString();
+    }
+
+    public void StartAnimation()
+    {
+        animator.SetTrigger("Start");
+    }
+
+    public void Submit()
+    {
+        animator.SetTrigger("Submit");
     }
 }

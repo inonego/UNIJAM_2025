@@ -25,53 +25,66 @@ public class GameUI : MonoBehaviour
     [Header("RSB UI")]
     public Image EnemyRSBImageUI;
     public Image PlayerRSBImageUI;
+    
+    public Animator EnemyRSBAnimator;
     public Animation PlayerRSBAnimation;
 
-    private bool HasPlayerRSBAnimationEverPlayed = false;
-
     [Header("RSB Card")]
+    public float CardShuffleInterval = 0.5f;
     public List<RSBCardUI> RSBCardList = new List<RSBCardUI>();
+
+    private IEnumerator StartCard()
+    {
+        for (int i = 0; i < RSBCardList.Count; i++)
+        {
+            RSBCardList[i].StartAnimation();
+
+            yield return new WaitForSeconds(CardShuffleInterval);
+        }
+    }
 
     private void Start()
     {
         StageNameUI.text = StageName;
 
-        // 각 RSB에 대해서 키 입력 텍스트 설정
-        for (int i = 0; i < RSBCardList.Count; i++)
-        {
-            int index = i;
-
-            RSBGameManager.Instance.OnRSBStarted += (currentRSB)=>
-            {
-                RSBType rsbType = RSBCardList[index].RSBType;
-
-                Key key = currentRSB.CurrentKeyBinding.Keys[(int)rsbType];
-
-                RSBCardList[index].SetKeyLabelText(key);
-            };
-        }
+        StartCoroutine(StartCard());
 
         // 메인 이미지 설정
         RSBGameManager.Instance.OnRSBStarted += (currentRSB) =>
         {
             RSBType rsbType = currentRSB.RSBType.Value;
 
+            // 각 RSB에 대해서 키 입력 텍스트 설정
+            for (int i = 0; i < RSBCardList.Count; i++)
+            {
+                RSBType cardRSBType = RSBCardList[i].RSBType;
+
+                Key key = currentRSB.CurrentKeyBinding.Keys[(int)cardRSBType];
+
+                RSBCardList[i].SetKeyLabelText(key);
+            }
+
+            // 적 카드 이미지를 보여줍니다.
             EnemyRSBImageUI.sprite = EnemySpriteDictionary[rsbType];
 
+            // 가위바위보 시작 시 적 카드 보여주기 애니메이션 재생
+            EnemyRSBAnimator.SetBool("IsVisible", true);
+
+            // 플레이어의 입력이 주어진 경우
             currentRSB.OnInput += (input) =>
             {
                 PlayerRSBImageUI.sprite = PlayerSpriteDictionary[input];
 
-                if (!HasPlayerRSBAnimationEverPlayed)
-                {
-                    PlayerRSBAnimation.Play("HandAnimation");
+                PlayerRSBAnimation.Play("HandShow");
 
-                    HasPlayerRSBAnimationEverPlayed = true;
-                }
-                else
-                {
-                    PlayerRSBAnimation.Play("HandAnimationSecond");
-                }
+                RSBCardList[(int)input].Submit();
+            };
+
+            currentRSB.OnJudged += (result) =>
+            {
+                EnemyRSBAnimator.SetBool("IsVisible", false);
+
+                PlayerRSBAnimation.Play("HandHide");
             };
         };
 

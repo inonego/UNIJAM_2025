@@ -811,7 +811,9 @@ MonoBehaviour:
   RSBTimeUI: {fileID: 1931265249}
   EnemyRSBImageUI: {fileID: 2037987199}
   PlayerRSBImageUI: {fileID: 1951906257}
+  EnemyRSBAnimator: {fileID: 2037987198}
   PlayerRSBAnimation: {fileID: 1614289076}
+  CardShuffleInterval: 0.2
   RSBCardList:
   - {fileID: 1801555280}
   - {fileID: 1138557230}
@@ -1190,6 +1192,14 @@ PrefabInstance:
     - target: {fileID: 1144594174507962285, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
       propertyPath: m_Color.r
       value: 0.90188676
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176855084443922527, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
+      propertyPath: m_EffectDistance.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1176855084443922527, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
+      propertyPath: m_EffectDistance.y
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1330873249395373772, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
       propertyPath: m_AnchorMax.x
