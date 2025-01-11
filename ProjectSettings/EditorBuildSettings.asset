@@ -9,11 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Meoyoung/Title.unity
     guid: b0f9a157f9af7e145ab840475049106e
   - enabled: 1
+    path: Assets/Scenes/Meoyoung/CutScene1.unity
+    guid: 73af34accb5416642900f867e81c94c2
+  - enabled: 1
     path: Assets/Scenes/Meoyoung/Stage1.unity
     guid: d5aa196d703124246b36ac4809f5a832
   - enabled: 1
+    path: Assets/Scenes/Meoyoung/CutScene2.unity
+    guid: 3152e2eefa7979d4a808838965612a8d
+  - enabled: 1
     path: Assets/Scenes/Meoyoung/Stage2.unity
     guid: e86f6053a9f7c42489c15daba93e5b0c
+  - enabled: 1
+    path: Assets/Scenes/Meoyoung/CutScene3.unity
+    guid: c9a6c14837f97a949b6bfaeb8a1cdfde
   - enabled: 1
     path: Assets/Scenes/Meoyoung/Stage3.unity
     guid: 5e414b988231c994a88ba9275d738b13

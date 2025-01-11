@@ -14,7 +14,6 @@ public class FadeManager : MonoBehaviour
 
     private Image defaultImage;
 
-
     private void Awake()
     {
         if (instance == null)
@@ -28,7 +27,6 @@ public class FadeManager : MonoBehaviour
         }
 
         defaultImage = GetComponentInChildren<Image>();
-
         defaultImage.enabled = false;
     }
 
