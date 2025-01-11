@@ -522,7 +522,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      VFX_emotion_0: 4637857148913723078
+      VFX_emotion_1: -8102624015033040944
+      VFX_emotion_10: -5245970674415231396
+      VFX_emotion_11: 454341623646896628
+      VFX_emotion_12: 2346888568029495340
+      VFX_emotion_13: -256250462621090959
+      VFX_emotion_14: 2945015700430967350
+      VFX_emotion_15: -7588248367437581629
+      VFX_emotion_2: -9060956867351540775
+      VFX_emotion_3: -3489927007165503199
+      VFX_emotion_4: 8917635911417218081
+      VFX_emotion_5: 8207993662825818263
+      VFX_emotion_6: 6907709713276284863
+      VFX_emotion_7: -7813283402716344498
+      VFX_emotion_8: 4751904494053339140
+      VFX_emotion_9: -1428145501506676340
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

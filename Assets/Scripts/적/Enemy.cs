@@ -23,6 +23,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] Sprite rsbWinSprite;
     [SerializeField] Sprite rsbDrawSprite;
 
+    [Header("보스 비겼을 때 물음표")]
+    [SerializeField] GameObject drawEffect;
+
     private float currentHp;                // 보스 현재체력
     private float varianceValue = 5f;       // 보스 게이지 차는 비율
     private Image fillIcon;                 // Slider FIll Icon이 0에 수렴할 경우 이미지 enabled = false 처리를 위함
@@ -71,11 +74,12 @@ public class Enemy : MonoBehaviour
             case RSBResult.Draw:
                 // 비겼을 때의 로직 처리
                 spriteRenderer.sprite = rsbDrawSprite;
+                Instantiate(drawEffect);
                 break;
             case RSBResult.Lose:
                 GetHpBarValue(-varianceValue);
                 spriteRenderer.sprite = rsbLoseSprite;
-
+                LoseEffect.instance.ShowDamageEffect();
                 animation.Play("Boss Bad");
                 // 졌을 때의 로직 처리
                 break;
