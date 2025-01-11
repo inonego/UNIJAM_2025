@@ -17,4 +17,4 @@ MonoBehaviour:
   Judgers:
   - Judger: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
     Weight: 1
-  JudgeTime: 2
+  JudgeTime: 5

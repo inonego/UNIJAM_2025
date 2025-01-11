@@ -28,18 +28,22 @@ public class Enemy : MonoBehaviour
     private Image fillIcon;                 // Slider FIll Icon이 0에 수렴할 경우 이미지 enabled = false 처리를 위함
     private SpriteRenderer spriteRenderer;  // 보스 SpriteRender 컴포넌트
 
+    private new Animation animation;
+
     private void Awake()
     {
         if(Instance == null)
             Instance = this;
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         Image[] images = hpBar.GetComponentsInChildren<Image>();
         fillIcon = images[1];
 
         hpBar.value = baseHp / maxHp;
         currentHp = baseHp;
         SetSprite();
+
+        animation = GetComponentInChildren<Animation>();
     }
 
     private void Start()
@@ -60,6 +64,8 @@ public class Enemy : MonoBehaviour
             case RSBResult.Win:
                 GetHpBarValue(varianceValue);
                 spriteRenderer.sprite = rsbWinSprite;
+
+                animation.Play("Boss Good");
                 // 이겼을 때의 로직 처리
                 break;
             case RSBResult.Draw:
@@ -69,6 +75,8 @@ public class Enemy : MonoBehaviour
             case RSBResult.Lose:
                 GetHpBarValue(-varianceValue);
                 spriteRenderer.sprite = rsbLoseSprite;
+
+                animation.Play("Boss Bad");
                 // 졌을 때의 로직 처리
                 break;
         }

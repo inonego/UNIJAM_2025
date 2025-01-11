@@ -25,6 +25,8 @@ public class GameUI : MonoBehaviour
     [Header("RSB UI")]
     public Image EnemyRSBImageUI;
     public Image PlayerRSBImageUI;
+
+    private bool IsHandVisible = false;
     
     public Animator EnemyRSBAnimator;
     public Animation PlayerRSBAnimation;
@@ -77,6 +79,8 @@ public class GameUI : MonoBehaviour
 
                 PlayerRSBAnimation.Play("HandShow");
 
+                IsHandVisible = true;
+
                 RSBCardList[(int)input].Submit();
             };
 
@@ -84,7 +88,12 @@ public class GameUI : MonoBehaviour
             {
                 EnemyRSBAnimator.SetBool("IsVisible", false);
 
-                PlayerRSBAnimation.Play("HandHide");
+                if (IsHandVisible)
+                {
+                    PlayerRSBAnimation.Play("HandHide");
+
+                    IsHandVisible = false;
+                }
             };
         };
 
