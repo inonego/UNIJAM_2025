@@ -231,7 +231,7 @@ public class SoundManager : MonoBehaviour
             case "CutScene4":
                 PlayBGM(BGM.Final);
                 break;
-            case "INF":
+            case "CutScene5":
                 PlayBGM(BGM.Stage3);
                 break;
             default:
