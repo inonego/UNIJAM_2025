@@ -55,11 +55,17 @@ public class FadeManager : MonoBehaviour
 
     public void FadeIn(Image image = null, Action onComplete = null)
     {
+        Debug.Log("null");
         if (image == null)
             image = defaultImage;
+        Debug.Log("null2");
 
         SettingUI.Instance.SetIsFading(true);
+        Debug.Log("null3");
+
         StartCoroutine(FadeInCoroutine(image, onComplete));
+        Debug.Log("null4");
+
         SoundManager.instance.FadeInAudioGroup();
     }
 
