@@ -949,10 +949,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3931147736120494561, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 582
+      objectReference: {fileID: 0}
+    - target: {fileID: 3931147736120494561, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 345
+      objectReference: {fileID: 0}
     - target: {fileID: 3961318040868023675, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1212783063}
+    - target: {fileID: 3968231107165134609, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 36ac0bdca75f27440b84e55bc02e40bb, type: 3}
     - target: {fileID: 4203280736952905042, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: Enemy
       value: 
@@ -1092,6 +1104,26 @@ PrefabInstance:
     - target: {fileID: 6143970165106167027, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391488850953183687, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 495
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391488850953183687, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 380
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234238981336679285, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7bb47bdcecb887945be4b0a494d6f693, type: 3}
+    - target: {fileID: 7402676275987011310, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7670377407639022858, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7933899280857843242, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_Pivot.x
