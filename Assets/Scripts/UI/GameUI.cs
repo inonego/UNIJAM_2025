@@ -26,6 +26,9 @@ public class GameUI : MonoBehaviour
 
     [Header("RSB UI")]
     public Image EnemyRSBImageUI;
+    
+    public SpriteRenderer EnemyRSBImageSpriteRenderer;
+    
     public Image PlayerRSBImageUI;
 
     private bool IsHandVisible = false;
@@ -62,7 +65,7 @@ public class GameUI : MonoBehaviour
 
     private void HideAllRSB()
     {
-        EnemyRSBAnimator.SetBool("IsVisible", false);
+        if (EnemyRSBAnimator != null) EnemyRSBAnimator.SetBool("IsVisible", false);
 
         if (IsHandVisible)
         {
@@ -70,6 +73,12 @@ public class GameUI : MonoBehaviour
 
             IsHandVisible = false;
         }
+    }
+
+    private void SetEnemyRSBImage(RSBType rsbType)
+    {
+        if (EnemyRSBImageUI != null) EnemyRSBImageUI.sprite = EnemySpriteDictionary[rsbType];
+        if (EnemyRSBImageSpriteRenderer != null) EnemyRSBImageSpriteRenderer.sprite = EnemySpriteDictionary[rsbType];
     }
 
     private void Start()
@@ -94,10 +103,10 @@ public class GameUI : MonoBehaviour
             }
 
             // 적 카드 이미지를 보여줍니다.
-            EnemyRSBImageUI.sprite = EnemySpriteDictionary[rsbType];
+            SetEnemyRSBImage(rsbType);
 
             // 가위바위보 시작 시 적 카드 보여주기 애니메이션 재생
-            EnemyRSBAnimator.SetBool("IsVisible", true);
+            if (EnemyRSBAnimator != null) EnemyRSBAnimator.SetBool("IsVisible", true);
 
             // 플레이어의 입력이 주어진 경우
             currentRSB.OnInput += (input) =>

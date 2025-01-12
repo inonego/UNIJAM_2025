@@ -36,5 +36,5 @@ MonoBehaviour:
   TargetBossPlusValue: 20
   TargetBossMinusMultiplier: 1.5
   BossPowerValue: 1.08
-  TargetMinusPerSecond: 0.1
+  TargetMinusPerSecond: 0.25
   MinusPerSecondPowerValue: 1.02
