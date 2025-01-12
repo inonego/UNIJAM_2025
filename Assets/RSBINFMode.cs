@@ -9,6 +9,8 @@ public class RSBINFMode : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI ScoreUI;
     public TextMeshProUGUI TimeUI;
+    public TextMeshProUGUI ResultScoreUI;
+    public TextMeshProUGUI ResultTimeUI;
 
     private void Start()
     {
@@ -24,6 +26,9 @@ public class RSBINFMode : MonoBehaviour
 
         ScoreUI.text = $"{Score}";
         TimeUI.text = $"{ElapsedTime:F0}";
+
+        ResultScoreUI.text = $"{Score}";
+        ResultTimeUI.text = $"{ElapsedTime:F0}";
 
         if (float.IsInfinity(RSBGameManager.Instance.LeftTime))
         {
