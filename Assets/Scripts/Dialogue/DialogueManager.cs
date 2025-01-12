@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -18,6 +19,8 @@ public class DialogueManager : MonoBehaviour
 
     [Header("# 타이핑 소리")]
     [SerializeField] AudioSource typingAudioSource;
+
+    private bool isSkipped = false;
 
     private Image imagePanel;
     private TMP_Text dialogue;
@@ -38,6 +41,14 @@ public class DialogueManager : MonoBehaviour
         {
             ShowDialogue();
         });
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            Skip();
+        }
     }
 
     public void ShowDialogue()
@@ -80,12 +91,20 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            FadeManager.instance.FadeOut(onComplete: () =>
-            {
-                SceneManager.LoadScene(nextSceneName);
-            });
+            Skip();
         }
     }
 
+    private void Skip()
+    {
+        if (isSkipped) return;
+        
+        isSkipped = true;
+
+        FadeManager.instance.FadeOut(onComplete: () =>
+        {
+            SceneManager.LoadScene(nextSceneName);
+        });
+    }
 
 }
