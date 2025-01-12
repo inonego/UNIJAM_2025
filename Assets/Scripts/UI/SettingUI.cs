@@ -106,6 +106,6 @@ public class SettingUI : MonoBehaviour
 
     public void OnClickBtn()
     {
-        SoundManager.instance.PlaySFX(SFX.BtnClick);
+        SoundManager.instance?.PlaySFX(SFX.BtnClick);
     }
 }

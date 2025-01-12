@@ -24,10 +24,6 @@ public class Enemy : MonoBehaviour
     public bool CanLose = true;
 #endregion
 
-    [Header("보스 게이지 증감 정보")]
-    [SerializeField] float plusValue;
-    [SerializeField] float minusValue;
-
     [Header("보스 스프라이트")]
     [SerializeField] Sprite boss30;
     [SerializeField] Sprite boss50;
@@ -126,12 +122,6 @@ public class Enemy : MonoBehaviour
     private void OnPhaseChanged(RSBPhase phase)
     {
         currentPhase = phase;
-
-        if (phase != null)
-        {
-            plusValue = phase.current.BossPlusValue;
-            minusValue = phase.current.BossMinusValue;
-        }
     }
 
 #endregion
@@ -143,7 +133,7 @@ public class Enemy : MonoBehaviour
         {
             // 1. 게임 이겼을 때
             case RSBResult.Win:
-                SetHp(currentHp + plusValue);
+                SetHp(currentHp + currentPhase.current.BossPlusValue);
 
                 spriteRenderer.sprite = rsbWinSprite;
 
@@ -166,7 +156,7 @@ public class Enemy : MonoBehaviour
 
             // 3. 게임 졌을 때
             case RSBResult.Lose:
-                SetHp(currentHp - minusValue);
+                SetHp(currentHp - currentPhase.current.BossMinusValue);
 
                 spriteRenderer.sprite = rsbLoseSprite;
 

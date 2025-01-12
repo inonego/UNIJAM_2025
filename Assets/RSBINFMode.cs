@@ -17,10 +17,18 @@ public class RSBINFMode : MonoBehaviour
 
     private void Update()
     {
-        ElapsedTime += Time.deltaTime;
+        if (RSBGameManager.Instance.IsGameRunning)
+        {
+            ElapsedTime += Time.deltaTime;
+        }
 
         ScoreUI.text = $"{Score}";
         TimeUI.text = $"{ElapsedTime:F0}";
+
+        if (float.IsInfinity(RSBGameManager.Instance.LeftTime))
+        {
+            RSBGameManager.Instance.UpdatePhase(ElapsedTime);
+        }
     }
 
     private void OnRSBEnded(RSBResult result)

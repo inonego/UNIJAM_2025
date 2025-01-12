@@ -25,16 +25,16 @@ MonoBehaviour:
     - Judger: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
       Weight: 1
     JudgeTime: 5
-    BossPlusValue: 4
-    BossMinusValue: 4
-    MinusPerSecond: 0.5
+    BossPlusValue: 7
+    BossMinusValue: 0
+    MinusPerSecond: 0.2
   TargetMinJudgerCount: 1
   TargetMaxJudgerCount: 1
   JudgeCountPowerValue: 1.08
-  TargetJudgeTime: 3
-  JudgeTimePowerValue: 1.08
-  TargetBossPlusValue: 4
-  TargetBossMinusValue: 4
+  TargetJudgeTime: 2
+  JudgeTimePowerValue: 1.02
+  TargetBossPlusValue: 20
+  TargetBossMinusMultiplier: 1.5
   BossPowerValue: 1.08
-  TargetMinusPerSecond: 1
-  MinusPerSecondPowerValue: 1.08
+  TargetMinusPerSecond: 0.1
+  MinusPerSecondPowerValue: 1.02

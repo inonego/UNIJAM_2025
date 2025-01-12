@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RSBTweakerKey
   m_EditorClassIdentifier: Assembly-CSharp::RSBJudgerKey
   Icon: {fileID: 0}
-  Name: "\uC704\uCE58 \uC774\uB3D9!"
+  Name: "\uC704\uCE58 \uBCC0\uACBD!"
   Description: 
   DefaultKeyBinding: {fileID: 11400000, guid: 27198400c44826346baaefe9b1202298, type: 2}
   KeyBindings:

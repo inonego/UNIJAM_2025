@@ -103,6 +103,8 @@ public class CurrentRSB
     // 플레이어의 입력을 처리합니다.
     private void ProcessInput()
     {
+        if (Time.timeScale <= 1E-5) return;
+
         RSBType? input = null;
 
         for (int i = 0; i < CurrentKeyBinding.Keys.Count; i++)

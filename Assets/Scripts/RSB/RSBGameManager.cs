@@ -72,7 +72,7 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 
             if (IsGameRunning)
             {
-                UpdatePhase();
+                UpdatePhase(ElapsedTime);
             }
         }
         
@@ -97,13 +97,13 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
         }
     }
 
-    private void UpdatePhase()
-    {
+    public void UpdatePhase(float elapsedTime)
+    {        
         RSBPhase currentPhase = null;
 
         foreach (var phaseTime in PhaseTimes)
         {
-            if (ElapsedTime >= phaseTime.StartTime)
+            if (elapsedTime >= phaseTime.StartTime)
             {
                 currentPhase = phaseTime.Phase;
             }
@@ -111,7 +111,7 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
         
         SetPhase(currentPhase);
 
-        currentPhase.UpdateAll(ElapsedTime);
+        currentPhase.UpdateAll(elapsedTime);
     }
 
 #endregion
