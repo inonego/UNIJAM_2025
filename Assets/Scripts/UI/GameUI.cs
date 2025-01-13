@@ -128,7 +128,7 @@ public class GameUI : MonoBehaviour
             };
         };
 
-        RSBGameManager.Instance.OnGameEnded += () =>
+        RSBGameManager.Instance.OnGameEnded += (isTimeOver) =>
         {
             StartCoroutine(HideCard());
         };

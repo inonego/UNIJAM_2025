@@ -10,9 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a89d5192d81a7244ba0894218dedb7d9, type: 3}
-  m_Name: RSBPhase2_1
+  m_Name: Stage 3_phase 1
   m_EditorClassIdentifier: 
-  MinJudgerCount: 3
-  MaxJudgerCount: 5
-  Judgers: []
-  JudgeTime: 5
+  data:
+    MinJudgerCount: 3
+    MaxJudgerCount: 4
+    Judgers:
+    - Judger: {fileID: 11400000, guid: 7dae88153d112574c8a635092881aa0d, type: 2}
+      Weight: 1
+    JudgeTime: 4
+    BossPlusValue: 11
+    BossMinusValue: 20
+    MinusPerSecond: 2.5

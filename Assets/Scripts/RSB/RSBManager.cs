@@ -13,9 +13,9 @@ public class RSBManager : MonoBehaviour
 {
 #region 기본 설정
     // 남은 가위바위보 판정 조건 개수입니다.
-    public int LeftJudgerCount { get; private set; } = 0;
+    public int LeftJudgerCount      { get; private set; } = 0;
 
-    public RSBPhase CurrentPhase;
+    public RSBPhase CurrentPhase    = null;
 #endregion
 
 #region 현재 상태

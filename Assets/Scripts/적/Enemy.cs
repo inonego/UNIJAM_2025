@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -44,7 +43,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject winPanel;
     [SerializeField] GameObject losePanel;
 
-    [SerializeField] AudioSource timer;
+    [SerializeField] AudioSource audioTimerSound;
 
     private Animation anim;
     private SpriteRenderer spriteRenderer;  // 보스 SpriteRender 컴포넌트
@@ -59,9 +58,6 @@ public class Enemy : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         SetSprite();
-
-        OnWin.AddListener(Win);
-        OnLose.AddListener(Lose);
 
         currentHp = baseHp;
     }
@@ -109,13 +105,27 @@ public class Enemy : MonoBehaviour
         applyMinusPerSecondCoroutine = StartCoroutine(ApplyMinusPerSecond());
     }
 
-    private void OnGameEnded()
+    private void OnGameEnded(bool isTimeOver)
     {
-        timer.Stop(); 
+        Debug.Log("OnGameEnded");
+
+        audioTimerSound.Stop();
 
         if (applyMinusPerSecondCoroutine != null)
         {
             StopCoroutine(applyMinusPerSecondCoroutine);
+        }
+
+        // 이겼을때
+        if(currentHp >= maxHp && CanWin)
+        {
+            Win();
+        }
+        else
+        // 죽었을때
+        if (currentHp <= 0f && CanLose || isTimeOver)
+        {
+            Lose();
         }
     }
 
@@ -182,36 +192,13 @@ public class Enemy : MonoBehaviour
         CheckHp();
     }
 
-    // 보스의 Slider.value가 1이면 승리 처리
     private void CheckHp()
     {
         if (!RSBGameManager.Instance.IsGameRunning) return;
-
-        void SetDone()
+        
+        if(currentHp >= maxHp && CanWin || currentHp <= 0 && CanLose)
         {
             RSBGameManager.Instance.Stop();
-        }
-
-        // 이겼을때
-        if(currentHp >= maxHp)
-        {
-            if (CanWin)
-            {
-                SetDone();
-
-                OnWin?.Invoke();
-            }
-        }
-        else
-        // 죽었을때
-        if (currentHp <= 0f)
-        {
-            if (CanLose)
-            {
-                SetDone();
-
-                OnLose?.Invoke();
-            }
         }
     }
 
@@ -243,11 +230,19 @@ public class Enemy : MonoBehaviour
     void Win()
     {
         StartCoroutine(WinCoroutine());
+
+        OnWin?.Invoke();
+
+        Debug.Log("Win");
     }
 
     void Lose()
     {
         StartCoroutine(LoseCoroutine());
+
+        OnLose?.Invoke();
+
+        Debug.Log("Lose");
     }
 
     IEnumerator WinCoroutine()

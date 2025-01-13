@@ -34,7 +34,7 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 #region 게임 이벤트
 
     public event Action OnGameStarted;
-    public event Action OnGameEnded;
+    public event Action<bool> OnGameEnded;
     public event Action<CurrentRSB> OnRSBStarted;
     public event Action<RSBResult> OnRSBEnded;
 
@@ -138,7 +138,12 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
 
     public void Stop()
     {
-        OnGameEnded?.Invoke();
+        if (IsGameRunning) End(false);
+    }
+
+    private void End(bool isTimeOver)
+    {
+        OnGameEnded?.Invoke(isTimeOver);
 
         StopAll();
 
@@ -175,9 +180,7 @@ public class RSBGameManager : MonoSingleton<RSBGameManager>
     // 게임 타이머 종료 시 호출
     private void OnGameTimerEnded(Timer timer, Timer.EndedEventArgs args)
     {
-        Stop();
-
-        OnGameEnded?.Invoke();
+        End(true);
     }
 
     // 가위바위보 간 간격 타이머 종료 시 호출

@@ -143,9 +143,14 @@ public class SoundManager : MonoBehaviour
         AudioSource player = sfxQueue.Dequeue();
         AudioClip clip = sfxs[_sfx.ToString()];
 
-        player.clip = clip;
-        player.Play();
-        StartCoroutine(ReturnToQueueAfterPlay(player));
+        if (player != null)
+        {
+            player.clip = clip;
+
+            player.Play();
+
+            StartCoroutine(ReturnToQueueAfterPlay(player));
+        }
     }
 
     private IEnumerator ReturnToQueueAfterPlay(AudioSource player)

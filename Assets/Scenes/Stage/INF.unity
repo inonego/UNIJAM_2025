@@ -2094,6 +2094,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Global Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 7836380226802211318, guid: f8c3f4c199ddceb4d84aca7e3647f4c6, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 5afcdf467b567f14aa013df2568dea82, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2302,7 +2306,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 266689567}
   - {fileID: 750871301}
-  - {fileID: 6353380152452154781}
-  - {fileID: 1532111361}
-  - {fileID: 4190225031921950826}
   - {fileID: 917675519}
+  - {fileID: 6353380152452154781}
+  - {fileID: 4190225031921950826}
+  - {fileID: 1532111361}
