@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 31429e8d191d6c44a96c55fe0c822bb4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4637857148913723078
+    second: VFX_emotion_0
+  - first:
+      213: -8102624015033040944
+    second: VFX_emotion_1
+  - first:
+      213: -9060956867351540775
+    second: VFX_emotion_2
+  - first:
+      213: -3489927007165503199
+    second: VFX_emotion_3
+  - first:
+      213: 8917635911417218081
+    second: VFX_emotion_4
+  - first:
+      213: 8207993662825818263
+    second: VFX_emotion_5
+  - first:
+      213: 6907709713276284863
+    second: VFX_emotion_6
+  - first:
+      213: -7813283402716344498
+    second: VFX_emotion_7
+  - first:
+      213: 4751904494053339140
+    second: VFX_emotion_8
+  - first:
+      213: -1428145501506676340
+    second: VFX_emotion_9
+  - first:
+      213: -5245970674415231396
+    second: VFX_emotion_10
+  - first:
+      213: 454341623646896628
+    second: VFX_emotion_11
+  - first:
+      213: 2346888568029495340
+    second: VFX_emotion_12
+  - first:
+      213: -256250462621090959
+    second: VFX_emotion_13
+  - first:
+      213: 2945015700430967350
+    second: VFX_emotion_14
+  - first:
+      213: -7588248367437581629
+    second: VFX_emotion_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VFX_emotion_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 801
+        width: 211
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c62208218afc5040800000000000000
+      internalID: 4637857148913723078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_1
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 778
+        width: 175
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dff76b4362bd8f80800000000000000
+      internalID: -8102624015033040944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_2
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 779
+        width: 131
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db00647cb3014280800000000000000
+      internalID: -9060956867351540775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_3
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 782
+        width: 160
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 129abdd90e9419fc0800000000000000
+      internalID: -3489927007165503199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_4
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 520
+        width: 76
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1244a402d9ec1cb70800000000000000
+      internalID: 8917635911417218081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 555
+        width: 183
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 798e36f9fb6a8e170800000000000000
+      internalID: 8207993662825818263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_6
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 538
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbf2957b26d1ddf50800000000000000
+      internalID: 6907709713276284863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_7
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 607
+        width: 127
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f03ab4424a19390800000000000000
+      internalID: -7813283402716344498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_8
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 329
+        width: 99
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 400b1aee5f722f140800000000000000
+      internalID: 4751904494053339140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_9
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 312
+        width: 117
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c895f17ab353e2ce0800000000000000
+      internalID: -1428145501506676340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_10
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 275
+        width: 212
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5e1d5947719237b0800000000000000
+      internalID: -5245970674415231396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_11
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 274
+        width: 212
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f1c52cac452e4600800000000000000
+      internalID: 454341623646896628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_12
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 18
+        width: 212
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c20c2d0e7b2d19020800000000000000
+      internalID: 2346888568029495340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_13
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 16
+        width: 212
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17bb0f9df8d917cf0800000000000000
+      internalID: -256250462621090959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_14
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 22
+        width: 212
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 632d22a1d2cced820800000000000000
+      internalID: 2945015700430967350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_emotion_15
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 20
+        width: 212
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c2f177605021b690800000000000000
+      internalID: -7588248367437581629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      VFX_emotion_0: 4637857148913723078
+      VFX_emotion_1: -8102624015033040944
+      VFX_emotion_10: -5245970674415231396
+      VFX_emotion_11: 454341623646896628
+      VFX_emotion_12: 2346888568029495340
+      VFX_emotion_13: -256250462621090959
+      VFX_emotion_14: 2945015700430967350
+      VFX_emotion_15: -7588248367437581629
+      VFX_emotion_2: -9060956867351540775
+      VFX_emotion_3: -3489927007165503199
+      VFX_emotion_4: 8917635911417218081
+      VFX_emotion_5: 8207993662825818263
+      VFX_emotion_6: 6907709713276284863
+      VFX_emotion_7: -7813283402716344498
+      VFX_emotion_8: 4751904494053339140
+      VFX_emotion_9: -1428145501506676340
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
