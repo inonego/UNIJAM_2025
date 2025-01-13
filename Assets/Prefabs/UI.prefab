@@ -710,6 +710,7 @@ MonoBehaviour:
   RSBTimeUI: {fileID: 4201820687013910507}
   EnemyHPUI: {fileID: 2373286027002261787}
   EnemyRSBImageUI: {fileID: 3789717234882051331}
+  EnemyRSBImageSpriteRenderer: {fileID: 0}
   PlayerRSBImageUI: {fileID: 9104146543034393160}
   EnemyRSBAnimator: {fileID: 190637134608946389}
   PlayerRSBAnimation: {fileID: 6374284572791736006}
@@ -2054,6 +2055,18 @@ PrefabInstance:
     - target: {fileID: 6729426440527219040, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536591691842660315, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
+      propertyPath: m_FillColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536591691842660315, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
+      propertyPath: m_FillColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536591691842660315, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
+      propertyPath: m_FillColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8627049405634497942, guid: 0f50dee3b242c3144bafbb4669422730, type: 3}
       propertyPath: m_AnchorMax.x
