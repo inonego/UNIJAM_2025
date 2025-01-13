@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      god_scisor_red_0: 6500611786559304967
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

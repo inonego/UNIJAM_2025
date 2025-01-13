@@ -123,7 +123,7 @@ public class Enemy : MonoBehaviour
         }
         else
         // 죽었을때
-        if (currentHp <= 0f && CanLose || isTimeOver)
+        if ((currentHp <= 0f && CanLose) || isTimeOver)
         {
             Lose();
         }
@@ -198,6 +198,8 @@ public class Enemy : MonoBehaviour
         
         if(currentHp >= maxHp && CanWin || currentHp <= 0 && CanLose)
         {
+            Debug.Log("Stop");
+
             RSBGameManager.Instance.Stop();
         }
     }

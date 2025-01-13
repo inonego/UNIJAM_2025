@@ -49,7 +49,7 @@ public class RSBINFPhase : RSBPhase
 
         current.MinusPerSecond = current.BossPlusValue * GetPowerValue(initial: data.MinusPerSecond, target: TargetMinusPerSecond, a: MinusPerSecondPowerValue, value: time);
 
-        Debug.Log($"current.JudgeTime: {current.JudgeTime}, current.MinJudgerCount: {current.MinJudgerCount}, current.MaxJudgerCount: {current.MaxJudgerCount}, BossPlusValue: {current.BossPlusValue}, BossMinusValue: {current.BossMinusValue}, MinusPerSecond: {current.MinusPerSecond}");
+        //Debug.Log($"current.JudgeTime: {current.JudgeTime}, current.MinJudgerCount: {current.MinJudgerCount}, current.MaxJudgerCount: {current.MaxJudgerCount}, BossPlusValue: {current.BossPlusValue}, BossMinusValue: {current.BossMinusValue}, MinusPerSecond: {current.MinusPerSecond}");
     }
 
     public override void UpdateAll(float currentTime)

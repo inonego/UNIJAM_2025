@@ -286,6 +286,10 @@ PrefabInstance:
       propertyPath: rsbLoseSprite
       value: 
       objectReference: {fileID: 21300000, guid: 1a848593defd1ef4fb8a2f9ee58ddb20, type: 3}
+    - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
+      propertyPath: audioTimerSound
+      value: 
+      objectReference: {fileID: 915040465}
     - target: {fileID: 5658536544968875041, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.45000002
@@ -353,34 +357,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8320230897853262562, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 588596417}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
---- !u!1 &588596416 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8320230897853262562, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
-  m_PrefabInstance: {fileID: 588596415}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &588596417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588596416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fd3332bc63aa6e4eba578314c683d00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &588596418 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
   m_PrefabInstance: {fileID: 588596415}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 588596416}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 576516b39e6fe844e8fbcbea50c25744, type: 3}

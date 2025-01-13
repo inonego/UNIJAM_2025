@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      god_rock_green_0: 8406158245514619013
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

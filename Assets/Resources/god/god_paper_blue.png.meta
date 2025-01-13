@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      god_paper_blue_0: 3331530016579785125
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
