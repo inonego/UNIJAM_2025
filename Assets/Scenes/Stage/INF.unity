@@ -806,7 +806,7 @@ PrefabInstance:
       objectReference: {fileID: 356147269}
     - target: {fileID: 4203280736952905042, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: StageName
-      value: INF
+      value: "\uBB34\uD55C\uBAA8\uB4DC"
       objectReference: {fileID: 0}
     - target: {fileID: 4203280736952905042, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: GameTimeUI

@@ -31,7 +31,7 @@ MonoBehaviour:
   TargetMinJudgerCount: 1
   TargetMaxJudgerCount: 1
   JudgeCountPowerValue: 1.08
-  TargetJudgeTime: 1.35
+  TargetJudgeTime: 0.9
   JudgeTimePowerValue: 1.02
   TargetBossPlusValue: 20
   TargetBossMinusMultiplier: 1.5
