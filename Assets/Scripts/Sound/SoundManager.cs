@@ -46,7 +46,7 @@ public class SoundManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-
+        Debug.Log(originVolume);
         Init();
     }
 
@@ -170,7 +170,7 @@ public class SoundManager : MonoBehaviour
         float currentVolume = 0;
         //audioMixer.GetFloat(VolumeParameter, out currentVolume);
 
-        float targetVolume = originVolume;
+        float targetVolume = 0;
 
         float elapsedTime = 0f;
 
