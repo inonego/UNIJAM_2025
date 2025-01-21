@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d04be8417a61a242ad1c1cc0fc42321, type: 3}
-  m_Name: RSBTweakerInverse
+  m_Name: RSBTweakerJudgeInverse
   m_EditorClassIdentifier: Assembly-CSharp::RSBJudgerInverse
   Icon: {fileID: 0}
   Name: "\uC838\uB77C!"

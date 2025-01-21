@@ -15,9 +15,9 @@ MonoBehaviour:
   data:
     MinJudgerCount: 3
     MaxJudgerCount: 5
-    Judgers:
-    - Judger: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
-      Weight: 1
+    TweakerList:
+    - Tweaker: {fileID: 0}
+      Weight: 0
     JudgeTime: 5
     BossPlusValue: 7
     BossMinusValue: 10

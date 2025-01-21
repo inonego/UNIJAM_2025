@@ -663,6 +663,7 @@ GameObject:
   - component: {fileID: 512501433}
   - component: {fileID: 512501434}
   - component: {fileID: 512501432}
+  - component: {fileID: 512501435}
   m_Layer: 0
   m_Name: RSB Manager
   m_TagString: Untagged
@@ -683,6 +684,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentPhase: {fileID: 0}
+  <Container>k__BackingField:
+    TweakerDictionary:
+      _serializedList: []
 --- !u!4 &512501433
 Transform:
   m_ObjectHideFlags: 0
@@ -716,6 +720,20 @@ MonoBehaviour:
   PhaseTimes:
   - Phase: {fileID: 11400000, guid: e7f489e3b17358b4aab56730b1bc523b, type: 2}
     StartTime: 0
+--- !u!114 &512501435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512501431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8fd323fccf6f846952fc3ca70fc902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <DefaultTweakerJudge>k__BackingField: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
+  <DefaultTweakerKey>k__BackingField: {fileID: 11400000, guid: 0fe05213317aa954691b6a2057ec3ec7, type: 2}
 --- !u!1001 &750871301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -895,6 +913,10 @@ PrefabInstance:
     - target: {fileID: 4894666219633419768, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197483425331611651, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6140571237534729622, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

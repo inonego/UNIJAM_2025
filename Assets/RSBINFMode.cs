@@ -14,12 +14,12 @@ public class RSBINFMode : MonoBehaviour
 
     private void Start()
     {
-        RSBGameManager.Instance.OnRSBEnded += OnRSBEnded;
+        StageManager.Instance.OnRSBEnded += OnRSBEnded;
     }
 
     private void Update()
     {
-        if (RSBGameManager.Instance.IsGameRunning)
+        if (StageManager.Instance.IsGameRunning)
         {
             ElapsedTime += Time.deltaTime;
         }
@@ -30,9 +30,9 @@ public class RSBINFMode : MonoBehaviour
         ResultScoreUI.text = $"{Score}";
         ResultTimeUI.text = $"{ElapsedTime:F0}";
 
-        if (float.IsInfinity(RSBGameManager.Instance.LeftTime))
+        if (float.IsInfinity(StageManager.Instance.LeftTime))
         {
-            RSBGameManager.Instance.UpdatePhase(ElapsedTime);
+            StageManager.Instance.UpdatePhase(ElapsedTime);
         }
     }
 

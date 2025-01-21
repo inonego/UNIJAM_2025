@@ -88,9 +88,9 @@ public class GameUI : MonoBehaviour
         StartCoroutine(ShowCard());
 
         // 메인 이미지 설정
-        RSBGameManager.Instance.OnRSBStarted += (currentRSB) =>
+        StageManager.Instance.OnRSBStarted += (currentRSB) =>
         {
-            RSBType rsbType = currentRSB.RSBType.Value;
+            RSBType rsbType = currentRSB.AI.Value;
 
             // 각 RSB에 대해서 키 입력 텍스트 설정
             for (int i = 0; i < RSBCardList.Count; i++)
@@ -128,12 +128,12 @@ public class GameUI : MonoBehaviour
             };
         };
 
-        RSBGameManager.Instance.OnGameEnded += (isTimeOver) =>
+        StageManager.Instance.OnStageEnded += (isTimeOver) =>
         {
             StartCoroutine(HideCard());
         };
 
-        RSBGameManager.Instance.OnTweakerChanged += (rsbJudger) =>
+        StageManager.Instance.OnTweakerChanged += (rsbJudger) =>
         {
             NameUI.text = rsbJudger.Name;
             DescriptionUI.text = rsbJudger.Description;
@@ -144,18 +144,16 @@ public class GameUI : MonoBehaviour
 
     private void Update()
     {
-        var gameManager = RSBGameManager.Instance;
+        var gameManager = StageManager.Instance;
 
         if (GameTimeUI != null) GameTimeUI.text = $"{gameManager.LeftTime:F0}";
 
-        var rsbGameManager = gameManager.RSBManager;
-
-        if (rsbGameManager.CurrentRSB != null)
+        if (gameManager.CurrentRSB != null)
         {
-            if (rsbGameManager.CurrentRSB.IsWorking)
+            if (gameManager.CurrentRSB.IsWorking)
             {
-                RSBTimeUI.maxValue  = rsbGameManager.CurrentRSB.LeftTime + rsbGameManager.CurrentRSB.ElapsedTime;
-                RSBTimeUI.value     = rsbGameManager.CurrentRSB.LeftTime;
+                RSBTimeUI.maxValue  = gameManager.CurrentRSB.LeftTime + gameManager.CurrentRSB.ElapsedTime;
+                RSBTimeUI.value     = gameManager.CurrentRSB.LeftTime;
             }
         }
 

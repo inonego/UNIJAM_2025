@@ -52,8 +52,6 @@ public class GimmicUI : MonoBehaviour
 
 public enum Gimmic
 { 
-    DRAW    = 0,
-    WIN     = 1,
-    CHANGE  = 2,
-    LOSE    = 3
+    Judge,
+    Key,
 }

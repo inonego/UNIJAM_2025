@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
         {
             if (currentPhase != null)
             {
-                SetHp(currentHp - currentPhase.current.MinusPerSecond * Time.deltaTime);
+                SetHp(currentHp - currentPhase.MinusPerSecond * Time.deltaTime);
             }
 
             yield return null;
@@ -81,11 +81,11 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        RSBGameManager.Instance.OnRSBEnded       += OnRSBEnded;
-        RSBGameManager.Instance.OnTweakerChanged += OnTweakerChanged;
-        RSBGameManager.Instance.OnGameStarted    += OnGameStarted;
-        RSBGameManager.Instance.OnGameEnded      += OnGameEnded;
-        RSBGameManager.Instance.OnPhaseChanged   += OnPhaseChanged;
+        StageManager.Instance.OnRSBEnded       += OnRSBEnded;
+        StageManager.Instance.OnTweakerChanged += OnTweakerChanged;
+        StageManager.Instance.OnStageStarted   += OnStageStarted;
+        StageManager.Instance.OnStageEnded     += OnStageEnded;
+        StageManager.Instance.OnPhaseChanged   += OnPhaseChanged;
     }
 
 #region 이벤트 메서드
@@ -100,12 +100,12 @@ public class Enemy : MonoBehaviour
         SoundManager.instance?.PlaySFX(SFX.Gimmic); 
     }
 
-    private void OnGameStarted()
+    private void OnStageStarted()
     {
         applyMinusPerSecondCoroutine = StartCoroutine(ApplyMinusPerSecond());
     }
 
-    private void OnGameEnded(bool isTimeOver)
+    private void OnStageEnded(bool isTimeOver)
     {
         Debug.Log("OnGameEnded");
 
@@ -143,7 +143,7 @@ public class Enemy : MonoBehaviour
         {
             // 1. 게임 이겼을 때
             case RSBResult.Win:
-                SetHp(currentHp + currentPhase.current.BossPlusValue);
+                SetHp(currentHp + currentPhase.BossPlusValue);
 
                 spriteRenderer.sprite = rsbWinSprite;
 
@@ -166,7 +166,7 @@ public class Enemy : MonoBehaviour
 
             // 3. 게임 졌을 때
             case RSBResult.Lose:
-                SetHp(currentHp - currentPhase.current.BossMinusValue);
+                SetHp(currentHp - currentPhase.BossMinusValue);
 
                 spriteRenderer.sprite = rsbLoseSprite;
 
@@ -194,13 +194,13 @@ public class Enemy : MonoBehaviour
 
     private void CheckHp()
     {
-        if (!RSBGameManager.Instance.IsGameRunning) return;
+        if (!StageManager.Instance.IsGameRunning) return;
         
         if(currentHp >= maxHp && CanWin || currentHp <= 0 && CanLose)
         {
             Debug.Log("Stop");
 
-            RSBGameManager.Instance.Stop();
+            StageManager.Instance.Stop();
         }
     }
 

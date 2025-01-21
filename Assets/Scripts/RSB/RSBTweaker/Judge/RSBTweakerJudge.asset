@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7187b514f8ad9714dbb11efc54a3632f, type: 3}
-  m_Name: RSBTweakerSame
-  m_EditorClassIdentifier: Assembly-CSharp::RSBJudgerSame
+  m_Script: {fileID: 11500000, guid: b49e89226f3b74444b3c04a9018de8f3, type: 3}
+  m_Name: RSBTweakerJudge
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultRSBJudger
   Icon: {fileID: 0}
-  Name: "\uBE44\uACA8\uB77C!"
+  Name: "\uC774\uACA8\uB77C!"
   Description: 
   DefaultKeyBinding: {fileID: 11400000, guid: 27198400c44826346baaefe9b1202298, type: 2}
