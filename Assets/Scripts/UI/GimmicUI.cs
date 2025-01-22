@@ -17,17 +17,6 @@ public class GimmicUI : MonoBehaviour
         }
     }
 
-    /*private void Update()
-    {
-        if (Keyboard.current[Key.Q].wasPressedThisFrame)
-            ShowGimmicText(Gimmic.DRAW);
-        else if(Keyboard.current[Key.W].wasPressedThisFrame)
-            ShowGimmicText(Gimmic.WIN);
-        else if (Keyboard.current[Key.E].wasPressedThisFrame)
-            ShowGimmicText(Gimmic.CHANGE);
-        else if (Keyboard.current[Key.R].wasPressedThisFrame)
-            ShowGimmicText(Gimmic.LOSE);
-    }*/
     public void ShowGimmicText(Gimmic type)
     {
         panel.SetActive(true);
@@ -55,5 +44,6 @@ public enum Gimmic
     DRAW    = 0,
     WIN     = 1,
     CHANGE  = 2,
-    LOSE    = 3
+    LOSE    = 3,
+    ORIGIN  = 4
 }
