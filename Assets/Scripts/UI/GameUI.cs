@@ -139,6 +139,14 @@ public class GameUI : MonoBehaviour
 
             foreach (var tweaker in e.CurrentTweakers)
             {
+                if (tweaker.Value is RSBTweakerKey keyTweaker)
+                {
+                    if (!keyTweaker.HasBeenSelected)
+                    {
+                        continue;
+                    }
+                }
+
                 nameText += $"{tweaker.Value.Name}\n";
             }
             

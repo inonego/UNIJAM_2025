@@ -15,4 +15,4 @@ MonoBehaviour:
   Icon: {fileID: 0}
   Name: "\uC774\uACA8\uB77C!"
   Description: 
-  DefaultKeyBinding: {fileID: 11400000, guid: 27198400c44826346baaefe9b1202298, type: 2}
+  ShowGimmicText: {fileID: 21300000, guid: 05479ac3caaab564a91bf7a6f66533cb, type: 3}

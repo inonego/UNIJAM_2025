@@ -1,14 +1,15 @@
 ﻿using AYellowpaper.SerializedCollections;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class GimmicUI : MonoBehaviour
 {
     public static GimmicUI instance;
 
-    [Header("# 기믹 종류")]
-    [SerializeField] SerializedDictionary<RSBTweakerBase, GameObject> gimmicList;
     [SerializeField] GameObject panel;
+    [SerializeField] Image gimmicText;
+
+    private Animator animator;
 
     private void Awake()
     {
@@ -16,24 +17,20 @@ public class GimmicUI : MonoBehaviour
         {
             instance = this;
         }
+
+        animator = gimmicText.GetComponent<Animator>();
     }
 
-    /*private void Update()
-    {
-        if (Keyboard.current[Key.Q].wasPressedThisFrame)
-            ShowGimmicText(Gimmic.DRAW);
-        else if(Keyboard.current[Key.W].wasPressedThisFrame)
-            ShowGimmicText(Gimmic.WIN);
-        else if (Keyboard.current[Key.E].wasPressedThisFrame)
-            ShowGimmicText(Gimmic.CHANGE);
-        else if (Keyboard.current[Key.R].wasPressedThisFrame)
-            ShowGimmicText(Gimmic.LOSE);
-    }*/
     public void ShowGimmicText(RSBTweakerBase tweaker)
     {
         panel.SetActive(true);
         InitObject();
-        gimmicList[tweaker].SetActive(true);
+
+        gimmicText.gameObject.SetActive(true);
+        gimmicText.sprite = tweaker.ShowGimmicText;
+        gimmicText.SetNativeSize();
+
+        animator.SetTrigger("Show");
         Invoke(nameof(SetPanelFalse), 1.2f);
     }
 
@@ -44,9 +41,6 @@ public class GimmicUI : MonoBehaviour
 
     private void InitObject()
     {
-        foreach (var gimmic in gimmicList)
-        {
-            gimmic.Value.SetActive(false);
-        }
+        gimmicText.gameObject.SetActive(false);
     }
 }

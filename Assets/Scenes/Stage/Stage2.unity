@@ -216,11 +216,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &178517512 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5536423368823374226, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-  m_PrefabInstance: {fileID: 869483755}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &313418816 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8412594497084976847, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
@@ -614,11 +609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ec96ae314feca4fb319f772551acd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &521127926 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 779236917976180650, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-  m_PrefabInstance: {fileID: 869483755}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &588596415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -779,11 +769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576516b39e6fe844e8fbcbea50c25744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &845254322 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7553746806904908344, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-  m_PrefabInstance: {fileID: 869483755}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &869483755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -872,6 +857,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 779236917976180650, guid: c9cdc363eef1da845942f89c99576014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1504622173650548124, guid: c9cdc363eef1da845942f89c99576014, type: 3}
       propertyPath: m_Name
       value: Gimmic Canvas
@@ -884,52 +873,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8036040947788537945, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-      propertyPath: gimmicList._serializedList.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8036040947788537945, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-      propertyPath: gimmicList._serializedList.Array.data[0].Key
-      value: 
-      objectReference: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
-    - target: {fileID: 8036040947788537945, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-      propertyPath: gimmicList._serializedList.Array.data[1].Key
-      value: 
-      objectReference: {fileID: 11400000, guid: 80ffaac662e075a438e997f709ecc014, type: 2}
-    - target: {fileID: 8036040947788537945, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-      propertyPath: gimmicList._serializedList.Array.data[2].Key
-      value: 
-      objectReference: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
-    - target: {fileID: 8036040947788537945, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-      propertyPath: gimmicList._serializedList.Array.data[3].Key
-      value: 
-      objectReference: {fileID: 11400000, guid: 0fe05213317aa954691b6a2057ec3ec7, type: 2}
-    - target: {fileID: 8036040947788537945, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-      propertyPath: gimmicList._serializedList.Array.data[0].Value
-      value: 
-      objectReference: {fileID: 845254322}
-    - target: {fileID: 8036040947788537945, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-      propertyPath: gimmicList._serializedList.Array.data[1].Value
-      value: 
-      objectReference: {fileID: 992170438}
-    - target: {fileID: 8036040947788537945, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-      propertyPath: gimmicList._serializedList.Array.data[2].Value
-      value: 
-      objectReference: {fileID: 521127926}
-    - target: {fileID: 8036040947788537945, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-      propertyPath: gimmicList._serializedList.Array.data[3].Value
-      value: 
-      objectReference: {fileID: 178517512}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9cdc363eef1da845942f89c99576014, type: 3}
---- !u!1 &992170438 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4990126056046890796, guid: c9cdc363eef1da845942f89c99576014, type: 3}
-  m_PrefabInstance: {fileID: 869483755}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1719660558
 PrefabInstance:
   m_ObjectHideFlags: 0

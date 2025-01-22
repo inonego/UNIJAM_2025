@@ -21,6 +21,11 @@ public class Enemy : MonoBehaviour
     [Header("승리 / 패배 가능 여부")]
     public bool CanWin = true;
     public bool CanLose = true;
+
+    public int RSBLoseCount = 0;
+    public float MinusMultiplier = 1.5f;
+    public float MinusPerRSBLose = 10f;
+
 #endregion
 
     [Header("보스 스프라이트")]
@@ -166,7 +171,7 @@ public class Enemy : MonoBehaviour
 
             // 3. 게임 졌을 때
             case RSBResult.Lose:
-                SetHp(currentHp - currentPhase.BossMinusValue);
+                SetHp(currentHp - (currentPhase.BossMinusValue * MinusMultiplier + MinusPerRSBLose * (++RSBLoseCount)));
 
                 spriteRenderer.sprite = rsbLoseSprite;
 

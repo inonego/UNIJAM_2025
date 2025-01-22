@@ -22,6 +22,8 @@ public abstract class RSBTweakerBase : ScriptableObject
     [TextArea(1, 1)] public string Name;
     [TextArea(3, 5)] public string Description;
 
+    public Sprite ShowGimmicText;
+
     public abstract Gimmic GimicType { get; }
 
     public virtual void Initialize() {}

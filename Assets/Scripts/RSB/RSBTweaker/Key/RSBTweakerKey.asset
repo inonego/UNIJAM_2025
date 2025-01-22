@@ -15,6 +15,8 @@ MonoBehaviour:
   Icon: {fileID: 0}
   Name: "\uC704\uCE58 \uBCC0\uACBD!"
   Description: 
+  ShowGimmicText: {fileID: 0}
+  HasBeenSelected: 0
   DefaultKeyBinding: {fileID: 11400000, guid: 27198400c44826346baaefe9b1202298, type: 2}
   RandomKeyBindings:
     _serializedList:
@@ -22,3 +24,7 @@ MonoBehaviour:
       Value: {fileID: 11400000, guid: 2a3023e7d499a7a408888323f91bef78, type: 2}
     - Key: 2
       Value: {fileID: 11400000, guid: 930d7ee486595494b8b148acf59b38f6, type: 2}
+  DefaultName: "\uC6D0 \uC704\uCE58!"
+  RandomName: "\uC704\uCE58 \uBCC0\uACBD!"
+  DefaultShowGimmicText: {fileID: 1748705326445904990, guid: 51c280f6a44624546b9d620a9dd8456a, type: 3}
+  RandomShowGimmicText: {fileID: 21300000, guid: 11392b7bb76f76147b94826a917543e3, type: 3}

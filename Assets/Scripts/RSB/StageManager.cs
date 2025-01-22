@@ -1,7 +1,6 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
-
-using AYellowpaper.SerializedCollections;
 
 using inonego;
 
@@ -123,8 +122,15 @@ public class StageManager : MonoSingleton<StageManager>
     }
 
     private void Start()
-    {        
-        Start(GameTime);
+    {   
+        IEnumerator DelayedStart()
+        {
+            yield return new WaitForSeconds(1f);
+
+            Start(GameTime);
+        }
+
+        StartCoroutine(DelayedStart());
     }
 
     private void Update()
