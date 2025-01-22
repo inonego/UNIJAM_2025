@@ -23,10 +23,10 @@ MonoBehaviour:
     Weight: 1
   - Tweaker: {fileID: 11400000, guid: 0fe05213317aa954691b6a2057ec3ec7, type: 2}
     Weight: 1
-  JudgeTime: 4.139049
-  BossPlusValue: 19
-  BossMinusValue: 29
-  MinusPerSecond: 0.24999991
+  JudgeTime: 5
+  BossPlusValue: 7
+  BossMinusValue: 0
+  MinusPerSecond: 0.2
   TargetMinTweakerCount: 1
   TargetMaxTweakerCount: 1
   TweakerCountPowerValue: 1.08
