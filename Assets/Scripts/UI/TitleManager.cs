@@ -12,9 +12,18 @@ public class TitleManager : MonoSingleton<TitleManager>
     [Header("# 설정 팝업")]
     [SerializeField] GameObject settingPopup;
 
+    [Header("# 게임방법 팝업")]
+    [SerializeField] GameObject howToPlayPopup;
+
     protected override void Awake()
     {
         base.Awake();
+    }
+
+    void Start()
+    {
+        if(howToPlayPopup.activeSelf)
+            howToPlayPopup.SetActive(false);
 
         if(stagePopup.activeSelf)
             stagePopup.SetActive(false);
@@ -53,6 +62,18 @@ public class TitleManager : MonoSingleton<TitleManager>
             settingPopup.SetActive(false);
 
         Time.timeScale = 1f;
+    }
+
+    public void OnClickHowToPlayPopUpBtn()
+    {
+        if(!howToPlayPopup.activeSelf)
+            howToPlayPopup.SetActive(true);
+    }
+
+    public void DeactiveHowToPlayPopUp()
+    {
+        if(howToPlayPopup.activeSelf)
+            howToPlayPopup.SetActive(false);
     }
 
     public void OnClickExitBtn()

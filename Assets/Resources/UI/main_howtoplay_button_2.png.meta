@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 51c280f6a44624546b9d620a9dd8456a
+guid: 67efb20e29b4b294688e626249f80fb7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1748705326445904990
-    second: text_back_0
+      213: -6638914211838936860
+    second: main_howtoplay_button_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: text_back_0
+      name: main_howtoplay_button_2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 864
-        height: 218
+        width: 340
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5444a7ba36a44810800000000000000
-      internalID: 1748705326445904990
+      spriteID: 4e83c05e2b6ddd3a0800000000000000
+      internalID: -6638914211838936860
       vertices: []
       indices: 
       edges: []
@@ -135,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      text_back_0: 1748705326445904990
+      main_howtoplay_button_2_0: -6638914211838936860
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
