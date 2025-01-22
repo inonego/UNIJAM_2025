@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using AYellowpaper.SerializedCollections;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class GimmicUI : MonoBehaviour
@@ -6,7 +7,7 @@ public class GimmicUI : MonoBehaviour
     public static GimmicUI instance;
 
     [Header("# 기믹 종류")]
-    [SerializeField] GameObject[] gimmicList;
+    [SerializeField] SerializedDictionary<RSBTweakerBase, GameObject> gimmicList;
     [SerializeField] GameObject panel;
 
     private void Awake()
@@ -28,11 +29,11 @@ public class GimmicUI : MonoBehaviour
         else if (Keyboard.current[Key.R].wasPressedThisFrame)
             ShowGimmicText(Gimmic.LOSE);
     }*/
-    public void ShowGimmicText(Gimmic type)
+    public void ShowGimmicText(RSBTweakerBase tweaker)
     {
         panel.SetActive(true);
         InitObject();
-        gimmicList[(int)type].SetActive(true);
+        gimmicList[tweaker].SetActive(true);
         Invoke(nameof(SetPanelFalse), 1.2f);
     }
 
@@ -43,15 +44,9 @@ public class GimmicUI : MonoBehaviour
 
     private void InitObject()
     {
-        for (int i = 0; i < gimmicList.Length; i++)
+        foreach (var gimmic in gimmicList)
         {
-            gimmicList[i].SetActive(false);
+            gimmic.Value.SetActive(false);
         }
     }
-}
-
-public enum Gimmic
-{ 
-    Judge,
-    Key,
 }

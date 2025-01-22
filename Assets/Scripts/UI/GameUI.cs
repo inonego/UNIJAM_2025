@@ -133,12 +133,20 @@ public class GameUI : MonoBehaviour
             StartCoroutine(HideCard());
         };
 
-        StageManager.Instance.OnTweakerChanged += (rsbJudger) =>
+        StageManager.Instance.OnTweakerChanged += (e) =>
         {
-            NameUI.text = rsbJudger.Name;
-            DescriptionUI.text = rsbJudger.Description;
+            string nameText = "";
 
-            GimmicUI.instance.ShowGimmicText(rsbJudger.GimicType);
+            foreach (var tweaker in e.CurrentTweakers)
+            {
+                nameText += $"{tweaker.Value.Name}\n";
+            }
+            
+            NameUI.text = nameText;
+
+            //DescriptionUI.text = .Description;
+
+            GimmicUI.instance.ShowGimmicText(e.RaisedTweaker);
         };
     }
 

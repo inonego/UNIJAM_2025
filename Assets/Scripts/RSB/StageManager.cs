@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 
+using AYellowpaper.SerializedCollections;
+
 using inonego;
 
 using UnityCommunity.UnitySingleton;
@@ -56,7 +58,9 @@ public class StageManager : MonoSingleton<StageManager>
     /// <summary>
     /// 현재 페이즈입니다.
     /// </summary>
-    public RSBPhase CurrentPhase = null;
+    public RSBPhase currentPhase = null;
+
+    private RSBPhase currentBasePhase = null;
 
     /// <summary>
     /// 가위바위보 Tweaker를 관리하는 컨테이너입니다.
@@ -94,7 +98,7 @@ public class StageManager : MonoSingleton<StageManager>
     /// <summary>
     /// 현재 가위바위보의 Tweaker 변경 이벤트입니다.
     /// </summary>
-    public event Action<RSBTweakerBase> OnTweakerChanged;
+    public event Action<TweakerChangedEventArgs> OnTweakerChanged;
 
     /// <summary>
     /// 페이즈 변경 이벤트입니다.
@@ -115,7 +119,7 @@ public class StageManager : MonoSingleton<StageManager>
         // 현재 컨테이너를 기본 설정으로 초기화합니다.
         TweakerContainer.SetToDefaultTweaker();
 
-        TweakerContainer.OnTweakerChanged += OnTweakerChanged;
+        TweakerContainer.OnTweakerChanged += (e) => OnTweakerChanged?.Invoke(e);
     }
 
     private void Start()
@@ -156,6 +160,9 @@ public class StageManager : MonoSingleton<StageManager>
             // 게임 타이머를 시작합니다.
             GameTimer.Start(time);
 
+            // 페이즈를 업데이트합니다.
+            UpdatePhase(0f);
+
             // 다음 가위바위보를 시작합니다.
             GoNext();
         }
@@ -182,10 +189,9 @@ public class StageManager : MonoSingleton<StageManager>
     
     private void StopAll()
     {
-        CurrentRSB.Stop();
+        CurrentRSB?.Stop();
 
         GameTimer.Stop();
-
         IntervalTimer.Stop();
     }
 
@@ -199,9 +205,11 @@ public class StageManager : MonoSingleton<StageManager>
     /// <param name="phase"></param>
     public void SetPhase(RSBPhase phase)
     {
-        if (phase != null && CurrentPhase != phase)
+        if (phase != null && currentPhase != phase)
         {
-            CurrentPhase = Instantiate(phase);
+            currentBasePhase = phase;
+
+            currentPhase = Instantiate(phase);
 
             // 페이즈를 초기화합니다.
             phase.Initialize();
@@ -231,7 +239,7 @@ public class StageManager : MonoSingleton<StageManager>
         // 페이즈를 설정합니다.
         SetPhase(currentPhase);
 
-        currentPhase.UpdateAll(elapsedTime);
+        this.currentPhase.UpdateAll(currentBasePhase, elapsedTime);
     }
 
 #endregion
@@ -260,7 +268,7 @@ public class StageManager : MonoSingleton<StageManager>
     /// </summary>
     public void GoNext()
     {
-        if (CurrentPhase == null)
+        if (currentPhase == null)
         {
             Debug.LogError("현재 페이즈가 없습니다!");
         
@@ -271,13 +279,13 @@ public class StageManager : MonoSingleton<StageManager>
         CurrentRSB = CreateRSB();
 
         // 페이즈에 따른 현재 기믹을 설정합니다.
-        TweakerContainer.RaiseTweaker(CurrentPhase);
+        TweakerContainer.RaiseTweaker(currentPhase);
 
         // 기믹을 적용합니다.
         TweakerContainer.ApplyTo(CurrentRSB);
 
         // 가위바위보를 시작합니다.
-        CurrentRSB.Start(CurrentPhase.JudgeTime);
+        CurrentRSB.Start(currentPhase.JudgeTime);
 
         // 가위바위보 판정 완료 이벤트를 등록합니다.
         CurrentRSB.OnJudged += OnCurrentRSBJudged;

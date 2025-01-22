@@ -2,6 +2,13 @@ using System;
 
 using UnityEngine;
 
+
+public enum Gimmic
+{ 
+    Judge,
+    Key,
+}
+
 public enum RSBTweakerType
 {
     Key,
@@ -16,6 +23,10 @@ public abstract class RSBTweakerBase : ScriptableObject
     [TextArea(3, 5)] public string Description;
 
     public abstract Gimmic GimicType { get; }
+
+    public virtual void Initialize() {}
+
+    public virtual void OnSelected() {}
 
     public abstract void ApplyGimmic(SingleRSB currentRSB);
 }   

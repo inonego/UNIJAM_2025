@@ -31,5 +31,5 @@ public class RSBPhase : ScriptableObject
 
     public virtual void Initialize() {}
 
-    public virtual void UpdateAll(float currentTime) {}
+    public virtual void UpdateAll(RSBPhase basePhase, float currentTime) {}
 }

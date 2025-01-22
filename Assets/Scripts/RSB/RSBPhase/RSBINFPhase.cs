@@ -35,25 +35,25 @@ public class RSBINFPhase : RSBPhase
         return (initial - target) * Mathf.Pow(a, -value) + target;
     }
 
-    private void UpdateParameters(float time)
+    private void UpdateParameters(RSBPhase basePhase, float time)
     {
-        JudgeTime = GetPowerValue(initial: JudgeTime, target: TargetJudgeTime, a: JudgeTimePowerValue, value: time);
+        JudgeTime = GetPowerValue(initial: basePhase.JudgeTime, target: TargetJudgeTime, a: JudgeTimePowerValue, value: time);
 
-        MinTweakerCount = Mathf.RoundToInt(GetPowerValue(initial: MinTweakerCount, target: TargetMinTweakerCount, a: TweakerCountPowerValue, value: time));
-        MaxTweakerCount = Mathf.RoundToInt(GetPowerValue(initial: MaxTweakerCount, target: TargetMaxTweakerCount, a: TweakerCountPowerValue, value: time));
+        MinTweakerCount = Mathf.RoundToInt(GetPowerValue(initial: basePhase.MinTweakerCount, target: TargetMinTweakerCount, a: TweakerCountPowerValue, value: time));
+        MaxTweakerCount = Mathf.RoundToInt(GetPowerValue(initial: basePhase.MaxTweakerCount, target: TargetMaxTweakerCount, a: TweakerCountPowerValue, value: time));
 
-        float bossPlusValue = GetPowerValue(initial: BossPlusValue, target: TargetBossPlusValue, a: BossPowerValue, value: time);
+        float bossPlusValue = GetPowerValue(initial: basePhase.BossPlusValue, target: TargetBossPlusValue, a: BossPowerValue, value: time);
 
         BossPlusValue = Mathf.RoundToInt(bossPlusValue);
         BossMinusValue = Mathf.RoundToInt(bossPlusValue * TargetBossMinusMultiplier);
 
-        MinusPerSecond = BossPlusValue * GetPowerValue(initial: MinusPerSecond, target: TargetMinusPerSecond, a: MinusPerSecondPowerValue, value: time);
+        MinusPerSecond = GetPowerValue(initial: basePhase.MinusPerSecond, target: TargetMinusPerSecond, a: MinusPerSecondPowerValue, value: time);
     }
 
-    public override void UpdateAll(float currentTime)
+    public override void UpdateAll(RSBPhase basePhase, float currentTime)
     {
-        base.UpdateAll(currentTime);
+        base.UpdateAll(basePhase, currentTime);
 
-        UpdateParameters(currentTime);
+        UpdateParameters(basePhase, currentTime);
     }
 }

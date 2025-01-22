@@ -12,17 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89d5192d81a7244ba0894218dedb7d9, type: 3}
   m_Name: Stage 2_phase 3
   m_EditorClassIdentifier: 
-  data:
-    MinJudgerCount: 2
-    MaxJudgerCount: 4
-    Judgers:
-    - Judger: {fileID: 11400000, guid: 7dae88153d112574c8a635092881aa0d, type: 2}
-      Weight: 1
-    - Judger: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
-      Weight: 1
-    - Judger: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
-      Weight: 1
-    JudgeTime: 3.5
-    BossPlusValue: 12
-    BossMinusValue: 25
-    MinusPerSecond: 2.8
+  MinTweakerCount: 2
+  MaxTweakerCount: 4
+  TweakerList:
+  - Tweaker: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
+    Weight: 1
+  - Tweaker: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
+    Weight: 1
+  - Tweaker: {fileID: 11400000, guid: 0fe05213317aa954691b6a2057ec3ec7, type: 2}
+    Weight: 1
+  JudgeTime: 3.5
+  BossPlusValue: 12
+  BossMinusValue: 25
+  MinusPerSecond: 0.25

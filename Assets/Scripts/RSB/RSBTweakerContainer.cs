@@ -7,6 +7,12 @@ using AYellowpaper.SerializedCollections;
 
 using UnityEngine;
 
+public struct TweakerChangedEventArgs
+{
+    public RSBTweakerBase RaisedTweaker;
+    public SerializedDictionary<Gimmic, RSBTweakerBase> CurrentTweakers;
+}
+
 [Serializable]
 public class RSBTweakerContainer
 {
@@ -22,12 +28,14 @@ public class RSBTweakerContainer
 
     public SerializedDictionary<Gimmic, RSBTweakerBase> CurrentTweakers { get; private set; } = new SerializedDictionary<Gimmic, RSBTweakerBase>();
 
+    private HashSet<RSBTweakerBase> initializedTweakers = new HashSet<RSBTweakerBase>();
+
 #region 이벤트
 
     /// <summary>
     /// 가위바위보 Tweaker가 변경되었을 때 호출되는 이벤트입니다.
     /// </summary>
-    public event Action<RSBTweakerBase> OnTweakerChanged;
+    public event Action<TweakerChangedEventArgs> OnTweakerChanged;
     
 #endregion
     
@@ -35,6 +43,11 @@ public class RSBTweakerContainer
     {
         CurrentTweakers[Gimmic.Judge] = RSBTweakerManager.Instance.DefaultTweakerJudge;
         CurrentTweakers[Gimmic.Key]   = RSBTweakerManager.Instance.DefaultTweakerKey;
+
+        foreach (var tweaker in CurrentTweakers.Values)
+        {
+            InitializeTweaker(tweaker);
+        }
     }
     
     public void ApplyTo(SingleRSB rsb)
@@ -45,9 +58,32 @@ public class RSBTweakerContainer
         }
     }
 
+    private void InitializeTweaker(RSBTweakerBase tweaker)
+    {
+        if (!initializedTweakers.Contains(tweaker))
+        {
+            tweaker.Initialize();
+            initializedTweakers.Add(tweaker);
+
+            Debug.Log($"Initialized {tweaker.Name}");
+        }
+    }
+
     public void SetTweaker(RSBTweakerBase tweaker)
     {
+        InitializeTweaker(tweaker);
+        
         RaisedTweaker = CurrentTweakers[tweaker.GimicType] = tweaker;
+
+        tweaker.OnSelected();
+
+        Debug.Log($"Set {tweaker.Name}");
+
+        OnTweakerChanged?.Invoke(new TweakerChangedEventArgs()
+        {
+            RaisedTweaker = tweaker,
+            CurrentTweakers = CurrentTweakers
+        });
     }
     
     public void RaiseTweaker(RSBPhase phase)
@@ -75,13 +111,14 @@ public class RSBTweakerContainer
         
         if (phase.TweakerList.Count == 1)
         {
-            SetTweaker(RaisedTweaker);
-
-            // 가위바위보 판정 조건 변경 이벤트를 호출합니다.
-            OnTweakerChanged?.Invoke(RaisedTweaker);
+            SetTweaker(phase.TweakerList[0].Tweaker);
 
             return;
         }
+
+        // 이전 가위바위보 Tweaker를 저장합니다.
+        RSBTweakerBase previousTweaker = RaisedTweaker;
+        RSBTweakerBase currentTweaker = null;
 
         float sum = 0f;
 
@@ -90,14 +127,18 @@ public class RSBTweakerContainer
             sum += phase.TweakerList[i].Weight;
         }
 
-        // 이전 가위바위보 Tweaker를 저장합니다.
-        RSBTweakerBase previousTweaker = RaisedTweaker;
+        if (sum <= 0)
+        {
+            Debug.LogError("가위바위보 판정 조건의 가중치 값이 0 이하입니다!");
+
+            return;
+        }
 
         do
         {
             float randomValue = UnityEngine.Random.Range(0, sum);
             
-            SetTweaker(phase.TweakerList[0].Tweaker);
+            currentTweaker = phase.TweakerList[0].Tweaker;
 
             // 확률에 따라 가위바위보 승리 조건을 선택합니다.
             for (int i = 0; i < phase.TweakerList.Count; i++)
@@ -106,17 +147,16 @@ public class RSBTweakerContainer
 
                 if (randomValue < 0)
                 {
-                    SetTweaker(phase.TweakerList[i].Tweaker);
+                    currentTweaker = phase.TweakerList[i].Tweaker;
 
                     break;
                 }
             }
         }
         // 이전 가위바위보 Tweaker와 같은 경우 다시 랜덤으로 선택합니다.
-        while (previousTweaker == RaisedTweaker);
+        while (previousTweaker == currentTweaker);
 
-        // 가위바위보 판정 조건 변경 이벤트를 호출합니다.
-        OnTweakerChanged?.Invoke(RaisedTweaker);
+        SetTweaker(currentTweaker);
     }
 
 }

@@ -12,27 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ba3374682f02c4ba21fb9c05e71197, type: 3}
   m_Name: RSBINFPhase
   m_EditorClassIdentifier: 
-  data:
-    MinJudgerCount: 4
-    MaxJudgerCount: 5
-    TweakerList:
-    - Tweaker: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
-      Weight: 1
-    - Tweaker: {fileID: 11400000, guid: 80ffaac662e075a438e997f709ecc014, type: 2}
-      Weight: 1
-    - Tweaker: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
-      Weight: 1
-    - Tweaker: {fileID: 11400000, guid: 0fe05213317aa954691b6a2057ec3ec7, type: 2}
-      Weight: 1
-    - Tweaker: {fileID: 11400000, guid: 7dae88153d112574c8a635092881aa0d, type: 2}
-      Weight: 1
-    JudgeTime: 5
-    BossPlusValue: 7
-    BossMinusValue: 0
-    MinusPerSecond: 0.2
-  TargetMinJudgerCount: 1
-  TargetMaxJudgerCount: 1
-  JudgeCountPowerValue: 1.08
+  MinTweakerCount: 2
+  MaxTweakerCount: 2
+  TweakerList:
+  - Tweaker: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
+    Weight: 1
+  - Tweaker: {fileID: 11400000, guid: 80ffaac662e075a438e997f709ecc014, type: 2}
+    Weight: 1
+  - Tweaker: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
+    Weight: 1
+  - Tweaker: {fileID: 11400000, guid: 0fe05213317aa954691b6a2057ec3ec7, type: 2}
+    Weight: 1
+  JudgeTime: 4.139049
+  BossPlusValue: 19
+  BossMinusValue: 29
+  MinusPerSecond: 0.24999991
+  TargetMinTweakerCount: 1
+  TargetMaxTweakerCount: 1
+  TweakerCountPowerValue: 1.08
   TargetJudgeTime: 0.9
   JudgeTimePowerValue: 1.02
   TargetBossPlusValue: 20

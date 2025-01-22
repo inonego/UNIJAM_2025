@@ -9,13 +9,32 @@ public class RSBTweakerKey : RSBTweakerBase
 {
     public override Gimmic GimicType => Gimmic.Key;
 
+    private bool hasBeenSelected = false;
+
     public RSBKeyBinding DefaultKeyBinding;
 
     public SerializedDictionary<RSBKeyBindingType, RSBKeyBinding> RandomKeyBindings = new SerializedDictionary<RSBKeyBindingType, RSBKeyBinding>();
     
-    public override void ApplyGimmic(SingleRSB currentRSB)
+    public string DefaultName = "원 위치!";
+    public string RandomName = "위치 변경!";
+
+    public override void Initialize()
     {
-        if (RandomKeyBindings.Count == 0)
+        Name = DefaultName;
+
+        hasBeenSelected = false;
+    }
+
+    public override void OnSelected()
+    {
+        hasBeenSelected = !hasBeenSelected;
+
+        Name = hasBeenSelected ? RandomName : DefaultName;
+    }
+
+    public override void ApplyGimmic(SingleRSB currentRSB)
+    {   
+        if (!hasBeenSelected)
         {
             // 기본 키 바인딩으로 변경합니다.
             currentRSB.CurrentKeyBinding = DefaultKeyBinding;
@@ -31,3 +50,4 @@ public class RSBTweakerKey : RSBTweakerBase
         }
     }
 }
+

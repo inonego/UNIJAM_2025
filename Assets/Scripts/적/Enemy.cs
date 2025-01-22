@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
         {
             if (currentPhase != null)
             {
-                SetHp(currentHp - currentPhase.MinusPerSecond * Time.deltaTime);
+                SetHp(currentHp - currentPhase.BossPlusValue * currentPhase.MinusPerSecond * Time.deltaTime);
             }
 
             yield return null;
@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
         ReflectionRSBValue(result);
     }
 
-    private void OnTweakerChanged(RSBTweakerBase tweaker)
+    private void OnTweakerChanged(TweakerChangedEventArgs args)
     {
         SoundManager.instance?.PlaySFX(SFX.Gimmic); 
     }

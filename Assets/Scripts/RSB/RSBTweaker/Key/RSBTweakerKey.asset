@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: RSBTweakerKey
   m_EditorClassIdentifier: 
   Icon: {fileID: 0}
-  Name: "\uC6D0\uC704\uCE58!"
+  Name: "\uC704\uCE58 \uBCC0\uACBD!"
   Description: 
   DefaultKeyBinding: {fileID: 11400000, guid: 27198400c44826346baaefe9b1202298, type: 2}
+  RandomKeyBindings:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 11400000, guid: 2a3023e7d499a7a408888323f91bef78, type: 2}
+    - Key: 2
+      Value: {fileID: 11400000, guid: 930d7ee486595494b8b148acf59b38f6, type: 2}
