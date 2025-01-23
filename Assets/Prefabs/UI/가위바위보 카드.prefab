@@ -32,11 +32,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 9037583687681568691}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 40, y: -40}
+  m_SizeDelta: {x: 80, y: 80}
+  m_Pivot: {x: 0, y: 1}
 --- !u!222 &6778467391315963891
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   IsCardEnabled: 1
   XMark: {fileID: 92799154814916499}
   EnabledColor: {r: 1, g: 1, b: 1, a: 1}
-  DisabledColor: {r: 0.8805031, g: 0.8805031, b: 0.8805031, a: 1}
+  DisabledColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
 --- !u!1 &7013737086970107984
 GameObject:
   m_ObjectHideFlags: 0

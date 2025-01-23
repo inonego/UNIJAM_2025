@@ -50,7 +50,7 @@ MonoBehaviour:
   PhaseTimes:
   - Phase: {fileID: 11400000, guid: e7f489e3b17358b4aab56730b1bc523b, type: 2}
     StartTime: 0
-  CurrentPhase: {fileID: 0}
+  currentPhase: {fileID: 0}
 --- !u!114 &7342231020630769443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,6 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DefaultTweakerJudge: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
   DefaultTweakerKey: {fileID: 11400000, guid: 0fe05213317aa954691b6a2057ec3ec7, type: 2}
+  DefaultTweakerLockKey: {fileID: 11400000, guid: 600684ab2ace82a4b81770b65a539cc4, type: 2}
 --- !u!1 &6555425295002327046
 GameObject:
   m_ObjectHideFlags: 0

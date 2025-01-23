@@ -55,6 +55,8 @@ public class SingleRSB
     /// </summary>
     public List<int> CardShuffleIndexList = new List<int>() { 1, 2, 3 };
 
+    public List<bool> CardLockList = new List<bool>() { false, false, false };
+
     public delegate RSBResult JudgeAction(RSBType ai, RSBType user);
 
     /// <summary>
@@ -164,8 +166,11 @@ public class SingleRSB
                     break;
                 }
 
-                // 키 바인딩에 맞춰서 입력 값을 설정합니다.
-                input = (RSBType)i;
+                if (!CardLockList[i])
+                {
+                    // 키 바인딩에 맞춰서 입력 값을 설정합니다.
+                    input = (RSBType)i;
+                }
             }
         }
 

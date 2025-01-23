@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using AYellowpaper.SerializedCollections;
-
+using NUnit.Framework;
 using UnityEngine;
 
 public struct TweakerChangedEventArgs
@@ -43,6 +43,7 @@ public class RSBTweakerContainer
     {
         CurrentTweakers[Gimmic.Judge] = RSBTweakerManager.Instance.DefaultTweakerJudge;
         CurrentTweakers[Gimmic.Key]   = RSBTweakerManager.Instance.DefaultTweakerKey;
+        CurrentTweakers[Gimmic.LockKey] = RSBTweakerManager.Instance.DefaultTweakerLockKey;
 
         foreach (var tweaker in CurrentTweakers.Values)
         {
@@ -77,8 +78,6 @@ public class RSBTweakerContainer
 
         tweaker.OnSelected();
 
-        Debug.Log($"Set {tweaker.Name}");
-
         OnTweakerChanged?.Invoke(new TweakerChangedEventArgs()
         {
             RaisedTweaker = tweaker,
@@ -100,6 +99,8 @@ public class RSBTweakerContainer
         LeftTweakerCount--;
     }
 
+    private List<RSBTweakerRandomValue> randomTweakerList = new List<RSBTweakerRandomValue>();
+
     private void SetRandomTweaker(RSBPhase phase)
     {
         if (phase.TweakerList.Count <= 0)
@@ -120,43 +121,77 @@ public class RSBTweakerContainer
         RSBTweakerBase previousTweaker = RaisedTweaker;
         RSBTweakerBase currentTweaker = null;
 
-        float sum = 0f;
+        randomTweakerList.Clear();
 
+        // 선택 가능한 가위바위보 판정 기믹만 남깁니다.
         for (int i = 0; i < phase.TweakerList.Count; i++)
-        {
-            sum += phase.TweakerList[i].Weight;
+        {   
+            RSBTweakerRandomValue tweakerRandomValue = phase.TweakerList[i];
+
+            // 이전 가위바위보 Tweaker와 같지 않은 경우에만 추가합니다.
+            if (previousTweaker != tweakerRandomValue.Tweaker)
+            {
+                if (CheckAdditionalCondition(tweakerRandomValue.Tweaker)) randomTweakerList.Add(tweakerRandomValue);
+            }
         }
 
+        float sum = 0f;
+
+        // 가중치의 합을 구합니다.
+        for (int i = 0; i < randomTweakerList.Count; i++)
+        {
+            sum += randomTweakerList[i].Weight;
+        }
+
+        // 예외 처리
         if (sum <= 0)
         {
             Debug.LogError("가위바위보 판정 조건의 가중치 값이 0 이하입니다!");
 
             return;
         }
-
-        do
-        {
-            float randomValue = UnityEngine.Random.Range(0, sum);
+        
+        float randomValue = UnityEngine.Random.Range(0, sum);
             
-            currentTweaker = phase.TweakerList[0].Tweaker;
+        currentTweaker = phase.TweakerList[0].Tweaker;
 
-            // 확률에 따라 가위바위보 승리 조건을 선택합니다.
-            for (int i = 0; i < phase.TweakerList.Count; i++)
+        // 확률에 따라 가위바위보 승리 조건을 선택합니다.
+        for (int i = 0; i < phase.TweakerList.Count; i++)
+        {
+            randomValue -= phase.TweakerList[i].Weight;
+
+            if (randomValue < 0)
             {
-                randomValue -= phase.TweakerList[i].Weight;
+                currentTweaker = phase.TweakerList[i].Tweaker;
 
-                if (randomValue < 0)
-                {
-                    currentTweaker = phase.TweakerList[i].Tweaker;
-
-                    break;
-                }
+                break;
             }
         }
-        // 이전 가위바위보 Tweaker와 같은 경우 다시 랜덤으로 선택합니다.
-        while (previousTweaker == currentTweaker);
 
         SetTweaker(currentTweaker);
     }
 
+    private bool IsFirstCheck = true;
+
+    private bool CheckAdditionalCondition(RSBTweakerBase currentTweaker)
+    {
+        if (!IsFirstCheck && CurrentTweakers[Gimmic.Judge].GetType() == currentTweaker.GetType())
+        {
+            return false;
+        }
+
+        // 봉인된 상태의 경우 비겨라가 나오지 않도록 합니다.  
+        if (currentTweaker is RSBTweakerJudgeSame)
+        {
+            if ((CurrentTweakers[Gimmic.LockKey] as RSBTweakerLockKey).HasBeenSelected)
+            {
+                return false;
+            }
+        }
+
+        IsFirstCheck = false;
+
+        return true;
+
+    }
 }

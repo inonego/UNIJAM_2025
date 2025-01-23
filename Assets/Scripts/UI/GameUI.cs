@@ -100,6 +100,8 @@ public class GameUI : MonoBehaviour
                 Key key = currentRSB.CurrentKeyBinding.Keys[(int)cardRSBType];
 
                 RSBCardList[i].SetKeyLabelText(key);
+
+                RSBCardList[i].SetLock(currentRSB.CardLockList[(int)cardRSBType]);
             }
 
             // 적 카드 이미지를 보여줍니다.
@@ -137,11 +139,20 @@ public class GameUI : MonoBehaviour
         {
             string nameText = "";
 
+            // 현재 선택된 기믹의 목록을 출력합니다.
             foreach (var tweaker in e.CurrentTweakers)
             {
                 if (tweaker.Value is RSBTweakerKey keyTweaker)
                 {
                     if (!keyTweaker.HasBeenSelected)
+                    {
+                        continue;
+                    }
+                }
+
+                if (tweaker.Value is RSBTweakerLockKey lockTweaker)
+                {
+                    if (!lockTweaker.HasBeenSelected)
                     {
                         continue;
                     }

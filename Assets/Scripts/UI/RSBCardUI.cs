@@ -31,6 +31,11 @@ public class RSBCardUI : MonoBehaviour
         XMark.SetActive(!IsCardEnabled);
     }
 
+    public void SetLock(bool isLock)
+    {
+        IsCardEnabled = !isLock;
+    }
+
     public void SetKeyLabelText(Key key)
     {        
         KeyLabel.text = key.ToString();

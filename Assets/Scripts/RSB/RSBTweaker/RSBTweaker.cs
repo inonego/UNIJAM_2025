@@ -7,12 +7,7 @@ public enum Gimmic
 { 
     Judge,
     Key,
-}
-
-public enum RSBTweakerType
-{
-    Key,
-    Judge,
+    LockKey,
 }
 
 [Serializable]
