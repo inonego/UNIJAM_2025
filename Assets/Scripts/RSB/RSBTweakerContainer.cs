@@ -189,6 +189,14 @@ public class RSBTweakerContainer
             }
         }
 
+        if (currentTweaker is RSBTweakerLockKey)
+        {
+             if (CurrentTweakers[Gimmic.Judge] is RSBTweakerJudgeSame)
+            {
+                return false;
+            }
+        }
+
         IsFirstCheck = false;
 
         return true;
