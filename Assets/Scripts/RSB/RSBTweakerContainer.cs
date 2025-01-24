@@ -153,16 +153,16 @@ public class RSBTweakerContainer
         
         float randomValue = UnityEngine.Random.Range(0, sum);
             
-        currentTweaker = phase.TweakerList[0].Tweaker;
+        currentTweaker = randomTweakerList[0].Tweaker;
 
         // 확률에 따라 가위바위보 승리 조건을 선택합니다.
-        for (int i = 0; i < phase.TweakerList.Count; i++)
+        for (int i = 0; i < randomTweakerList.Count; i++)
         {
-            randomValue -= phase.TweakerList[i].Weight;
+            randomValue -= randomTweakerList[i].Weight;
 
             if (randomValue < 0)
             {
-                currentTweaker = phase.TweakerList[i].Tweaker;
+                currentTweaker = randomTweakerList[i].Tweaker;
 
                 break;
             }
