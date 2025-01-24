@@ -20,4 +20,4 @@ MonoBehaviour:
   JudgeTime: 5
   BossPlusValue: 7
   BossMinusValue: 10
-  MinusPerSecond: 0.25
+  MinusPerSecond: 1.5

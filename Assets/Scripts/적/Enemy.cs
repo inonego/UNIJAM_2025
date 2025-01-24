@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
         {
             if (currentPhase != null)
             {
-                SetHp(currentHp - currentPhase.BossPlusValue * currentPhase.MinusPerSecond * Time.deltaTime);
+                SetHp(currentHp - currentPhase.MinusPerSecond * Time.deltaTime);
             }
 
             yield return null;

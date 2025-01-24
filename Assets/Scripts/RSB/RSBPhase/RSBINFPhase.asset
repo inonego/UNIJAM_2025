@@ -28,7 +28,7 @@ MonoBehaviour:
   JudgeTime: 5
   BossPlusValue: 7
   BossMinusValue: 0
-  MinusPerSecond: 0.2
+  MinusPerSecond: 1.5
   TargetMinTweakerCount: 1
   TargetMaxTweakerCount: 1
   TweakerCountPowerValue: 1.08
@@ -37,5 +37,5 @@ MonoBehaviour:
   TargetBossPlusValue: 20
   TargetBossMinusMultiplier: 1.5
   BossPowerValue: 1.08
-  TargetMinusPerSecond: 0.25
+  TargetMinusPerSecond: 5
   MinusPerSecondPowerValue: 1.02
