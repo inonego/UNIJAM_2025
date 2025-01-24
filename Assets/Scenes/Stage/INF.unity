@@ -1893,6 +1893,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5718536866345034905, guid: 7d0caeb751196134794df2ae8dfb0d2d, type: 3}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
+      propertyPath: MinusPerRSBLose
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: audioTimerSound
       value: 
       objectReference: {fileID: 750871302}

@@ -171,7 +171,7 @@ public class Enemy : MonoBehaviour
 
             // 3. 게임 졌을 때
             case RSBResult.Lose:
-                SetHp(currentHp - (currentPhase.BossMinusValue * MinusMultiplier + MinusPerRSBLose * (++RSBLoseCount)));
+                SetHp(currentHp - (currentPhase.BossMinusValue * MinusMultiplier + MinusPerRSBLose * RSBLoseCount++));
 
                 spriteRenderer.sprite = rsbLoseSprite;
 
