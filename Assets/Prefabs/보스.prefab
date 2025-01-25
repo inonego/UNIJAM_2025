@@ -133,10 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576516b39e6fe844e8fbcbea50c25744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpBar: {fileID: 0}
-  duration: 0.1
   maxHp: 100
   baseHp: 30
+  CanWin: 1
+  CanLose: 1
   boss30: {fileID: 21300000, guid: fa4909d0ce3fdcf459321623982dc047, type: 3}
   boss50: {fileID: 21300000, guid: 20f492aafeb5ad44b96d82e9498825f6, type: 3}
   boss70: {fileID: 21300000, guid: 5dd308b3383b1af4fa0f66e7d610e4d7, type: 3}
@@ -144,6 +144,16 @@ MonoBehaviour:
   rsbLoseSprite: {fileID: 21300000, guid: a99acab7d11da5242b845d92e565bca6, type: 3}
   rsbWinSprite: {fileID: 21300000, guid: 496599d61fb833a41bb22e921ef84094, type: 3}
   rsbDrawSprite: {fileID: 21300000, guid: b24a2bafa6be06941bea29af724ebd85, type: 3}
+  drawEffect: {fileID: 2125750941963791122, guid: f265cc1b0715020438e497e71cf0ae36, type: 3}
+  OnWin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLose:
+    m_PersistentCalls:
+      m_Calls: []
+  winPanel: {fileID: 0}
+  losePanel: {fileID: 0}
+  audioTimerSound: {fileID: 0}
 --- !u!111 &1614602761821719573
 Animation:
   m_ObjectHideFlags: 0

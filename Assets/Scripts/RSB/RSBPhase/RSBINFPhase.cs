@@ -7,10 +7,10 @@ using UnityEngine;
 public class RSBINFPhase : RSBPhase
 {
     [Header("Judger Count")]
-    public int TargetMinJudgerCount = 1;
-    public int TargetMaxJudgerCount = 1;
+    public int TargetMinTweakerCount = 1;
+    public int TargetMaxTweakerCount = 1;
     
-    public float JudgeCountPowerValue = 1f;
+    public float TweakerCountPowerValue = 1f;
 
     [Header("Judge Time")]
     public float TargetJudgeTime = 1f;
@@ -35,27 +35,25 @@ public class RSBINFPhase : RSBPhase
         return (initial - target) * Mathf.Pow(a, -value) + target;
     }
 
-    private void UpdateParameters(float time)
+    private void UpdateParameters(RSBPhase basePhase, float time)
     {
-        current.JudgeTime = GetPowerValue(initial: data.JudgeTime, target: TargetJudgeTime, a: JudgeTimePowerValue, value: time);
+        JudgeTime = GetPowerValue(initial: basePhase.JudgeTime, target: TargetJudgeTime, a: JudgeTimePowerValue, value: time);
 
-        current.MinJudgerCount = Mathf.RoundToInt(GetPowerValue(initial: data.MinJudgerCount, target: TargetMinJudgerCount, a: JudgeCountPowerValue, value: time));
-        current.MaxJudgerCount = Mathf.RoundToInt(GetPowerValue(initial: data.MaxJudgerCount, target: TargetMaxJudgerCount, a: JudgeCountPowerValue, value: time));
+        MinTweakerCount = Mathf.RoundToInt(GetPowerValue(initial: basePhase.MinTweakerCount, target: TargetMinTweakerCount, a: TweakerCountPowerValue, value: time));
+        MaxTweakerCount = Mathf.RoundToInt(GetPowerValue(initial: basePhase.MaxTweakerCount, target: TargetMaxTweakerCount, a: TweakerCountPowerValue, value: time));
 
-        float bossPlusValue = GetPowerValue(initial: data.BossPlusValue, target: TargetBossPlusValue, a: BossPowerValue, value: time);
+        float bossPlusValue = GetPowerValue(initial: basePhase.BossPlusValue, target: TargetBossPlusValue, a: BossPowerValue, value: time);
 
-        current.BossPlusValue = Mathf.RoundToInt(bossPlusValue);
-        current.BossMinusValue = Mathf.RoundToInt(bossPlusValue * TargetBossMinusMultiplier);
+        BossPlusValue = Mathf.RoundToInt(bossPlusValue);
+        BossMinusValue = Mathf.RoundToInt(bossPlusValue * TargetBossMinusMultiplier);
 
-        current.MinusPerSecond = current.BossPlusValue * GetPowerValue(initial: data.MinusPerSecond, target: TargetMinusPerSecond, a: MinusPerSecondPowerValue, value: time);
-
-        //Debug.Log($"current.JudgeTime: {current.JudgeTime}, current.MinJudgerCount: {current.MinJudgerCount}, current.MaxJudgerCount: {current.MaxJudgerCount}, BossPlusValue: {current.BossPlusValue}, BossMinusValue: {current.BossMinusValue}, MinusPerSecond: {current.MinusPerSecond}");
+        MinusPerSecond = GetPowerValue(initial: basePhase.MinusPerSecond, target: TargetMinusPerSecond, a: MinusPerSecondPowerValue, value: time);
     }
 
-    public override void UpdateAll(float currentTime)
+    public override void UpdateAll(RSBPhase basePhase, float currentTime)
     {
-        base.UpdateAll(currentTime);
+        base.UpdateAll(basePhase, currentTime);
 
-        UpdateParameters(currentTime);
+        UpdateParameters(basePhase, currentTime);
     }
 }

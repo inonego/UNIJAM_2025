@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7187b514f8ad9714dbb11efc54a3632f, type: 3}
+  m_Name: RSBTweakerJudgeSame
+  m_EditorClassIdentifier: Assembly-CSharp::RSBJudgerSame
+  Icon: {fileID: 0}
+  Name: "\uBE44\uACA8\uB77C!"
+  Description: 
+  ShowGimmicText: {fileID: 21300000, guid: 7bfc93a984d90144692169e7707eb35b, type: 3}

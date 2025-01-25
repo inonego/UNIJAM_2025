@@ -9,11 +9,31 @@ public class RSBCardUI : MonoBehaviour
     public Image Image;
     public TextMeshProUGUI KeyLabel;
 
+    [Header("카드 상태")]
+    public bool IsCardEnabled = true;
+    public GameObject XMark;
+
+    [Header("카드 색상")]
+    public Color EnabledColor;
+    public Color DisabledColor;
+
     private Animator animator;
 
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+    }
+
+    private void Update()
+    {
+        Image.color = IsCardEnabled ? EnabledColor : DisabledColor;
+        
+        XMark.SetActive(!IsCardEnabled);
+    }
+
+    public void SetLock(bool isLock)
+    {
+        IsCardEnabled = !isLock;
     }
 
     public void SetKeyLabelText(Key key)

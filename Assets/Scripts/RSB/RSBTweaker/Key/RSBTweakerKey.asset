@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb204588419bc94099cb9855542c3c0, type: 3}
+  m_Name: RSBTweakerKey
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 0}
+  Name: 
+  Description: 
+  ShowGimmicText: {fileID: 1748705326445904990, guid: 51c280f6a44624546b9d620a9dd8456a, type: 3}
+  HasBeenSelected: 0
+  DefaultKeyBinding: {fileID: 11400000, guid: 27198400c44826346baaefe9b1202298, type: 2}
+  RandomKeyBindings:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 11400000, guid: 2a3023e7d499a7a408888323f91bef78, type: 2}
+    - Key: 2
+      Value: {fileID: 11400000, guid: 930d7ee486595494b8b148acf59b38f6, type: 2}
+  DefaultName: "\uC6D0 \uC704\uCE58!"
+  RandomName: "\uC704\uCE58 \uBCC0\uACBD!"
+  DefaultShowGimmicText: {fileID: 1748705326445904990, guid: 51c280f6a44624546b9d620a9dd8456a, type: 3}
+  RandomShowGimmicText: {fileID: 21300000, guid: 11392b7bb76f76147b94826a917543e3, type: 3}

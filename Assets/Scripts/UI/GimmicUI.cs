@@ -1,13 +1,15 @@
-﻿using UnityEngine;
-using UnityEngine.InputSystem;
+﻿using AYellowpaper.SerializedCollections;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class GimmicUI : MonoBehaviour
 {
     public static GimmicUI instance;
 
-    [Header("# 기믹 종류")]
-    [SerializeField] GameObject[] gimmicList;
     [SerializeField] GameObject panel;
+    [SerializeField] Image gimmicText;
+
+    private Animator animator;
 
     private void Awake()
     {
@@ -15,13 +17,20 @@ public class GimmicUI : MonoBehaviour
         {
             instance = this;
         }
+
+        animator = gimmicText.GetComponent<Animator>();
     }
 
-    public void ShowGimmicText(Gimmic type)
+    public void ShowGimmicText(RSBTweakerBase tweaker)
     {
         panel.SetActive(true);
         InitObject();
-        gimmicList[(int)type].SetActive(true);
+
+        gimmicText.gameObject.SetActive(true);
+        gimmicText.sprite = tweaker.ShowGimmicText;
+        gimmicText.SetNativeSize();
+
+        animator.SetTrigger("Show");
         Invoke(nameof(SetPanelFalse), 1.2f);
     }
 
@@ -32,18 +41,6 @@ public class GimmicUI : MonoBehaviour
 
     private void InitObject()
     {
-        for (int i = 0; i < gimmicList.Length; i++)
-        {
-            gimmicList[i].SetActive(false);
-        }
+        gimmicText.gameObject.SetActive(false);
     }
-}
-
-public enum Gimmic
-{ 
-    DRAW    = 0,
-    WIN     = 1,
-    CHANGE  = 2,
-    LOSE    = 3,
-    ORIGIN  = 4
 }

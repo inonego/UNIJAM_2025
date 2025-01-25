@@ -73,7 +73,7 @@ public class SettingUI : MonoBehaviour
     {
         Time.timeScale = 1.0f;
 
-        FadeManager.instance.FadeOut(onComplete: () =>
+        FadeManager.instance?.FadeOut(onComplete: () =>
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         });

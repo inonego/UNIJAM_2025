@@ -2,20 +2,28 @@ using System;
 
 using UnityEngine;
 
+
+public enum Gimmic
+{ 
+    Judge,
+    Key,
+    LockKey,
+}
+
 [Serializable]
 public abstract class RSBTweakerBase : ScriptableObject
 {
     public Sprite Icon;
     [TextArea(1, 1)] public string Name;
-    [TextArea(2, 5)] public string Description;
+    [TextArea(3, 5)] public string Description;
 
-    public RSBKeyBinding DefaultKeyBinding;
+    public Sprite ShowGimmicText;
 
     public abstract Gimmic GimicType { get; }
 
-    public virtual void Initialize() { }
+    public virtual void Initialize() {}
 
-    public virtual RSBKeyBinding GetKeyBinding() => DefaultKeyBinding;
-    
-    public abstract RSBResult Judge(RSBType current, RSBType input);
+    public virtual void OnSelected() {}
+
+    public abstract void ApplyGimmic(SingleRSB currentRSB);
 }   
