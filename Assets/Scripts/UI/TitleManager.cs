@@ -1,8 +1,6 @@
 ﻿using UnityCommunity.UnitySingleton;
-
 using UnityEngine;
 
-using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoSingleton<TitleManager>
 {
@@ -22,58 +20,44 @@ public class TitleManager : MonoSingleton<TitleManager>
 
     void Start()
     {
-        if(howToPlayPopup.activeSelf)
-            howToPlayPopup.SetActive(false);
+        howToPlayPopup.transform.localScale = Vector3.zero;
 
-        if(stagePopup.activeSelf)
-            stagePopup.SetActive(false);
+        stagePopup.transform.localScale = Vector3.zero;
 
-        if(settingPopup.activeSelf)
-            settingPopup.SetActive(false);
+        settingPopup.transform.localScale = Vector3.zero;
     }
 
-
-    public void LoadScene(string sceneName)
-    {
-        FadeManager.instance.FadeOut(onComplete: () => { SceneManager.LoadScene(sceneName); });
-    }
 
     public void OnClickStagePopUpBtn()
     {
-        if (!stagePopup.activeSelf)
-            stagePopup.SetActive(true);
+        stagePopup.transform.localScale = Vector3.one;
     }
 
     public void DeactiveStagePopUp()
     {
-        if (stagePopup.activeSelf)
-            stagePopup.SetActive(false);
+        stagePopup.transform.localScale = Vector3.zero;
     }
 
     public void OnClickSettingPopUpBtn()
     {
-        if(!settingPopup.activeSelf)
-            settingPopup.SetActive(true);
+        settingPopup.transform.localScale = Vector3.one;
     }
 
     public void DeactiveSettingPopUp()
     {
-        if(settingPopup.activeSelf)
-            settingPopup.SetActive(false);
+        settingPopup.transform.localScale = Vector3.zero;
 
         Time.timeScale = 1f;
     }
 
     public void OnClickHowToPlayPopUpBtn()
     {
-        if(!howToPlayPopup.activeSelf)
-            howToPlayPopup.SetActive(true);
+        howToPlayPopup.transform.localScale = Vector3.one;
     }
 
     public void DeactiveHowToPlayPopUp()
     {
-        if(howToPlayPopup.activeSelf)
-            howToPlayPopup.SetActive(false);
+        howToPlayPopup.transform.localScale = Vector3.zero;
     }
 
     public void OnClickExitBtn()

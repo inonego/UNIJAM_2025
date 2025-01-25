@@ -31,16 +31,9 @@ public class FadeManager : MonoBehaviour
 
     private void Start()
     {
-        if (defaultImage.color.a == 1)
-            FadeIn();
-
-        SceneManager.sceneLoaded += (scene, mode) =>
-        {
-            Debug.Log("씬 전환 ");
-            if (defaultImage.color.a == 1)
-                FadeIn();
-        };
+        FadeIn();
     }
+    
     public void FadeOut(Image image = null, Action onComplete = null)
     {
         if (image == null)
