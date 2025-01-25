@@ -27,8 +27,8 @@ public class SettingUI : MonoBehaviour
         // 슬라이더 값 변경 이벤트 연결
         volumeSlider.onValueChanged.AddListener(SetVolume);
 
-        if(settingPanel.activeSelf)
-            settingPanel.SetActive(false);
+        if(settingPanel.transform.localScale == Vector3.one)
+            settingPanel.transform.localScale = Vector3.zero;
     }
 
     private void Update()
@@ -38,15 +38,15 @@ public class SettingUI : MonoBehaviour
 
         if (Keyboard.current[Key.Escape].wasPressedThisFrame)
         {
-            if(settingPanel.activeSelf)
+            if(settingPanel.transform.localScale == Vector3.zero)
             {
-                settingPanel.SetActive(false);
-                Time.timeScale = 1.0f;
+                settingPanel.transform.localScale = Vector3.one;
+                Time.timeScale = 0.0f;
             }
             else
             {
-                settingPanel.SetActive(true);
-                Time.timeScale = 0.0f;
+                settingPanel.transform.localScale = Vector3.zero;
+                Time.timeScale = 1.0f;
             }
         }
     }   
@@ -65,10 +65,8 @@ public class SettingUI : MonoBehaviour
     public void OnClickCloseBtn()
     {
         Time.timeScale = 1.0f;
-        if (settingPanel.activeSelf)
-        {
-            settingPanel.SetActive(false);
-        }
+        
+        settingPanel.transform.localScale = Vector3.zero;
     }
 
     public void OnClickRetryBtn()

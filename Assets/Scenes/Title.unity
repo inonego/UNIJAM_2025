@@ -367,9 +367,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 177880068}
     m_Modifications:
+    - target: {fileID: 421941152286628313, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191732439832102107, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302421811998820384, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 802076349}
+    - target: {fileID: 1302421811998820384, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1302421811998820384, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1302421811998820384, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: CutScene3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920009612731488409, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 802076349}
+    - target: {fileID: 1920009612731488409, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920009612731488409, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1920009612731488409, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -463,6 +495,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -6638914211838936860, guid: 67efb20e29b4b294688e626249f80fb7, type: 3}
+    - target: {fileID: 3891764890262786403, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891764890262786403, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891764890262786403, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3969406636723988395, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
       propertyPath: m_Name
       value: main
@@ -488,15 +532,87 @@ PrefabInstance:
       value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 4546184030782809448, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 802076349}
+    - target: {fileID: 4546184030782809448, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546184030782809448, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546184030782809448, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: CutScene1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302909479519768537, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 802076349}
+    - target: {fileID: 5302909479519768537, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302909479519768537, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5302909479519768537, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: CutScene5
       objectReference: {fileID: 0}
+    - target: {fileID: 6136506506436163768, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136506506436163768, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136506506436163768, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136506506436163768, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6691608155093364090, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783863506334093768, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783863506334093768, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783863506334093768, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783863506334093768, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910627128342806147, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910627128342806147, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910627128342806147, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910627128342806147, guid: 1d92e46e653cc0543b2948633cf69a0c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -735,47 +851,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxs:
     _serializedList:
-    - Key: Stage1_RSB_Lose
+    - Key: 0
       Value: {fileID: 8300000, guid: a2779712ce0de5f46802605cf3fad180, type: 3}
-    - Key: Stage1_RSB_Win
+    - Key: 3
       Value: {fileID: 8300000, guid: 804c5bf5e349168408ad1bb7745116d6, type: 3}
-    - Key: Stage2_RSB_Lose
+    - Key: 1
       Value: {fileID: 8300000, guid: 8af6753a4c0e23c4bbe2cd61ac0896c7, type: 3}
-    - Key: Stage2_RSB_Win
+    - Key: 4
       Value: {fileID: 8300000, guid: 800f5d3c913e5b943be7daffeb0d55cb, type: 3}
-    - Key: Stage3_RSB_Lose
+    - Key: 2
       Value: {fileID: 8300000, guid: a942b7518a2cb4c45b78175c17d9e1fc, type: 3}
-    - Key: Stage3_RSB_Win
+    - Key: 5
       Value: {fileID: 8300000, guid: 7519c3a136a25f34aa4d148920f03de8, type: 3}
-    - Key: Draw
+    - Key: 8
       Value: {fileID: 8300000, guid: 5627c7d4ea43fe14f81a1d131dc760c1, type: 3}
-    - Key: Fail
+    - Key: 10
       Value: {fileID: 8300000, guid: 3878ec8cbf5a0f14787f7340cd80b026, type: 3}
-    - Key: Clear
+    - Key: 9
       Value: {fileID: 8300000, guid: 485549a57e631c042bef94dba65d3bc5, type: 3}
-    - Key: RSB
+    - Key: 12
       Value: {fileID: 8300000, guid: 5305f4f09585d38468b701ebe81f1ce6, type: 3}
-    - Key: Gimmic
+    - Key: 11
       Value: {fileID: 8300000, guid: d323f294e0e49e344b42226e29fc3576, type: 3}
-    - Key: Typing
+    - Key: 13
       Value: {fileID: 8300000, guid: 14df3827ff887af4782e3e104bf5e788, type: 3}
-    - Key: INF_RSB_Win
+    - Key: 6
       Value: {fileID: 8300000, guid: f6d28b4f1a03e394e9e23912666f3800, type: 3}
-    - Key: INF_RSB_Lose
+    - Key: 7
       Value: {fileID: 8300000, guid: 02c3e8698dda6ec44b19d91a75e60898, type: 3}
-    - Key: BtnClick
+    - Key: 14
       Value: {fileID: 8300000, guid: 7b0651966256dd24582cbf78c6e62435, type: 3}
   bgms:
     _serializedList:
-    - Key: Menu
+    - Key: 0
       Value: {fileID: 8300000, guid: 55793fb2b06c90147b008028878d7b83, type: 3}
-    - Key: Stage1
+    - Key: 1
       Value: {fileID: 8300000, guid: 7a3339c56b5ee0f48845032d7814c355, type: 3}
-    - Key: Stage2
+    - Key: 2
       Value: {fileID: 8300000, guid: 2908038277505f748abede0b2f5ee8e3, type: 3}
-    - Key: Stage3
+    - Key: 3
       Value: {fileID: 8300000, guid: f21ecbc2fd085fc49a1a85085ef7408f, type: 3}
-    - Key: Final
+    - Key: 4
       Value: {fileID: 8300000, guid: f6159c4bd8a21704ca6f08bcb97241a0, type: 3}
   bgmVolume: 0.5
   channels: 30
@@ -847,6 +963,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &802076348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 802076350}
+  - component: {fileID: 802076349}
+  m_Layer: 0
+  m_Name: SceneController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &802076349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802076348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03ff6405ebfb60b4ea29ef68248f47b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &802076350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802076348}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1092.7563, y: 876.4482, z: 53497.062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &958447938
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +1051,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958447938}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -931,3 +1091,4 @@ SceneRoots:
   - {fileID: 567741372}
   - {fileID: 261306168}
   - {fileID: 797626359}
+  - {fileID: 802076350}

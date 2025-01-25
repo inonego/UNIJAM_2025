@@ -10,8 +10,8 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
 
-    public SerializedDictionary<string, AudioClip> sfxs = new SerializedDictionary<string, AudioClip>();    // SFX 모음
-    public SerializedDictionary<string, AudioClip> bgms = new SerializedDictionary<string, AudioClip>();    // BGM 모음
+    public SerializedDictionary<SFX, AudioClip> sfxs = new();       // SFX 모음
+    public SerializedDictionary<BGM, AudioClip> bgms = new();        // BGM 모음
 
     [Header("# BGM")]
     [Range(0, 1)] public float bgmVolume;
@@ -53,12 +53,6 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         CheckSceneSound();
-
-        SceneManager.sceneLoaded += (scene, mode) =>
-        {
-            Debug.Log("Scene Loaded");
-            CheckSceneSound();
-        };
     }
 
     #region Initalize
@@ -113,7 +107,7 @@ public class SoundManager : MonoBehaviour
             return;
         }
 
-        AudioClip clip = bgms[bgm.ToString()];
+        AudioClip clip = bgms[bgm];
 
         bgmPlayer.clip = clip;
         bgmPlayer.Play();
@@ -141,7 +135,7 @@ public class SoundManager : MonoBehaviour
         }
 
         AudioSource player = sfxQueue.Dequeue();
-        AudioClip clip = sfxs[_sfx.ToString()];
+        AudioClip clip = sfxs[_sfx];
 
         if (player != null)
         {
@@ -216,13 +210,12 @@ public class SoundManager : MonoBehaviour
         audioMixer.SetFloat(VolumeParameter, targetVolume);
     }
 
-    void CheckSceneSound()
+    public void CheckSceneSound()
     {
-        Debug.Log("Check");
         switch (SceneManager.GetActiveScene().name)
         {
             case "Title":
-                PlayBGM(BGM.Menu);
+                PlayBGM(BGM.Title);
                 break;
             case "CutScene1":
                 PlayBGM(BGM.Stage1);
@@ -250,7 +243,7 @@ public class SoundManager : MonoBehaviour
 #region enum
 public enum BGM
 {
-    Menu,
+    Title,
     Stage1,
     Stage2,
     Stage3,
