@@ -218,10 +218,10 @@ public class StageManager : MonoSingleton<StageManager>
             currentPhase = Instantiate(phase);
 
             // 페이즈를 초기화합니다.
-            phase.Initialize();
+            currentPhase.Initialize();
 
             // 페이즈 변경 이벤트를 호출합니다.
-            OnPhaseChanged?.Invoke(phase);
+            OnPhaseChanged?.Invoke(currentPhase);
         }
     }
 

@@ -23,7 +23,6 @@ public class Enemy : MonoBehaviour
     public bool CanLose = true;
 
     public int RSBLoseCount = 0;
-    public float MinusMultiplier = 1.5f;
     public float MinusPerRSBLose = 10f;
 
 #endregion
@@ -171,7 +170,9 @@ public class Enemy : MonoBehaviour
 
             // 3. 게임 졌을 때
             case RSBResult.Lose:
-                SetHp(currentHp - (currentPhase.BossMinusValue * MinusMultiplier + MinusPerRSBLose * RSBLoseCount++));
+                Debug.Log(currentPhase.BossMinusValue + MinusPerRSBLose * RSBLoseCount);
+
+                SetHp(currentHp - (currentPhase.BossMinusValue + MinusPerRSBLose * RSBLoseCount++));
 
                 spriteRenderer.sprite = rsbLoseSprite;
 

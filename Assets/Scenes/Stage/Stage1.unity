@@ -843,6 +843,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1719429709}
     - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
+      propertyPath: MinusMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337370770035729039, guid: 0122485e886365f40af61402ec15a8e8, type: 3}
       propertyPath: MinusPerRSBLose
       value: 0
       objectReference: {fileID: 0}

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30ba3374682f02c4ba21fb9c05e71197, type: 3}
+  m_Name: RSBINFPhaseStart
+  m_EditorClassIdentifier: 
+  MinTweakerCount: 2
+  MaxTweakerCount: 2
+  TweakerList:
+  - Tweaker: {fileID: 11400000, guid: 8e318a808c1a9fe40bfb647982415028, type: 2}
+    Weight: 1
+  - Tweaker: {fileID: 11400000, guid: 80ffaac662e075a438e997f709ecc014, type: 2}
+    Weight: 1
+  - Tweaker: {fileID: 11400000, guid: e3e204df7b0387340adadb64d9ce481f, type: 2}
+    Weight: 1
+  JudgeTime: 5
+  BossPlusValue: 7
+  BossMinusValue: 0
+  MinusPerSecond: 1.5
+  TargetMinTweakerCount: 1
+  TargetMaxTweakerCount: 1
+  TweakerCountPowerValue: 1.08
+  TargetJudgeTime: 0.9
+  JudgeTimePowerValue: 1.012
+  TargetBossPlusValue: 25
+  TargetBossMinusMultiplier: 1.5
+  BossPowerValue: 1.08
+  TargetMinusPerSecond: 5
+  MinusPerSecondPowerValue: 1.02

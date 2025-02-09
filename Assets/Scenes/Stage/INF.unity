@@ -1811,6 +1811,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4907808006488536033, guid: 50a996f4df172794380e50dacfd929a1, type: 3}
+      propertyPath: PhaseTimes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4907808006488536033, guid: 50a996f4df172794380e50dacfd929a1, type: 3}
+      propertyPath: PhaseTimes.Array.data[0].Phase
+      value: 
+      objectReference: {fileID: 11400000, guid: cf017746d37c0b84b89482c95dae1ae9, type: 2}
+    - target: {fileID: 4907808006488536033, guid: 50a996f4df172794380e50dacfd929a1, type: 3}
+      propertyPath: PhaseTimes.Array.data[1].Phase
+      value: 
+      objectReference: {fileID: 11400000, guid: e7f489e3b17358b4aab56730b1bc523b, type: 2}
+    - target: {fileID: 4907808006488536033, guid: 50a996f4df172794380e50dacfd929a1, type: 3}
+      propertyPath: PhaseTimes.Array.data[1].StartTime
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6555425295002327046, guid: 50a996f4df172794380e50dacfd929a1, type: 3}
       propertyPath: m_Name
       value: "\uAC8C\uC784 \uB9E4\uB2C8\uC800"

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: RSBTweakerLockKey
   m_EditorClassIdentifier: 
   Icon: {fileID: 0}
-  Name: 
+  Name: "\uBD09\uC778!"
   Description: 
-  ShowGimmicText: {fileID: 0}
-  HasBeenSelected: 0
+  ShowGimmicText: {fileID: 21300000, guid: 1b524278a58dbc7469d99ef11353ab0a, type: 3}
+  HasBeenSelected: 1
   DefaultKeyBinding: {fileID: 0}
   DefaultName: "\uBD09\uC778 \uD574\uC81C!"
   LockName: "\uBD09\uC778!"
-  DefaultShowGimmicText: {fileID: 0}
-  LockShowGimmicText: {fileID: 0}
+  DefaultShowGimmicText: {fileID: 21300000, guid: 62538f2e1588abb4b8a9544998db8702, type: 3}
+  LockShowGimmicText: {fileID: 21300000, guid: 1b524278a58dbc7469d99ef11353ab0a, type: 3}
