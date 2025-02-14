@@ -695,7 +695,7 @@ PrefabInstance:
     - target: {fileID: 3961318040868023675, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 1971363701}
+      objectReference: {fileID: 0}
     - target: {fileID: 3968231107165134609, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1573,11 +1573,6 @@ Transform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1038956490467741398, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
   m_PrefabInstance: {fileID: 750871301}
-  m_PrefabAsset: {fileID: 0}
---- !u!20 &1971363701 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 4292963424628175786, guid: 50a996f4df172794380e50dacfd929a1, type: 3}
-  m_PrefabInstance: {fileID: 319619423466332992}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1995575947 stripped
 MonoBehaviour:

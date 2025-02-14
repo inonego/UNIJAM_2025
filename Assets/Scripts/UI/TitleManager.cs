@@ -77,4 +77,9 @@ public class TitleManager : MonoSingleton<TitleManager>
     {
         SoundManager.instance.PlaySFX(SFX.BtnClick);
     }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneController.instance.LoadScene(sceneName);
+    }
 }
