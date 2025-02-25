@@ -64,7 +64,7 @@ public class TitleManager : MonoSingleton<TitleManager>
     {
         FadeManager.instance.FadeOut(onComplete: () =>
         {
-#if UNITY_EDITOR
+            #if UNITY_EDITOR
             Debug.Log("에디터 종료");
             UnityEditor.EditorApplication.isPlaying = false;
             #else

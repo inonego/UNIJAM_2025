@@ -11,6 +11,8 @@ public class SettingUI : MonoBehaviour
     [Header("# 설정 UI")]
     [SerializeField] GameObject settingPanel;
 
+    public bool DoTimeFreezeWhenShown = true;
+
     [SerializeField] private AudioMixer audioMixer; // Audio Mixer를 연결
     [SerializeField] Slider volumeSlider;
     private const string VolumeParameter = "Master"; // 노출된 매개변수 이름
@@ -41,7 +43,9 @@ public class SettingUI : MonoBehaviour
             if(settingPanel.transform.localScale == Vector3.zero)
             {
                 settingPanel.transform.localScale = Vector3.one;
-                Time.timeScale = 0.0f;
+                
+                if (DoTimeFreezeWhenShown)
+                    Time.timeScale = 0.0f;
             }
             else
             {

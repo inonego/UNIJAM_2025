@@ -660,6 +660,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1481745374284501055, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481745374284501055, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1633284077891130931, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -667,6 +675,14 @@ PrefabInstance:
     - target: {fileID: 1740506772859970058, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978022398403739290, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.000122
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978022398403739290, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -77
       objectReference: {fileID: 0}
     - target: {fileID: 2195701553239221925, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_IsActive
@@ -767,6 +783,10 @@ PrefabInstance:
     - target: {fileID: 4253182113509100876, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4798483384506158287, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4894666219633419768, guid: 9e650b571dd81004e8141773ee10b7a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1307,9 +1327,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 779236917976180650, guid: c9cdc363eef1da845942f89c99576014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249795781212362612, guid: c9cdc363eef1da845942f89c99576014, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1504622173650548124, guid: c9cdc363eef1da845942f89c99576014, type: 3}
       propertyPath: m_Name
       value: Gimmic Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1545027932233658190, guid: c9cdc363eef1da845942f89c99576014, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954206931181355165, guid: c9cdc363eef1da845942f89c99576014, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954206931181355165, guid: c9cdc363eef1da845942f89c99576014, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954206931181355165, guid: c9cdc363eef1da845942f89c99576014, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954206931181355165, guid: c9cdc363eef1da845942f89c99576014, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954206931181355165, guid: c9cdc363eef1da845942f89c99576014, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954206931181355165, guid: c9cdc363eef1da845942f89c99576014, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7339107597127161675, guid: c9cdc363eef1da845942f89c99576014, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag

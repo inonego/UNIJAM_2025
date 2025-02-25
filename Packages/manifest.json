@@ -2,6 +2,7 @@
   "dependencies": {
     "com.simonoliver.unityfigma": "https://github.com/simonoliver/UnityFigmaBridge.git",
     "com.unity.collab-proxy": "2.6.0",
+    "com.unity.connect.share": "4.2.3",
     "com.unity.feature.2d": "2.0.1",
     "com.unity.ide.cursor": "https://github.com/boxqkrtm/com.unity.ide.cursor.git",
     "com.unity.ide.rider": "3.0.31",
